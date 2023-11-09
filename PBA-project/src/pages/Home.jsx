@@ -1,9 +1,9 @@
-import '../assets/styles/font.scss'
+import '../assets/main/font.scss'
 
 const Home = () => {
     return (
-        <div className="huhu">
-            <h2 className='huhu'>Home</h2>
+        <div className="home">
+            <h2>Home</h2>
         </div>
     );
 }

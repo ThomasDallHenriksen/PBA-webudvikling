@@ -1,0 +1,27 @@
+
+.navbar{
+    height: 3.875rem;
+    display: flex;
+    background-color: var(--color-grey);
+    justify-content: flex-end;
+    padding-right: 1.25rem;
+    align-items: center;
+
+
+
+  }
+
+  .link a{
+    color: var(--color-white);
+    margin-left: 1.25rem;
+    /* font-size: clamp-calc(0.1rem, 1.5rem, 24.375rem); */
+    font-size: 1.5rem;
+    
+  }
+
+  #airMap{
+    border-color: var(--color-skyblue);
+    border-radius: 30%;
+    background-color: var(--color-skyblue);
+    padding: 20px 1px 20px 1px;
+  }

@@ -63,7 +63,7 @@ button:focus-visible {
   }
 }
 
-navbar{
+.navbar{
   display: flex;
-  background-color: #535bf2;
+  background-color: var(--color-grey);
 }

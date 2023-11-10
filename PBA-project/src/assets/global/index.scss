@@ -1,4 +1,9 @@
 @import '../main/colors.scss';
+
+html {
+ font-size: '1vw';
+}
+
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -26,6 +31,10 @@
   
   body {
     background-color: var(--color-white);
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
   }
   
   h1 {
@@ -64,4 +73,5 @@
       background-color: #f9f9f9;
     }
   }
+
   

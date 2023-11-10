@@ -1,7 +1,7 @@
 /* 
  * This mixin can be used as follows:
- * @include media("xs") will translate to '@media (min-width: 48rem)'
- * @include media("xs") will translate to '@media (min-width: 48rem - 0.0625rem)
+ * @include media("xs") will translate to '@media (min-width: 768px)'
+ * @include media("xs") will translate to '@media (min-width: 768px - 1px)
 */
 
 @function translate-media-condition($c) {
@@ -16,7 +16,7 @@
   }
   
   @mixin media($size, $min: true) {
-    $one: 0.0625rem !default; // one px
+    $one: .0625rem !default; // one px
     $query: "";
     $bp: translate-media-condition($size);
     @if $min {

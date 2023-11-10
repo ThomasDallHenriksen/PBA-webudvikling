@@ -1,7 +1,9 @@
-.home {
-    font-size: 100px;
-    color: red;
-}
-.huhu{
-    font-size: 8px;
+// @import '../global/breakpoints.scss';
+// @import '../main/colors.scss';
+
+// font-family: var(--font-family-primary);
+
+:root {  
+//fonts
+--font-family-primary: "Inter";
 }

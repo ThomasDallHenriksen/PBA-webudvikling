@@ -1,0 +1,31 @@
+/* 
+ * This mixin can be used as follows:
+ * @include media("xs") will translate to '@media (min-width: 48rem)'
+ * @include media("xs") will translate to '@media (min-width: 48rem - 0.0625rem)
+*/
+
+@function translate-media-condition($c) {
+    $breakpoints: (
+      "xs": 48rem,
+      "sm": 64rem,
+      "md": 75rem,
+      "lg": 90rem,
+      "xl": 120rem,
+    ) !default;
+    @return map-get($breakpoints, $c);
+  }
+  
+  @mixin media($size, $min: true) {
+    $one: 0.0625rem !default; // one px
+    $query: "";
+    $bp: translate-media-condition($size);
+    @if $min {
+      $query: "(min-width: #{$bp})";
+    } @else {
+      $query: "(max-width: #{$bp - $one})";
+    }
+  
+    @media #{$query} {
+      @content;
+    }
+  }

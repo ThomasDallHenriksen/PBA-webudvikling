@@ -1,5 +1,6 @@
 import '../assets/global/breakpoints.scss'
 import '../assets/main/font.scss'
+import '../index.css'
 
 const Home = () => {
     return (
@@ -10,16 +11,16 @@ const Home = () => {
 }
 
 export default Home;
-/* <style lang="scss" scoped>
-.home {
-    background-color: red;
+//  <style lang="scss" scoped>
+// .home {
+//     background-color: red;
 
-        @include media("xs") {
-            background-color: var(--color-skyblue);
-        }   
+//         @include media("xs") {
+//             background-color: var(--color-skyblue);
+//         }   
 
-        @include media("sm") {
-            background-color: var(--color-black);
-        }   
-}
-</style> */
+//         @include media("sm") {
+//             background-color: var(--color-black);
+//         }   
+// }
+// </style> 

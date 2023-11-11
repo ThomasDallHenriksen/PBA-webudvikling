@@ -1,27 +1,39 @@
+@import '../main/colors.scss';
 
 .navbar{
     height: 3.875rem;
     display: flex;
     background-color: var(--color-grey);
-    justify-content: flex-end;
+    justify-content: space-between;
     padding-right: 1.25rem;
     align-items: center;
-
-
-
   }
 
-  .link a{
-    color: var(--color-white);
-    margin-left: 1.25rem;
-    /* font-size: clamp-calc(0.1rem, 1.5rem, 24.375rem); */
-    font-size: 1.5rem;
-    
-  }
+    .link a{
+        color: var(--color-white);
+        margin-left: 1.25rem;
+        /* font-size: clamp-calc(0.1rem, 1.5rem, 24.375rem); */
+        font-size: 1.5rem;
+    }
+    .link a:hover {
+        color: var(--color-lightestgrey);
+    }
 
-  #airMap{
-    border-color: var(--color-skyblue);
-    border-radius: 30%;
-    background-color: var(--color-skyblue);
-    padding: 20px 1px 20px 1px;
+
+    #navbarButton{
+        border-color: var(--color-skyblue);
+        border-radius: 1.5625rem;
+        background-color: var(--color-skyblue);
+        padding: 3px 9px 8px 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
+    }
+
+    #navbarButton:hover {
+        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
+        color: var(--color-white);
+    }
+  
+
+  .navbar-logo{
+    padding-left: 80px;
   }

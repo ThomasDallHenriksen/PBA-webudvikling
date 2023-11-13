@@ -1,5 +1,5 @@
-import '../assets/global/breakpoints.scss'
-import '../assets/main/font.scss'
+import '../assets/global/breakpoints.scss';
+import '../assets/main/font.scss';
 import Footer from '../components/Footer';
 import '../index.css'
 

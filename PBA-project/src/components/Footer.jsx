@@ -24,11 +24,11 @@ const Footer = () => {
 
             {/* Nedre sektion */}
             <div className="lower-section">
-                <div className="__home">HOME</div>
-                <div className="__product">PRODUCT</div>
-                <div className="__company">COMPANY</div>
-                <div className="__contact">CONTACT</div>
-                <div className="__AirMaps">AirMaps</div>
+                <a href='/'>HOME</a>
+                <a href='/Product'>PRODUCT</a>
+                <a href='/Company'>COMPANY</a>
+                <a href='/Contact'>CONTACT</a>
+                <a href='/Contact'>AirMaps</a>
             </div>
         </footer>
     );

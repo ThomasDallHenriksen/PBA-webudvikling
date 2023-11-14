@@ -2,33 +2,33 @@ import '../assets/styles/footer.scss';
 
 const Footer = () => {
     return (
-        <footer className="block">
-            {/* Øvre sektion */}
-            <div className="upper-section">
-                <div className="logo">
-                    <img src="images/logo.png" alt="Logo" />
-                </div>
-                <div className="text">2023 AirPlate ApA</div>
-                <div className="contact-container">
-                    <div className="mail">
-                        <img src="images/mail.png" alt="Mail" />
-                    </div>
-                    <div className="phone">
-                        <img src="images/phone.png" alt="Phone" />
-                    </div>
-                    <div className="linkedin">
-                        <img src="images/linkedin.png" alt="LinkedIn" />
-                    </div>
+        <footer className="footer">
+            <div className="footer__column">
+                <img src="images/logo.png" className="airplate-logo" />
+                <div className="about-heading">About AirPlate</div>
+                <div className="about-text">The AirPlate is a small, self-contained solution to tagging and tracking your drones and aerial devices</div>
+            </div>
+            <div className="footer__column">
+                <div className="links">
+                    <a href='/'>Home</a>
+                    <a href='/Product'>Product</a>
+                    <a href='/Company'>Company</a>
+                    <a href='/Contact'>Contact</a>
                 </div>
             </div>
-
-            {/* Nedre sektion */}
-            <div className="lower-section">
-                <a href='/'>HOME</a>
-                <a href='/Product'>PRODUCT</a>
-                <a href='/Company'>COMPANY</a>
-                <a href='/Contact'>CONTACT</a>
-                <a href='/Contact'>AirMaps</a>
+            <div className="footer__column">
+                <div className="contact-list">
+                    <div className="contact">Contact us</div>
+                    <div className="mail">airplategmail.com</div>
+                    <div className="phone">+45 31549731</div>
+                    <a href="https://www.linkedin.com/company/airplate-aero/" className="linkedin-link">
+                        <img src="images/blue-linkedin.png" className="linkedin-logo" alt="LinkedIn Logo" />
+                    </a>
+                </div>
+            </div>
+            <div className="footer__column">
+                <div className="airmap">AirMap</div>
+                <img src="images/map.png" />
             </div>
         </footer>
     );

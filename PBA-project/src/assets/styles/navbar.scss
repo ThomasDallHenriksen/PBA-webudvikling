@@ -1,13 +1,13 @@
 @import '../main/colors.scss';
 
-.navbar{
-    height: 3.875rem;
-    display: flex;
-    background-color: var(--color-grey);
-    justify-content: space-between;
-    padding-right: 1.25rem;
-    align-items: center;
-  }
+    .navbar{
+        height: 3.875rem;
+        display: flex;
+        background-color: var(--color-grey);
+        justify-content: space-between;
+        padding-right: 1.25rem;
+        align-items: center;
+    }
 
     .link a{
         color: var(--color-white);
@@ -24,7 +24,7 @@
         border-color: var(--color-skyblue);
         border-radius: 1.5625rem;
         background-color: var(--color-skyblue);
-        padding: 3px 9px 8px 12px;
+        padding: .1875rem .5625rem .5rem .75rem;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
     }
 
@@ -34,6 +34,6 @@
     }
   
 
-  .navbar-logo{
-    padding-left: 80px;
-  }
+    .navbar-logo{
+        padding-left: 80px;
+    }

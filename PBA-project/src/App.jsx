@@ -5,7 +5,6 @@ import Company from './pages/Company'
 import Contact from './pages/Contact'
 import Signup from './pages/Signup'
 import AirMap from './pages/AirMap'
-import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {

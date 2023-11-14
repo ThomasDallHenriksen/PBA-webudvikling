@@ -1,13 +1,13 @@
 @import '../main/colors.scss';
 
-.navbar{
-    height: 3.875rem;
-    display: flex;
-    background-color: var(--color-grey);
-    justify-content: space-between;
-    padding-right: 1.25rem;
-    align-items: center;
-  }
+    .navbar{
+        height: 3.875rem;
+        display: flex;
+        background-color: var(--color-grey);
+        justify-content: space-between;
+        padding-right: 1.25rem;
+        align-items: center;
+    }
 
     .link a{
         color: var(--color-white);
@@ -34,6 +34,6 @@
     }
   
 
-  .navbar-logo{
-    padding-left: 80px;
-  }
+    .navbar-logo{
+        padding-left: 80px;
+    }

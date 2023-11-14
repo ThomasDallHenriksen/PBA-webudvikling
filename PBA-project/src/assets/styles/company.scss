@@ -1,0 +1,76 @@
+@import '../main/colors.scss';
+
+    .company-section-1 {
+        display: flex;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        background-color: var(--color-grey);
+    }
+
+    .company-section-2{
+        display: flex;
+        padding-top: 1.875rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
+        background-color: var(--color-white);
+    }
+    .company-section-3{
+        padding-top: 2.5rem;
+    }
+
+    .company-section-4{
+        display: flex;
+        padding-top: 1.875rem;
+    }
+
+    .about-us{
+        width: 50%;
+        text-align: start;
+    }
+
+    .our-succes-story{
+        width: 50%;
+        text-align: start;
+        padding-top: .5rem;
+    }
+
+    .team-description{
+        width: 50%;
+        text-align: start;
+        font-size: 1.25rem;
+        padding-right: 8.4375rem;
+    }
+
+    .img-drone{
+        display: flex;
+        width: 50%;
+        height: 15rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-beach{
+        display: flex;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #drone{
+        width: 35%;
+    }
+
+    #beach{
+        width: 90%;
+    }
+
+    #drone2{
+        width: 100%;
+    }
+
+    #portraits{
+        width: 100%;
+    }
+
+    
+    

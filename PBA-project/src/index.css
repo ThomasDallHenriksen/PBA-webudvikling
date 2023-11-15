@@ -65,5 +65,5 @@ button:focus-visible {
 
 .navbar{
   display: flex;
-  background-color: var(--color-grey);
+  background-color: var(--color-white);
 }

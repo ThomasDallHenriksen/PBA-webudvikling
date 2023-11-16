@@ -16,6 +16,10 @@ const Carousel = ({ images }) => {
     );
   };
 
+  const handleImageClick = (index) => {
+    setCurrentImageIndex(index);
+  };
+
   return (
     <div className="carousel">
       <div className="main-image">
@@ -29,6 +33,7 @@ const Carousel = ({ images }) => {
             src={image}
             alt={`Image ${index + 1}`}
             className={index === currentImageIndex ? 'active' : ''}
+            onClick={() => handleImageClick(index)}
             />
             ))}
             <button className="arrow right" onClick={handleNext}>&#8250;</button>

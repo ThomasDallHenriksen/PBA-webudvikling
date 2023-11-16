@@ -1,0 +1,39 @@
+@import '../main/font.scss';
+@import '../main/colors.scss';
+
+
+.product-section-1{
+    display: flex;
+    width: 100%;
+}
+
+.drone-carousel{
+    width: 50%;
+    padding: 16px;
+}
+
+.demo-description{
+    width: 50%;
+    padding: 16px 143px 16px 143px;
+
+}
+
+h1{
+    margin-top: 0;
+}
+
+#demo-button{
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    padding:  16px 32px 16px 32px;
+    cursor: pointer;
+    transition: background-color 0.5s ease; /* Adding a smooth transition */
+
+}
+
+#demo-button:hover{
+    background-color: var(--color-skyblue);
+}

@@ -26,14 +26,15 @@
         border-color: var(--color-skyblue);
         border-radius: 1.5625rem;
         background-color: var(--color-skyblue);
+        color: var(--color-white);
         padding: 1px 9px 1px 12px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
+        transition: font-size 0.5s ease, transform 0.5s ease;
+        
     }
 
-    #navbarButton:hover {
-        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
-        color: var(--color-white);
-    }
+    #navbarButton:hover{
+        transform: scale(1.1); /* Increase the scale factor as needed */
+        color: var(--color-white);}
   
 
     .navbar-logo{

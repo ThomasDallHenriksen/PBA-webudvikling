@@ -18,7 +18,7 @@ const Product = () => {
                     <Carousel images={images} />
                 </div>
                 <div className="demo-description">
-                    <h1>Drone</h1>
+                    <h1>Airplate</h1>
                     <h3>299€</h3>
                     <p> The Airplate is a small, self-contained solution to tagging and tracking
                         your drones and arial devices, consisting of a single unit with a volume

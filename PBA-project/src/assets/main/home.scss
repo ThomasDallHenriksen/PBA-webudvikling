@@ -1,0 +1,14 @@
+@import '../global/breakpoints.scss';
+@import '../main/colors.scss';
+
+.home {
+    background-color: red;
+
+        @include media("xs") {
+            background-color: var(--color-skyblue);
+        }   
+
+        @include media("sm") {
+            background-color: var(--color-black);
+        }   
+}

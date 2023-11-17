@@ -1,8 +1,42 @@
+import React, { useState } from 'react';
 import '../assets/global/breakpoints.scss'
 import '../assets/main/font.scss'
 import '../assets/styles/contact.scss';
 
 const Contact = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phone: '',
+        message:'',
+    });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value});
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch('http://localhost:5000/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                console.log('email er sendt');
+            } else {
+                console.log('fejl ved afsendelse af email.');
+            }
+        } catch (error) {
+            console.log('fejl ved afsendelse af email.', error);
+        }
+    };
+
     return (
         <div className="contact">
             <div className="contact-info">
@@ -41,7 +75,7 @@ const Contact = () => {
 
                     <div className="contact-info__right">
                         
-                        <form className='contact-form'>
+                        <form className='contact-form' onSubmit={handleSubmit}>
                             <h3>Let's talk</h3>
                             <p>Feel free to drop a line below</p>
                             <input

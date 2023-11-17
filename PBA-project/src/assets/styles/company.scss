@@ -1,4 +1,7 @@
 @import '../main/colors.scss';
+@import '../global/breakpoints.scss';
+
+.company{
 
     .company-section-1 {
         display: flex;
@@ -21,6 +24,9 @@
     .company-section-4{
         display: flex;
         padding-top: 1.875rem;
+        @include media("sm") {
+            flex-direction: column;
+            }
     }
 
     .about-us{
@@ -39,6 +45,46 @@
         text-align: start;
         font-size: 1.25rem;
         padding-right: 8.4375rem;
+        padding-left: 4.375rem;
+        @include media("sm") {
+            width: 100%;
+            }
+    }
+
+    .title{
+        padding-left: 4.375rem;
+    }
+
+    .portraits{
+        @include media("sm") {
+        display: none;
+        }
+    }
+
+    .portraits-mobile{
+        display: none;
+        @include media("sm") {
+            width: auto;
+        display: flex;
+        justify-content: center;
+        }
+    }
+
+
+
+    .activities{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+
+        @include media("sm") {
+        flex-direction: column;
+        width: 50%;
+        position: relative;
+        margin: 0 auto;
+        justify-content: center;
+        }
     }
 
     .img-drone{
@@ -72,5 +118,5 @@
         width: 100%;
     }
 
-    
+}
     

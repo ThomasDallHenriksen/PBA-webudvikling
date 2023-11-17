@@ -3,20 +3,22 @@
     .navbar{
         height: 3.875rem;
         display: flex;
-        background-color: var(--color-grey);
+        background-color: var(--color-white);
         justify-content: space-between;
         padding-right: 1.25rem;
         align-items: center;
     }
-
+    .link{
+        display: flex;
+    }
     .link a{
-        color: var(--color-white);
+        color: var(--color-black);
         margin-left: 1.25rem;
         /* font-size: clamp-calc(0.1rem, 1.5rem, 24.375rem); */
         font-size: 1.5rem;
     }
     .link a:hover {
-        color: var(--color-lightestgrey);
+        color: var(--color-grey);
     }
 
 
@@ -24,16 +26,26 @@
         border-color: var(--color-skyblue);
         border-radius: 1.5625rem;
         background-color: var(--color-skyblue);
-        padding: .1875rem .5625rem .5rem .75rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
+        color: var(--color-white);
+        padding: 1px 9px 1px 12px;
+        transition: font-size 0.5s ease, transform 0.5s ease;
+        
     }
 
-    #navbarButton:hover {
-        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
-        color: var(--color-white);
-    }
+    #navbarButton:hover{
+        transform: scale(1.1); /* Increase the scale factor as needed */
+        color: var(--color-white);}
   
 
     .navbar-logo{
         padding-left: 80px;
+    }
+
+    #profil{
+        display: inline-block;
+        background-image: url("../public/spritesheet.png");
+        background-position-x: -20px;
+        background-position-y: -390px;
+        width: 39px;
+        height: 39px;
     }

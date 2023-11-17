@@ -12,7 +12,6 @@ function App() {
 return (
   <Router>
       <Navbar />
-      <Footer />
     <div className="App">
       <div className="content">
         <Routes>
@@ -27,6 +26,7 @@ return (
         </Routes>
       </div>
     </div>
+    <Footer />
   </Router>  
 )
 }

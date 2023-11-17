@@ -1,0 +1,212 @@
+@import '../global/breakpoints.scss';
+@import '../main/colors.scss';
+
+html {
+    font-size: 16px;
+}
+
+.contact {
+    width: 100%;
+    height: auto; 
+}
+
+.contact-info {
+    width: 100%;
+    height: 43.75rem;
+    display: flex;
+    justify-content: center;
+    background-color: #013A6B;
+    background-image: -webkit-linear-gradient(60deg, var(--color-skyblue) 50%, var(--color-white) 50%);
+
+    &__box {
+        width: 70.5rem;
+        height: 40.0625rem;
+        display: flex;
+        margin-top: 2rem;
+        box-shadow: 0.1rem 0.125rem 0.25rem rgba(0, 0, 0, 0.2);
+    }
+
+    &__left {
+        width: 35.125rem;
+        height: 40.0625rem;
+        background-image: linear-gradient(var(--color-skyblue), var(--color-skyblue), var(--color-white));
+    }
+    
+    &__right {
+        width: 35.125rem;
+        height: 40.0625rem;
+        background-color: var(--color-white);
+    }
+}
+
+
+
+.contact-form {
+    width: 100%;
+    height: 100%;
+    
+    &__name {
+        width: 30.75rem;
+        height: 3.5rem;
+        background-color: var(--color-white);
+        color: var(--color-black);
+        margin: 1rem;
+    }
+    &__email {
+        width: 30.75rem;
+        height: 3.5rem;
+        background-color: var(--color-white);
+        color: var(--color-black);
+        margin: 1rem;
+    }
+    &__phone {
+        width: 30.75rem;
+        height: 3.5rem;
+        background-color: var(--color-white);
+        color: var(--color-black);
+        margin: 1rem;
+    }
+    &__message {
+        width: 30.75rem;
+        height: 9.4375rem;
+        background-color: var(--color-white);
+        color: var(--color-black);
+        margin: 1rem;
+    }
+    &__submit {
+        width: 10.5rem;
+        height: 3.625rem;
+        background-color: #1897F3;
+        margin-left: 20.7rem;
+        border: none;
+    }
+}
+
+.contact-airplate {
+    width: 100%;
+h2 {
+    font-size: 3rem;
+    text-align: justify;
+    margin-left: 6.8rem;
+}
+p {
+    font-size: 1.25rem;
+    text-align: justify;
+    margin-left: 7rem;
+}
+}
+
+.phone {
+    display: flex;
+    text-align: justify;
+    margin-top: 1.25rem;
+
+&__icon {
+    width: 20%;
+}
+
+&__info {
+    width: 80%;
+    margin: 0;
+}
+&__info h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+&__info p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+}
+
+.mail {
+    display: flex;
+    text-align: justify;
+    margin-top: 1.25rem;
+
+&__icon {
+    width: 20%;
+}
+
+&__info {
+    width: 80%;
+    margin: 0;
+}
+&__info h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+&__info p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+}
+
+.location {
+    display: flex;
+    text-align: justify;
+    margin-top: 1.25rem;
+
+&__icon {
+    width: 20%;
+}
+
+&__info {
+    width: 80%;
+    margin: 0;
+}
+&__info h4 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+&__info p {
+    font-size: 1.5rem;
+    margin: 0;
+}
+}
+
+.contact-form h3 {
+    font-size: 3rem;
+    color: var(--color-black);
+    text-align: justify;
+    margin: 0;
+    padding-left: 1.7rem;
+}
+
+.contact-form p {
+    font-size: 1.25rem;
+    color: var(--color-blue);
+    text-align: justify;
+    margin: 0;
+    padding-left: 2rem;
+}
+
+.contact-personal {
+    width: 100%;
+    height: 40.0625rem;
+    background-color: var(--color-white);
+    color: #7B7979;
+    font-size: 4rem;
+
+&__founders {
+     display: flex;
+    justify-content: space-around;
+}
+
+&__director {
+    font-size: 1.5rem;
+}
+&__director p {
+    font-size: .9375rem;
+}
+
+&__ceo {
+    font-size: 1.5rem;
+}
+&__ceo p{
+    font-size: .9375rem;
+}
+}

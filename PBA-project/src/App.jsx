@@ -1,3 +1,4 @@
+import Footer from './components/Footer';
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Product from './pages/Product'
@@ -25,6 +26,7 @@ return (
         </Routes>
       </div>
     </div>
+    <Footer />
   </Router>  
 )
 }

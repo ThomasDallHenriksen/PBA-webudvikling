@@ -1,11 +1,11 @@
 import '../assets/global/breakpoints.scss';
 import '../assets/main/font.scss';
-import '../index.css'
+import '../assets/styles/home.scss';
 
 const Home = () => {
     return (
         <div className="home">
-            <h2>Home</h2>
+            <div className="home-section1"></div>
         </div>
     );
 }

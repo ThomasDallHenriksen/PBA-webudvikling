@@ -88,6 +88,7 @@
         @include media("sm") {
             width: auto;
             display: flex;
+            width: 100%;
             justify-content: center;
         }
     }
@@ -112,12 +113,23 @@
 
     .img-drone{
         display: flex;
-        width: 50%;
-        height: 15rem;
+        width: 100%;
+        height: auto;
         justify-content: center;
         align-items: center;
         @include media("sm") {
             width: 100%;
+        }
+    }
+
+    .img-drone2{
+        display: flex;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        @include media("sm") {
+            display: none;
         }
     }
 
@@ -127,18 +139,20 @@
         justify-content: center;
         align-items: center;
         @include media("sm") {
-            width: 100%;
-            display: flex;
-            justify-content: center;
+            display: none;
         }
     }
 
     #drone{
         width: 250px;
         @include media("sm") {
-            min-width: 25%;
+            width: 200px;
             display: flex;
             justify-content: center;
+        }
+        @include media("xs") {
+            width: 150px;
+            height: auto;
         }
     }
 

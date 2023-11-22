@@ -1,14 +1,318 @@
 @import '../global/breakpoints.scss';
 @import '../main/colors.scss';
+@import '../global/index.scss';
 
 .home {
-    background-color: red;
+    width: 100%;
+    height: auto;
+}
 
-        @include media("xs") {
-            background-color: var(--color-skyblue);
-        }   
+.home-sectionOne {
+    width: 100%;
+    height: 45.8125rem;
+    background-color: var(--color-white);
+    display: flex;
+    margin-top: 1.25rem;
+}
 
-        @include media("sm") {
-            background-color: var(--color-black);
-        }   
+.sectionOne-info {
+    width: 50%;
+    color: var(--color-black);
+
+    h2 {
+    font-size: 5rem;
+    padding-left: 4.7rem;
+}
+    p {
+    font-size: 1.125rem;
+    padding-left: 4.7rem;
+}
+
+&__airmap {
+    display: flex;
+    padding-left: 4.7rem;
+}
+&__airmap a{
+    display: flex;
+    color: var(--color-black);
+    align-items: center;
+    margin-left: 7.375rem;
+}
+
+&__50k {
+    width: 36.75rem;
+    height: 8.1875rem;
+    display: flex;
+    border: .0625rem solid var(--color-black) ;
+    justify-content: space-around;
+    margin-left: 4.7rem;
+    margin-top: 3.125rem;
+
+h2 {
+    font-size: 1.875rem;
+    padding: 1rem;
+    padding-left: 2rem;
+}
+p {
+    font-size: 1.125rem;
+    padding-left: 0.7rem;
+    display: flex;
+    align-items: center;
+}
+}
+}
+
+#sectionButton{
+    width: 15.375rem;
+    height: 4.25rem;
+    display: flex;
+    border-color: var(--color-skyblue);
+    border-radius: 2.5625rem;
+    background-color: var(--color-skyblue);
+    color: var(--color-white);
+    padding: 1px 9px 1px 12px;
+    transition: font-size 0.5s ease, transform 0.5s ease; 
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    margin-left: 3.625rem;
+}
+
+.sectionOne-pic {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+
+&__left {
+    margin-top: 3.5rem;
+    margin-left: 15rem;
+}
+&__left img {
+    width: 100%;
+}
+&__right {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.5rem;
+    margin-left: 1rem;
+}
+&__right img {
+    width: 100%;
+}
+}
+
+.underDrone {
+    margin-top: 17.5%;
+}
+
+.home-sectionTwo {
+    width: 100%;
+    height: 34.375rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
+
+h1 {
+    font-size: 2.5rem;
+    margin-left: 4.7rem;
+}
+
+&__data {
+    width: 100%;
+    display: flex;
+}
+&__data img {
+    width: 30%;
+    padding-left: 4.7rem;
+}
+&__data p {
+    font-size: 1.5rem;
+    margin-left: 5rem;
+}
+}
+
+.home-sectionThree {
+    width: 100%;
+    height: 37.75rem;
+    background-image: url('../../../public/images/frontpage/time.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: var(--color-black);
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+p {
+    font-size: 3rem;
+    margin-bottom: 8rem;
+    padding-left: 4.7rem;
+}
+}
+
+#airmapButton{
+    width: 21.875rem;
+    height: 5.625rem;
+    display: flex;
+    border-color: var(--color-skyblue);
+    border-radius: 2.5625rem;
+    background-color: var(--color-skyblue);
+    color: var(--color-white);
+    padding: 1px 9px 1px 12px;
+    transition: font-size 0.5s ease, transform 0.5s ease; 
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    margin-right: 3.625rem;
+    margin-bottom: 8rem;
+}
+
+.home-sectionFour {
+    width: 100%;
+    height: 110.125rem;
+    color: var(--color-black);
+    background-color: var(--color-white);
+}
+
+.sectionFour-internet {
+    width: 100%;
+    height: 37.875rem;
+    display: flex;
+
+&__left {
+    width: 40%;
+}
+&__left h3 {
+    font-size: 3rem;
+    padding-left: 4.7rem;
+}
+&__left p {
+    font-size: 1rem;
+    padding-left: 4.7rem;
+}
+
+&__mid {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+&__mid img {
+    width: 20%;
+}
+
+&__right {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+&__right img {
+    width: 65%;
+}
+}
+
+.sectionFour-bluetooth {
+    width: 100%;
+    height: 37.875rem;
+    display: flex;
+
+&__left {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+&__left img {
+    width: 65%;
+}
+
+&__mid {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+&__mid img {
+    width: 20%;
+}
+
+&__right {
+    width: 40%;
+}
+&__right h3 {
+    font-size: 3rem;
+    padding-left: 4.7rem;
+}
+&__right p {
+    font-size: 1rem;
+    padding-left: 4.7rem;
+}
+}
+
+.sectionFour-flags {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10.125rem;
+}
+
+.home-sectionFive {
+    width: 100%;
+    height: 42.0625rem;
+    background-color: var(--color-skyblue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sectionFive-form {
+    width: 53.75rem;
+    height: 24.5rem;
+    background-image: linear-gradient(var(--color-blue), var(--color-blue), var(--color-skyblue));
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+h3 {
+    font-size: 1.5rem;
+    color: var(--color-fontgrey);
+}
+
+p {
+    font-size: 1rem;
+    color: var(--color-fontgrey);
+}
+
+&__email {
+    width: 18.5rem;
+    height: 2.9375rem;
+    background-color: var(--color-white);
+    border: none;
+}
+
+&__submit {
+    width: 19.2rem;
+    height: 2.9375rem;
+    background-color: var(--color-blue);
+    color: var(--color-black);
+    border-radius: 1.5625rem;
+    border: none;
+    margin-top: 1.25rem;
+}
+}
+
+.home-sectionSix {
+    width: 100%;
+    height: 40.5625rem;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--color-black);
+    font-size: 3rem;
+
+img {
+    width: 100%;
+}
 }

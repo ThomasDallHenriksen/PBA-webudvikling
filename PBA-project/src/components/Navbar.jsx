@@ -1,25 +1,61 @@
-// import {Link} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/navbar.scss';
 
 const Navbar = () => {
-    return (
-        <nav className="navbar">
-            <div className="navbar-logo">
-                <a href='/'>
-                    <img src="images/logo.png" alt="'logo-placeholder'" />
-                </a>
-            </div>
-            <div className="link">
-                <a href='/'>Home</a>
-                <a href='/Product'>Product</a>
-                <a href='/Company'>Company</a>
-                <a href='/Contact'>Contact</a>
-                <a id='navbarButton' href='/AirMap'>AirMap</a>
-                {/* <a id='navbarButton' href='/Signup'>Sign up</a> */}
-                <a href='/Signup' id='profil'></a>
-            </div>
-        </nav>
-    );
+  const [showLinks, setShowLinks] = useState(false);
+  const [showLinkContainer, setShowLinkContainer] = useState(false);
+
+  const toggleLinks = () => {
+    setShowLinks(!showLinks);
+    setShowLinkContainer(!showLinkContainer);
+  };
+
+  const closeLinks = () => {
+    setShowLinks(false);
+    setShowLinkContainer(false);
+  };
+
+  const closeLinkContainer = () => {
+    setShowLinkContainer(false);
+  };
+
+  return (
+    <nav className="navbar">
+      <div className="navbar-logo">
+        <Link to='/'>
+          <img src="images/logo.png" alt="logo-placeholder" />
+        </Link>
+      </div>
+
+      {/* Burger menu icon */}
+      <div className={`burger-menu ${showLinks ? 'show' : ''}`} onClick={toggleLinks}>
+        <div></div>
+        <div id='middle'></div>
+        <div></div>
+      </div>
+
+      {/* Regular links */}
+      <div className={`link ${showLinks ? 'show' : ''}`}>
+        <Link to='/'>Home</Link>
+        <Link to='/Product'>Product</Link>
+        <Link to='/Company'>Company</Link>
+        <Link to='/Contact'>Contact</Link>
+        <Link id='navbarButton' to='/AirMap'>AirMap</Link>
+        <Link to='/Signup' id='profil'></Link>
+      </div>
+
+      {/* Links container below the navbar */}
+      <div className={`link-container ${showLinkContainer ? 'show' : ''}`} onClick={closeLinkContainer}>
+        <Link to='/' onClick={closeLinks}>Home</Link>
+        <Link to='/Product' onClick={closeLinks}>Product</Link>
+        <Link to='/Company' onClick={closeLinks}>Company</Link>
+        <Link to='/Contact' onClick={closeLinks}>Contact</Link>
+        <Link id='navbarButton' to='/AirMap' onClick={closeLinks}>AirMap</Link>
+        <Link to='/Signup' id='profil' onClick={closeLinks}></Link>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;

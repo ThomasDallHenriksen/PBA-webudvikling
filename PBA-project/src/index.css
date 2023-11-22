@@ -60,6 +60,8 @@ button:focus-visible {
 }
 
 .navbar{
+  width: 100%;
   display: flex;
   background-color: var(--color-white);
+  justify-content: space-between;
 }

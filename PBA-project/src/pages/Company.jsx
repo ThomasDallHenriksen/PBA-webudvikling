@@ -1,7 +1,15 @@
 import '../assets/styles/company.scss';
+import Carousel from '../components/Carousel'
 import '../index.css'
 
 const Company = () => {
+
+    const images = [
+        'images/companyPage/activity1.png',
+        'images/companyPage/activity2.png',
+        'images/companyPage/activity3.png'
+    ];
+
     return (
         <div className="company">
             <div className="company-section-1">
@@ -46,9 +54,7 @@ const Company = () => {
                         <h1>Our Activities</h1>
                     </div>
                 <div className="activities">
-                    <img src="images/companyPage/activity1.png" alt="" />
-                    <img src="images/companyPage/activity2.png" alt="" />
-                    <img src="images/companyPage/activity3.png" alt="" />
+                    <Carousel images={images} />
                 </div>
             </div>
         </div>

@@ -1,10 +1,7 @@
 @import '../main/colors.scss';
 
-html {
- font-size: '1vw';
-}
-
 :root {
+    --font-size-base: 16px;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
     font-weight: 400;
@@ -19,6 +16,10 @@ html {
     -moz-osx-font-smoothing: grayscale;
     -webkit-text-size-adjust: 100%;
   }
+
+  html {
+    font-size: 1rem;
+   }
   
   a {
     font-weight: 500;
@@ -36,6 +37,7 @@ html {
     height: auto;
     margin: 0;
     padding: 0;
+    font-size: 1rem;
   }
   
   h1 {

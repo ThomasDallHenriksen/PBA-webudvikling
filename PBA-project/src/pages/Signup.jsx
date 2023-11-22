@@ -1,4 +1,4 @@
-
+import '../assets/styles/signup.scss';
 
 const Signup = () => {
     return (

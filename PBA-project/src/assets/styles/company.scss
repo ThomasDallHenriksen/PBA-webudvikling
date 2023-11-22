@@ -1,10 +1,18 @@
 @import '../main/colors.scss';
+@import '../global/breakpoints.scss';
+
+.company{
 
     .company-section-1 {
         display: flex;
         padding-left: 5rem;
         padding-right: 5rem;
         background-color: var(--color-grey);
+
+        @include media("sm") {
+            flex-direction: column;
+            width: 100%;
+        }
     }
 
     .company-section-2{
@@ -13,6 +21,11 @@
         padding-left: 5rem;
         padding-right: 5rem;
         background-color: var(--color-white);
+
+        @include media("sm") {
+            flex-direction: column;
+            width: 100%;
+        }
     }
     .company-section-3{
         padding-top: 2.5rem;
@@ -21,17 +34,30 @@
     .company-section-4{
         display: flex;
         padding-top: 1.875rem;
+        @include media("sm") {
+            flex-direction: column;
+            color: var(--color-black);
+        }
     }
 
     .about-us{
         width: 50%;
         text-align: start;
+        color: var(--color-black);
+        @include media("sm") {
+            width: 100%;
+        }
     }
 
     .our-succes-story{
         width: 50%;
         text-align: start;
         padding-top: .5rem;
+        color: var(--color-black);
+        @include media("sm") {
+            color: var(--color-black);
+            width: 100%;
+        }
     }
 
     .team-description{
@@ -39,14 +65,72 @@
         text-align: start;
         font-size: 1.25rem;
         padding-right: 8.4375rem;
+        padding-left: 4.375rem;
+        color: var(--color-black);
+        @include media("sm") {
+            color: var(--color-black);
+            width: 100%;
+            }
+    }
+
+    .title{
+        padding-left: 4.375rem;
+    }
+
+    .portraits{
+        @include media("sm") {
+        display: none;
+        }
+    }
+
+    .portraits-mobile{
+        display: none;
+        @include media("sm") {
+            width: auto;
+            display: flex;
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+
+
+    .activities{
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: space-around;
+        color: var(--color-black);
+        @include media("sm") {
+            flex-direction: column;
+            color: var(--color-black);
+            width: 50%;
+            position: relative;
+            margin: 0 auto;
+            justify-content: center;
+        }
     }
 
     .img-drone{
         display: flex;
-        width: 50%;
-        height: 15rem;
+        width: 100%;
+        height: auto;
         justify-content: center;
         align-items: center;
+        @include media("sm") {
+            width: 100%;
+        }
+    }
+
+    .img-drone2{
+        display: flex;
+        width: 100%;
+        height: auto;
+        justify-content: center;
+        align-items: center;
+        @include media("sm") {
+            display: none;
+        }
     }
 
     .img-beach{
@@ -54,10 +138,22 @@
         width: 50%;
         justify-content: center;
         align-items: center;
+        @include media("sm") {
+            display: none;
+        }
     }
 
     #drone{
-        width: 35%;
+        width: 250px;
+        @include media("sm") {
+            width: 200px;
+            display: flex;
+            justify-content: center;
+        }
+        @include media("xs") {
+            width: 150px;
+            height: auto;
+        }
     }
 
     #beach{
@@ -72,5 +168,5 @@
         width: 100%;
     }
 
-    
+}
     

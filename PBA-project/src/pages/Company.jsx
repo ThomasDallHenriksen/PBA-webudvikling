@@ -54,7 +54,14 @@ const Company = () => {
                         <h1>Our Activities</h1>
                     </div>
                 <div className="activities">
-                    <Carousel images={images} />
+                    <div className="carousel">
+                        <Carousel images={images} />
+                    </div>
+                    <div className="activities-images">
+                        <img src="images/companyPage/activity1.png" alt="" />
+                        <img src="images/companyPage/activity2.png" alt="" />
+                        <img src="images/companyPage/activity3.png" alt="" />
+                    </div>
                 </div>
             </div>
         </div>

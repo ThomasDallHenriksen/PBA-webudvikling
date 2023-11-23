@@ -1,6 +1,5 @@
 @import '../global/breakpoints.scss';
 @import '../main/colors.scss';
-@import '../global/index.scss';
 
 .home {
     width: 100%;
@@ -20,7 +19,7 @@
     color: var(--color-black);
 
     h2 {
-    font-size: 5rem;
+    font-size: 4.167vw;
     padding-left: 4.7rem;
 }
     p {

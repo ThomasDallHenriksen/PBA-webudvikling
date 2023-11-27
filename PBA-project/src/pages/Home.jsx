@@ -143,6 +143,8 @@ const Home = () => {
                 <img src='../public/images/frontpage/trusted.png'></img>
                 <img src='../public/images/frontpage/trusted.png'></img>
             </div>
+
+            <div className="home-border"></div>
         </div>
     );
 }

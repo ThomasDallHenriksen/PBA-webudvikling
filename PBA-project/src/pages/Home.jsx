@@ -136,6 +136,7 @@ const Home = () => {
                             value='Signup'>
                         </input>
                 </form>
+                <div className="sectionFive-border"></div>
             </div>
 
             <div className="home-sectionSix">
@@ -143,8 +144,6 @@ const Home = () => {
                 <img src='../public/images/frontpage/trusted.png'></img>
                 <img src='../public/images/frontpage/trusted.png'></img>
             </div>
-
-            <div className="home-border"></div>
         </div>
     );
 }

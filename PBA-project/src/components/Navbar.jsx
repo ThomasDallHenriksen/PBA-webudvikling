@@ -52,7 +52,7 @@ const Navbar = () => {
         <Link to='/Company' onClick={closeLinks}>Company</Link>
         <Link to='/Contact' onClick={closeLinks}>Contact</Link>
         <Link id='navbarButton' to='/AirMap' onClick={closeLinks}>AirMap</Link>
-        <Link to='/Signup' id='profil' onClick={closeLinks}></Link>
+        <Link to='/Signup' onClick={closeLinks}>Login</Link>
       </div>
     </nav>
   );

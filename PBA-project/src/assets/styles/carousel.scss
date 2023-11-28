@@ -2,7 +2,7 @@
 @import '../global/breakpoints.scss';
 
 
-.desktop-carousel {
+  .desktop-carousel {
     display: flex;
     flex-direction: column;
     @include media("sm"){

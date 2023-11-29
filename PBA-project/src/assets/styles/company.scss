@@ -7,26 +7,31 @@
         display: flex;
         padding-left: 5rem;
         padding-right: 5rem;
-        height: 430px;
+        height: auto;
         background-color: var(--color-grey);
 
         @include media("sm") {
             flex-direction: column;
-            height: 480px;
+            height: auto;
+            padding-bottom: 10px;
         }
         @include media("xs") {
             flex-direction: column;
-            height: 530px;
+            height: auto;
+            padding-bottom: 10px;
+
         }
         @include media("xxs") {
             flex-direction: column;
-            height: 530px;
+            height: auto;
+            padding-bottom: 10px;
+
         }
     }
 
     .company-section-2{
         display: flex;
-        height: 364px;
+        height: auto;
         padding-left: 5rem;
         padding-right: 5rem;
         padding-top: 1.875rem;
@@ -141,7 +146,7 @@
         @include media("sm") {
             flex-direction: column;
             color: var(--color-black);
-            width: 50%;
+            width: auto;
             position: relative;
             margin: 0 auto;
             justify-content: center;

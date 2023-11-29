@@ -136,6 +136,7 @@ const Home = () => {
                             value='Signup'>
                         </input>
                 </form>
+                <div className="sectionFive-border"></div>
             </div>
 
             <div className="home-sectionSix">

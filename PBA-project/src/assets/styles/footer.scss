@@ -2,9 +2,10 @@
 @import '../global/breakpoints.scss';
 
 .footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
     display: flex;
     background-color: var(--color-white);
-    padding: 1.25rem;
     color: var(--color-black);
     font-size: 1.5rem;
     width: 100%;
@@ -18,7 +19,7 @@
 
 
     .airplate-logo {
-        padding-bottom: 0.5rem;
+        padding-bottom: .5rem;
     }
 
     .about-heading {
@@ -75,4 +76,10 @@
         font-size: 1.5rem;
         color: var(--color-skyblue);
     }
+}
+
+//mobile version
+
+.contact-mobile {
+    display: none;
 }

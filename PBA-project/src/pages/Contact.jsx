@@ -115,9 +115,86 @@ const Contact = () => {
                             </input>
                         </form>
                     </div>
-                </div>
-                
+                </div>             
             </div>
+
+            <div className="contact-mobile">
+                <div className="contact-mobile__text">
+                    <h2>Contact Us</h2>
+                    <p>We are here to help you.</p>
+                </div>
+
+                <div className="mobile-content">
+                    <p>If you have any questions or need
+                    <br />help, please fill out the form below. </p>
+
+                    <form className="mobile-form">
+
+                        <input
+                            type='text'
+                            className='mobile-form__name'
+                            placeholder='Your Name'
+                            name='name'
+                            required>
+                        </input>
+
+                        <input
+                            type='text'
+                            className='mobile-form__email'
+                            placeholder='Your E-mail'
+                            name='email'
+                            required>
+                        </input>
+
+                        <input
+                            type='tel'
+                            className='mobile-form__phone'
+                            placeholder='Phone Number'
+                            name='phone'>
+                        </input>
+
+                        <textarea
+                            name='message'
+                            className='mobile-form__message'
+                            placeholder='Message'
+                            required>
+                        </textarea>
+
+                        <input
+                            type='submit'
+                            className='mobile-form__submit'
+                            value='Submit'>
+                        </input>
+                    </form>
+
+                    <div className="mobile-airplate">
+                        <div className="mobile-phone">
+                            <div className="mobile-phone__icon"></div>
+                            <div className="mobile-phone__info">
+                                <h4>P h o n e</h4>
+                                <p>+45 21 34 4322</p>
+                            </div>
+                        </div>
+
+                        <div className="mobile-mail">
+                            <div className="mobile-mail__icon"></div>
+                            <div className="mobile-mail__info">
+                                <h4>E m a i l</h4>
+                                <p>airplate@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div className="mobile-location">
+                            <div className="mobile-location__icon"></div>
+                            <div className="mobile-location__info">
+                                <h4>L o c a t i o n</h4>
+                                <p>Seebladsgade 2,5000</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+                </div>
 
             <div className="contact-personal">
                 <h3>Other ways to get in touch</h3>

@@ -7,22 +7,33 @@
         display: flex;
         padding-left: 5rem;
         padding-right: 5rem;
+        height: 430px;
         background-color: var(--color-grey);
 
         @include media("sm") {
             flex-direction: column;
-            width: 100%;
+            height: 480px;
+        }
+        @include media("xs") {
+            flex-direction: column;
+            height: 530px;
+        }
+        @include media("xxs") {
+            flex-direction: column;
+            height: 530px;
         }
     }
 
     .company-section-2{
         display: flex;
-        padding-top: 1.875rem;
+        height: 364px;
         padding-left: 5rem;
         padding-right: 5rem;
+        padding-top: 1.875rem;
         background-color: var(--color-white);
 
         @include media("sm") {
+            display: none;
             flex-direction: column;
             width: 100%;
         }
@@ -33,11 +44,22 @@
 
     .company-section-4{
         display: flex;
-        padding-top: 1.875rem;
+        padding-top: 2.5rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
         @include media("sm") {
             flex-direction: column;
             color: var(--color-black);
         }
+    }
+
+    .company-section-5{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 2.5rem;
+        padding-left: 5rem;
+        padding-right: 5rem;
     }
 
     .about-us{
@@ -50,13 +72,23 @@
     }
 
     .our-succes-story{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 50%;
         text-align: start;
-        padding-top: .5rem;
         color: var(--color-black);
         @include media("sm") {
             color: var(--color-black);
-            width: 100%;
+            padding-left: 5rem;
+            padding-right: 5rem;
+        }
+    }
+
+    .our-succes-story h4{
+        margin-top: 0;
+        @include media("md") {
+            margin: 0;
         }
     }
 
@@ -64,22 +96,20 @@
         width: 50%;
         text-align: start;
         font-size: 1.25rem;
-        padding-right: 8.4375rem;
-        padding-left: 4.375rem;
         color: var(--color-black);
+        padding-right: .625rem;
         @include media("sm") {
-            color: var(--color-black);
             width: 100%;
+            color: var(--color-black);
             }
     }
 
-    .title{
-        padding-left: 4.375rem;
-    }
-
     .portraits{
+        width: 50%;
+        padding-left: .625rem;
         @include media("sm") {
         display: none;
+        width: 100%;
         }
     }
 
@@ -93,7 +123,14 @@
         }
     }
 
-
+    .title{
+        display: flex;
+        justify-content:start;
+        @include media("sm") {
+            display: flex;
+            justify-content: center;
+        }
+    }
 
     .activities{
         width: 100%;
@@ -135,29 +172,25 @@
 
     .img-beach{
         display: flex;
-        width: 50%;
-        justify-content: center;
         align-items: center;
+        padding: 0px 80px 0px 0px;
+        width: 50%;
         @include media("sm") {
             display: none;
         }
     }
 
     #drone{
-        width: 250px;
+        width: 300px;
         @include media("sm") {
-            width: 200px;
+            width: 250px;
             display: flex;
             justify-content: center;
-        }
-        @include media("xs") {
-            width: 150px;
-            height: auto;
         }
     }
 
     #beach{
-        width: 90%;
+        width: 650px;;
     }
 
     #drone2{
@@ -166,6 +199,29 @@
 
     #portraits{
         width: 100%;
+    }
+
+    .carousel{
+        display: none;
+        @include media("sm") {
+            display: block;
+        }
+    }
+
+    .activities-images{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        @include media("sm") {
+            display: none;
+        }
+    }
+
+    #bigger-p{
+        font-size: 32px;
+        @include media("md") {
+            margin: 0;
+        }
     }
 
 }

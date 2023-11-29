@@ -1,5 +1,6 @@
 @function translate-media-condition($c) {
   $breakpoints: (
+    "xxs": 33.75rem,
     "xs": 48rem,
     "sm": 64rem,
     "md": 75rem,

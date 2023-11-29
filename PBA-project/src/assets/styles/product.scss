@@ -25,6 +25,11 @@
     width: 50%;
     color: var(--color-black);
     padding: 16px 143px 16px 143px;
+    @include media("sm"){
+        width: auto;
+        color: var(--color-black);
+        padding: 16px 143px 16px 143px;
+    }
 
 }
 
@@ -53,7 +58,6 @@ h1{
     display: none;
     @include media("sm"){
         display: block;
-        width: 50%;
         padding: 16px;
     }
 }

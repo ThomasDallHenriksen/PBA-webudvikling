@@ -22,21 +22,31 @@ const Carousel = ({ images }) => {
 
   return (
     <div className="carousel">
-      <div className="main-image">
-        <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
+      <div className="desktop-carousel">
+        <div className="main-image">
+          <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
+        </div>
+        <div className="preview-images">
+          <button className="arrow left" onClick={handlePrev}>&#8249;</button>
+          {images.map((image, index) => (
+            <img
+              key={index}
+              src={image}
+              alt={`Image ${index + 1}`}
+              className={index === currentImageIndex ? 'active' : ''}
+              onClick={() => handleImageClick(index)}
+              />
+              ))}
+              <button className="arrow right" onClick={handleNext}>&#8250;</button>
+        </div>
       </div>
-      <div className="preview-images">
-        <button className="arrow left" onClick={handlePrev}>&#8249;</button>
-        {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Image ${index + 1}`}
-            className={index === currentImageIndex ? 'active' : ''}
-            onClick={() => handleImageClick(index)}
-            />
-            ))}
-            <button className="arrow right" onClick={handleNext}>&#8250;</button>
+
+      <div className="mobile-carousel">
+          <button className="arrow left" onClick={handlePrev}>&#8249;</button>
+        <div className="main-image">
+          <img src={images[currentImageIndex]} alt={`Image ${currentImageIndex + 1}`} />
+        </div>
+          <button className="arrow right" onClick={handleNext}>&#8250;</button>
       </div>
     </div>
   );

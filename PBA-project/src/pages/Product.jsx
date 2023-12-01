@@ -35,6 +35,9 @@ const Product = () => {
                         <input id='demo-button' type="button" value="Demo request" />
                     </div>
                 </div>
+                <div className='mobile-drone-carousel'>
+                    <Carousel images={images} />
+                </div>
             </div>
             {/* <div className="product-section-2">
                 <img src="images/carousel/drone2.png" alt="" />

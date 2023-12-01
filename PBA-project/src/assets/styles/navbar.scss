@@ -1,4 +1,3 @@
-// Common styles for both cases
 .navbar {
     height: 3.875rem;
     display: flex;
@@ -6,89 +5,87 @@
     justify-content: space-between;
     padding-right: 1.25rem;
     align-items: center;
-  }
+}
   
-  .link {
+.link {
     display: flex;
   
     a {
-      color: var(--color-black);
-      margin-left: 1.25rem;
-      font-size: 1.5rem;
+        color: var(--color-black);
+        margin-left: 1.25rem;
+        font-size: 1.5rem;
   
-      &:hover {
+        &:hover {
         color: var(--color-grey);
-      }
+        }
     }
   
     #navbarButton {
-      border-color: var(--color-skyblue);
-      border-radius: 1.5625rem;
-      background-color: var(--color-skyblue);
-      color: var(--color-white);
-      padding: 1px 9px 1px 12px;
-      transition: font-size 0.5s ease, transform 0.5s ease;
+        border-color: var(--color-skyblue);
+        border-radius: 1.5625rem;
+        background-color: var(--color-skyblue);
+        color: var(--color-white);
+        padding: 1px 9px 1px 12px;
+        transition: font-size 0.5s ease, transform 0.5s ease;
     }
   
     #navbarButton:hover {
-      transform: scale(1.1);
-      color: var(--color-white);
+        transform: scale(1.1);
+        color: var(--color-white);
     }
-  }
+}
   
-  .navbar-logo {
+.navbar-logo {
     padding-left: 80px;
-  }
+}
   
-  #profil {
+#profil {
     display: inline-block;
     background-image: url("../public/spritesheet.png");
     background-position-x: -20px;
     background-position-y: -390px;
     width: 39px;
     height: 39px;
-  }
+}
   
-  // Media query for screens over 1024px
-  @media screen and (min-width: 1025px) {
+@media screen and (min-width: 1025px) {
     .burger-menu {
-      display: none;
+        display: none;
     }
   
     .link-container {
-      display: none;
+        display: none;
     }
-  }
+}
   
-  // Media query for screens 1024px and below
-  @media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
     .link {
-      display: none;
+        display: none;
     }
   
     .burger-menu {
-      display: flex;
-      align-items: center;
-      flex-direction: column;
-      cursor: pointer;
-      width: 40px;
-      height: 50%;
-      background-color: var(--color-skyblue);
-      border-radius: 5px 5px 5px 5px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        width: 40px;
+        height: 50%;
+        background-color: var(--color-skyblue);
+        border-radius: 5px 5px 5px 5px;
   
-      div {
-        width: 25px;
-        height: 2px;
-        margin: 4px 0;
-        background: black;
-        background-color: var(--color-white);
+        div {
+            width: 25px;
+            height: 2px;
+            margin: 4px 0;
+            background: black;
+            background-color: var(--color-white);
   
-        &.middle {
-          margin: 5px 0 5px 0;
+            &.middle {
+                margin: 5px 0 5px 0;
+            }
         }
-      }
     }
-  
+            
     .link-container {
         display: none;
         flex-direction: column;
@@ -97,7 +94,7 @@
         top: 12%;
         left: 0%;
         width: 100%;
-        background-color: rgba(229, 227, 227, 0.9); /* Use the rgba equivalent of --color-lightestgrey with the desired alpha value */
+        background-color: rgba(2, 185, 250, 0.9);
         border-radius: 5px 5px 5px 5px;
         transition: 0.4s;
         align-items: center;

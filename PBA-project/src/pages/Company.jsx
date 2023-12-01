@@ -1,6 +1,5 @@
 import '../assets/styles/company.scss';
 import Carousel from '../components/Carousel'
-import '../index.css'
 
 const Company = () => {
 

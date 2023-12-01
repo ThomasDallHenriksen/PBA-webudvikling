@@ -31,7 +31,14 @@ const Profile = () => {
                     </div>
                     {openAccordions.includes(1) && (
                         <div className="accordion-content">
-                            <div>content 1</div>
+                            <div className="personal-info">
+                                <div className="name">
+                                    <div className='fullName'>Full name</div>
+                                    
+                                </div>
+                                <div className='dob'>Date of birth</div>
+                                <div className='gender'>Gender</div>
+                            </div>
                         </div>
                     )}
                 </div>

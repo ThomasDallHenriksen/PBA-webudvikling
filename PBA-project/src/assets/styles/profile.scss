@@ -1,3 +1,6 @@
+@import '../main/colors.scss';
+@import '../global/breakpoints.scss';
+
 .profile{
     padding: 0 80px 0 80px;
 }
@@ -11,31 +14,42 @@
 
 }
 
-/* Add this to your 'profile.scss' or create a new style file */
 .profile {
     /* Your existing styles for profile container */
   
     .accordion-item {
       margin-bottom: 15px; /* Adjust spacing between accordion items */
   
-      .accordion-header {
+      .accordion-header, .fullName, .dob, .gender {
         cursor: pointer;
         position: relative;
-        text-decoration: underline; /* Add underline to the accordion headers */
-        width: 100%;
   
         &:hover {
           /* Optional: Style for hover effect, you can customize as needed */
           color: #007bff; /* Change to your preferred color */
         }
   
-        &.open {
-          /* Style for open accordion header, if needed */
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%; /* Fills the whole width */
+          height: 2px; /* Adjust the thickness of the underline as needed */
+          background-color: var(--color-black); /* Change to your preferred color */
+          transform-origin: bottom left;
+          transform: scaleX(1); /* Show the underline at all times */
+          transition: transform 0.3s ease; /* Add a transition for a smooth effect */
         }
       }
   
       .accordion-content {
         /* Your existing styles for accordion content */
       }
+
+      .name{
+        display: flex;
+      }
     }
   }
+  

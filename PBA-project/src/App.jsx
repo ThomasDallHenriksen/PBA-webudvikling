@@ -6,6 +6,7 @@ import Company from './pages/Company'
 import Contact from './pages/Contact'
 import Signup from './pages/Signup'
 import AirMap from './pages/AirMap'
+import Profile from './pages/Profile'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -21,6 +22,7 @@ return (
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/Signup" element={<Signup />}></Route>
           <Route path="/AirMap" element={<AirMap />}></Route>
+          <Route path="/Profile" element={<Profile />}></Route>
           
 
         </Routes>

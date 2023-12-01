@@ -1,0 +1,41 @@
+.profile{
+    padding: 0 80px 0 80px;
+}
+
+.profile-section-2{
+    padding: 0 80px 0 80px;
+}
+
+.accordion-content{
+    padding: 0 40px 0 40px;
+
+}
+
+/* Add this to your 'profile.scss' or create a new style file */
+.profile {
+    /* Your existing styles for profile container */
+  
+    .accordion-item {
+      margin-bottom: 15px; /* Adjust spacing between accordion items */
+  
+      .accordion-header {
+        cursor: pointer;
+        position: relative;
+        text-decoration: underline; /* Add underline to the accordion headers */
+        width: 100%;
+  
+        &:hover {
+          /* Optional: Style for hover effect, you can customize as needed */
+          color: #007bff; /* Change to your preferred color */
+        }
+  
+        &.open {
+          /* Style for open accordion header, if needed */
+        }
+      }
+  
+      .accordion-content {
+        /* Your existing styles for accordion content */
+      }
+    }
+  }

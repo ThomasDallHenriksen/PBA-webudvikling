@@ -33,16 +33,12 @@
 
     h2 {
     font-size: 4.167vw;
-<<<<<<< HEAD
-    padding-left: 4.7rem;
-=======
     padding-left: 3.917vw;
 
     @include media("sm") {
         font-size: 3.906vw;
         padding-left: 0;
     }
->>>>>>> main
 }
     p {
     font-size: 0.938vw;

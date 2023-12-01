@@ -12,7 +12,7 @@
     display: flex;
     justify-content: center;
     background-color: #013A6B;
-    background-image: -webkit-linear-gradient(70deg, var(--color-skyblue) 50%, var(--color-white) 50%);
+    background-image: -webkit-linear-gradient(66deg, var(--color-skyblue) 55%, var(--color-white) 40%);
 
     @include media("sm") {
         display: none;
@@ -142,6 +142,7 @@ p {
 &__icon {
     width: 17%;
     background-image: url(../../../public/spritesheet.png);
+    background-size: cover;
 }
 
 &__info {
@@ -175,6 +176,7 @@ p {
     width: 17%;
     background-image: url(../../../public/spritesheet.png);
     background-position: 0.052vw -4.271vw;
+    background-size: cover;
 }
 
 &__info {
@@ -208,6 +210,7 @@ p {
     width: 17%;
     background-image: url(../../../public/spritesheet.png);
     background-position: 0.052vw -10.104vw;
+    background-size: cover;
 }
 
 &__info {
@@ -407,6 +410,7 @@ p {
         width: 7.813vw;
         height: 7.813vw;
         background-image: url(../../../public/spritesheet.png);
+        background-size: cover;
     }
 }
 
@@ -446,6 +450,7 @@ p {
         height: 7.813vw;
         background-image: url(../../../public/spritesheet.png);
         background-position: 0.098vw -8.008vw;
+        background-size: cover;
     }
 }
 
@@ -485,6 +490,7 @@ p {
         height: 7.813vw;
         background-image: url(../../../public/spritesheet.png);
         background-position: 0.098vw -19.945vw;
+        background-size: cover;
     }
 }
 

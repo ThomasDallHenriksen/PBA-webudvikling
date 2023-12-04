@@ -9,6 +9,7 @@
         padding-right: 5rem;
         height: auto;
         background-color: var(--color-grey);
+        padding-top: 5%;
 
         @include media("sm") {
             flex-direction: column;

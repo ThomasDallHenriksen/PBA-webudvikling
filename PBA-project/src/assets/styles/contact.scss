@@ -8,11 +8,12 @@
 
 .contact-info {
     width: 100%;
-    height: 36.458vw;
+    height: 42.458vw;
     display: flex;
     justify-content: center;
     background-color: #013A6B;
-    background-image: -webkit-linear-gradient(66deg, var(--color-skyblue) 55%, var(--color-white) 40%);
+    background-image: -webkit-linear-gradient(60deg, var(--color-skyblue) 58%, var(--color-white) 40%);
+    padding-top: 5%;
 
     @include media("sm") {
         display: none;

@@ -1,6 +1,6 @@
 import '../assets/styles/account.scss';
 
-const Signup = () => {
+const Login = () => {
     return (
         <div className="signup">
             <div className="column column1">
@@ -14,7 +14,7 @@ const Signup = () => {
                 </div>
             </div>
             <div className="column">
-                <div className="create">Create Account</div>
+                <div className="create">Login</div>
                 <div className="buttons">
                     <a href="#" className="button">
                         <img src="images/google.png" alt="Google Logo" className="button-logo" />
@@ -27,17 +27,16 @@ const Signup = () => {
                 </div>
                 <div className="or">-OR-</div>
                 <div className="input-column">
-                    <input type="text" placeholder="Full Name" className="underline-input" />
                     <input type="text" placeholder="Email Address" className="underline-input" />
                     <input type="text" placeholder="Password" className="underline-input" />
                 </div>
                 <div className="test">
-                    <a href="#" className="newacc">Create Account</a>
+                    <a href="#" className="newacc">Login</a>
                 </div>
                 <div className="container">
-                    <div className="account">Already have an account?</div>
+                    <div className="account">Don't have an account?</div>
                     <div className="login">
-                        <a href='/'>Log in</a>
+                        <a href='/'>Sign up</a>
                     </div>
                 </div>
             </div>
@@ -45,4 +44,4 @@ const Signup = () => {
     );
 }
 
-export default Signup;
+export default Login;

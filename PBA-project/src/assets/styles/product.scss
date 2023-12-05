@@ -6,6 +6,7 @@
 .product-section-1{
     display: flex;
     width: 100%;
+    padding-top: 5%;
     @include media("sm"){
         display: flex;
         flex-direction: column;

@@ -19,17 +19,20 @@ const Footer = () => {
             <div className="footer__column">
                 <div className="contact-list">
                     <div className="contact">Contact us</div>
-                    <div className="mail">airplategmail.com</div>
-                    <div className="phone">+45 31549731</div>
+                    <div className="email">airplategmail.com</div>
+                    <div className="number">+45 31549731</div>
                     <a href="https://www.linkedin.com/company/airplate-aero/" className="linkedin-link">
                         <img src="images/blue-linkedin.png" className="linkedin-logo" alt="LinkedIn Logo" />
                     </a>
                 </div>
             </div>
             <div className="footer__column">
-                <div className="airmap">AirMap</div>
-                <img src="images/map.png" />
+                <a href="/AirMap">
+                    <div className="airmap">AirMap</div>
+                    <img src="images/map.png" alt="Map" />
+                </a>
             </div>
+
         </footer>
     );
 };

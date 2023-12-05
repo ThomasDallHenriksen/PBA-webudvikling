@@ -1,0 +1,12 @@
+@mixin margin-styles {
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+// Anvend mixin i en klasse
+.margin {
+  @include margin-styles;
+}
+
+// Importér i .jsx ved 
+@import '../mixins/margins.scss';

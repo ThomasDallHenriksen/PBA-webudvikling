@@ -11,7 +11,7 @@
     height: auto;
     background-color: var(--color-white);
     display: flex;
-    margin-top: 1.042vw;
+    padding-top: 4.042vw;
 
     @include media("sm") {
         display: flex;
@@ -173,7 +173,7 @@ p {
     height: auto;
     background-color: var(--color-white);
     color: var(--color-black);
-    margin-top: 5%;
+    padding-top: 7%;
 
     @include media("sm") {
         margin-top: 5%;
@@ -217,6 +217,7 @@ h1 {
     display: flex;
     justify-content: space-between;
     align-items: end;
+    margin-top: 7%;
 
     @include media("sm") {
         margin-top: 5%;
@@ -263,6 +264,7 @@ p {
     height: auto;
     color: var(--color-black);
     background-color: var(--color-white);
+    padding-top: 7%;
 }
 
 .sectionFour-internet {

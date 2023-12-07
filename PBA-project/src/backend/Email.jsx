@@ -1,39 +1,39 @@
 const express = require('express');
 const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
+require('dotenv').config({
+    path: 'email.env'
+});
 
 const app = express();
-const port = 5000;
+const port = 5173;
 
 app.use(bodyParser.json());
 
-app.post('/send-email', (req, res) => {
+app.post('/send-email', async (req, res) => {
     const { name, email, phone, message } = req.body;
 
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'myemail',
-            pass: 'mypassword'
-        }
+            user: process.env.Email_USER,
+            pass: process.env.Email_PASS
+        },
     });
 
     const mailOptions = {
-        from: 'myemail',
-        to: 'email',
+        to: 'process.env.Email_USER',
         subject: 'New message',
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
     };
 
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error('Error sending email:', error);
-            res.status(500).json({success: false, error: 'error sending email'});
-        } else {
-            console.log('email sent:', info.response);
-            res.json({success: true, message: 'email sent'});
-        }
-    });
+    try {
+        const info = await transporter.sendMail(mailOptions);
+        res.status(200).send('Email sent: ' + info.response);
+    } catch (error) {
+        res.status(500).send(error.toString());
+    }
+
 });
 
 app.listen(port, () => {

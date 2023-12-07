@@ -1,9 +1,13 @@
 @import '../global/breakpoints.scss';
 @import '../main/colors.scss';
+@import '../mixins/layout.scss';
+
+
 
 .home {
     width: 100%;
     height: auto;
+    
 }
 
 .home-sectionOne {

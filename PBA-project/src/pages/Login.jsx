@@ -1,5 +1,6 @@
 import '../assets/styles/account.scss';
 
+
 const Login = () => {
     return (
         <div className="signup">

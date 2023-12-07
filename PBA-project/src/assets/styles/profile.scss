@@ -1,41 +1,208 @@
+@import '../main/colors.scss';
+@import '../global/breakpoints.scss';
+
 .profile{
     padding: 0 80px 0 80px;
+    @include media("md") {
+        padding: 0 60px 0 60px;
+
+    }
+    @include media("sm") {
+        padding: 0 40px 0 40px;
+
+    }
+}
+
+.profile-title{
+    font-size: 400%;
+    transition: font-size 0.5s ease; /* Add a smooth transition effect */
+
+    @include media("md") {
+        font-size: 300%;
+    }
+    @include media("sm") {
+        font-size: 200%;
+    }
+    @include media("xs") {
+        font-size: 100%;
+    }
+    
+}
+
+.profile-section-1{
+    width: 100%;
 }
 
 .profile-section-2{
     padding: 0 80px 0 80px;
+    @include media("md") {
+        padding: 0 60px 0 60px;
+    }
+    @include media("sm") {
+        padding: 0 40px 0 40px;
+    }
+    @include media("xs") {
+        padding: 0 20px 0 20px;
+    }
+    @include media("xxs") {
+        padding: 0 0 0 0;
+    }
 }
+
+
 
 .accordion-content{
+    display: flex;
+    justify-content: space-between;
     padding: 0 40px 0 40px;
+    @include media("xxs") {
+        padding: 0 0 0 0;
+    }
+    :hover{
+        color: var(--color-black);
+    }
 
 }
 
-/* Add this to your 'profile.scss' or create a new style file */
+.personal-info, .password, .contact{
+    width: 95%;
+}
+
+.gear{
+    height: 40px;
+    padding: 0;
+}
+
 .profile {
     /* Your existing styles for profile container */
   
     .accordion-item {
       margin-bottom: 15px; /* Adjust spacing between accordion items */
+      user-select: none;
   
-      .accordion-header {
+      .accordion-header, .name, .dob, .gender, .password, .email, .phone-number, .accordion-expand-header {
         cursor: pointer;
         position: relative;
-        text-decoration: underline; /* Add underline to the accordion headers */
-        width: 100%;
   
         &:hover {
           /* Optional: Style for hover effect, you can customize as needed */
           color: #007bff; /* Change to your preferred color */
         }
   
-        &.open {
-          /* Style for open accordion header, if needed */
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%; /* Fills the whole width */
+          height: 2px; /* Adjust the thickness of the underline as needed */
+          background-color: var(--color-black); /* Change to your preferred color */
+          transform-origin: bottom left;
+          transform: scaleX(1); /* Show the underline at all times */
         }
       }
   
       .accordion-content {
         /* Your existing styles for accordion content */
+        :hover{
+            color: var(--color-black);
+            cursor: default;
+        }
       }
+
+        .name{
+            display: flex;
+            @include media("sm") {
+                display: block;
+            }
+            :hover {
+                color: var(--color-black);
+            }
+        }
+
+        .dob{
+            display: flex;
+            @include media("sm") {
+                display: block;
+            }
+            :hover {
+                color: var(--color-black);
+            }
+        }
+
+        .gender{
+            display: flex;
+            @include media("sm") {
+                display: block;
+            }
+            :hover {
+                color: var(--color-black);
+            }
+        }
+
+        .password{
+            display: flex;
+            @include media("sm") {
+                display: block;
+            }
+            :hover {
+                color: var(--color-black);
+            }
+        }
+
+        .email, .phone-number{
+            display: flex;
+            @include media("sm") {
+                display: block;
+            }
+        }
+
+        .fullName{
+            padding-right: 14rem;
+            :hover{
+                color: var(--color-black);
+            }
+        }
+
+        .dob-hover{
+            padding-right: 12rem;
+        }
+
+        .gender-hover{
+            padding-right: 16rem;
+        }
+
+        .password-title{
+            padding-right: 11rem;
+            :hover{
+                color: var(--color-black);
+            }
+        }
+
+        .email-title{
+            padding-right: 13rem;
+        }
+
+        .phone-title{
+            padding-right: 7.5rem;
+
+        }
+
+        .password-gear{
+            padding: 0 28.8px 0 28.8px 
+        }
+
+        .accordion-expand-header{
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .flex{
+            display: flex;
+        }
+
+
+        
     }
   }
+  

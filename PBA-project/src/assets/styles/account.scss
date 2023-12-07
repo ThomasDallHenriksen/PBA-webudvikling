@@ -98,7 +98,7 @@
 .underline-input {
     border: none;
     border-bottom: .125rem solid var(--color-lightgrey);
-    margin-bottom: .625rem;
+    margin-bottom: 3.625rem;
     padding: .3125rem;
     font-size: 1rem;
     color: var(--color-black);
@@ -131,7 +131,6 @@
     }
 }
 
-.test,
 .newacc {
     border-radius: .5rem;
     padding: .5rem;
@@ -143,7 +142,8 @@
 }
 
 .newacc {
-    margin-left: 32%;
+    display: flex;
+    justify-content: center;
 }
 
 .button-logo {

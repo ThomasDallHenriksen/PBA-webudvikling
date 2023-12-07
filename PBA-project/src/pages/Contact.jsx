@@ -1,40 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from 'emailjs-com';
 import '../assets/global/breakpoints.scss'
 import '../assets/main/font.scss'
 import '../assets/styles/contact.scss';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        phone: '',
-        message:'',
-    });
+    // const [formData, setFormData] = useState({
+    //     name: '',
+    //     email: '',
+    //     phone: '',
+    //     message:'',
+    // });
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value});
-    };
+    // const handleChange = (e) => {
+    //     setFormData({ ...formData, [e.target.name]: e.target.value});
+    // };
 
-    const handleSubmit = async (e) => {
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+
+    //     const templateParams = {
+    //         to_email: '',
+    //         name: formData.name,
+    //         email: formData.email,
+    //         phone: formData.phone,
+    //         message: formData.message,
+    //     };
+
+    //     emailjs.send(
+    //         service_wl4etu5,
+    //         template_4mwsv1h,
+    //         templateParams,
+    //         Acxi6gURdvLCYbdq4
+    //     )
+    //     .then((response) => {
+    //         console.log('email sent:', response);
+    //     })
+    //     .catch((error) => {
+    //         console.error('error sending email:', error);
+    //     });
+    // };
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
         e.preventDefault();
 
-        try {
-            const response = await fetch('http://localhost:5000/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            if (response.ok) {
-                console.log('email er sendt');
-            } else {
-                console.log('fejl ved afsendelse af email.');
-            }
-        } catch (error) {
-            console.log('fejl ved afsendelse af email.', error);
-        }
+        emailjs.sendForm('service_rfe6anl', 'template_ul09dy1', form.current, 'wWPM2HnD6d_lsPqgw')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
     };
 
     return (
@@ -75,7 +92,7 @@ const Contact = () => {
 
                     <div className="contact-info__right">
                         
-                        <form className='contact-form' onSubmit={handleSubmit}>
+                        <form ref={form} className='contact-form' onSubmit={sendEmail}>
                             <h3>Let's talk</h3>
                             <p>Feel free to drop a line below</p>
                             <input
@@ -83,6 +100,7 @@ const Contact = () => {
                                 className='contact-form__name'
                                 placeholder='Your Name'
                                 name='name'
+                                // onChange={handleChange}
                                 required>
                             </input>
 
@@ -91,6 +109,7 @@ const Contact = () => {
                                 className='contact-form__email'
                                 placeholder='Your E-mail'
                                 name='email'
+                                // onChange={handleChange}
                                 required>
                             </input>
 
@@ -98,13 +117,16 @@ const Contact = () => {
                                 type='tel'
                                 className='contact-form__phone'
                                 placeholder='Phone Number'
-                                name='phone'>
+                                name='phone'
+                                // onChange={handleChange}
+                                >
                             </input>
 
                             <textarea
                                 name='message'
                                 className='contact-form__message'
                                 placeholder='Message'
+                                // onChange={handleChange}
                                 required>
                             </textarea>
 

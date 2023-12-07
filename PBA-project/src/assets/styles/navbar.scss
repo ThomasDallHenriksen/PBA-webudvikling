@@ -21,6 +21,33 @@
         color: var(--color-grey);
         }
     }
+
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        background-color: rgba(2, 185, 250, 0.9);
+        border-radius: 5px 5px 5px 5px;
+        transition: 0.4s;
+        align-items: center;
+        width: 100%;
+
+        &.show {
+            display: flex;
+        }
+
+        a {
+            color: var(--color-black);
+            margin-left: 1.25rem;
+            font-size: 1.5rem;
+
+            &:hover {
+                color: var(--color-grey);
+            }
+        }
+    }
   
     #navbarButton {
         border-color: var(--color-skyblue);
@@ -49,6 +76,32 @@
     width: 39px;
     height: 39px;
 }
+
+.dropdown-btn {
+    position: relative; // Make the container relative for absolute positioning within it
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    top: 100%; // Position the dropdown content below the button
+    right: 0; // Align the dropdown content with the right edge of the button
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #fff; // Add a background color if needed
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Add a box shadow for a nice effect
+    z-index: 1; // Ensure the dropdown is above other elements
+  }
+  
+  // Add styling for individual links in the dropdown if needed
+  .dropdown-content a {
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    &:hover {
+      background-color: #f0f0f0;
+    }
+  }
   
 @media screen and (min-width: 1025px) {
     .burger-menu {
@@ -107,7 +160,6 @@
       
         a {
             color: var(--color-black);
-            margin-left: 1.25rem;
             font-size: 1.5rem;
       
             &:hover {

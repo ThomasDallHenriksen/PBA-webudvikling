@@ -5,6 +5,8 @@ import '../assets/styles/navbar.scss';
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
   const [showLinkContainer, setShowLinkContainer] = useState(false);
+  const [showDropdown, setShowDropdown] = useState(false);
+
 
   const toggleLinks = () => {
     setShowLinks(!showLinks);
@@ -18,6 +20,10 @@ const Navbar = () => {
 
   const closeLinkContainer = () => {
     setShowLinkContainer(false);
+  };
+
+  const toggleDropdown = () => {
+    setShowDropdown(!showDropdown);
   };
 
   return (
@@ -42,8 +48,19 @@ const Navbar = () => {
         <Link to='/Company'>Company</Link>
         <Link to='/Contact'>Contact</Link>
         <Link id='navbarButton' to='/AirMap'>AirMap</Link>
-        <Link to='/Signup' id='profil'></Link>
+        <div className="dropdown-btn" onClick={toggleDropdown}>
+          <button id='profil'></button>
+        </div>
+          {/* Dropdown content */}
+          {showDropdown && (
+            <div className="dropdown-content">
+              <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
+              <Link to='/Guide' onClick={toggleDropdown}>Guide</Link>
+              <Link to='/signup' onClick={toggleDropdown}>Login</Link>
+            </div>
+          )}
       </div>
+      
 
       {/* Links container below the navbar */}
       <div className={`link-container ${showLinkContainer ? 'show' : ''}`} onClick={closeLinkContainer}>
@@ -52,7 +69,10 @@ const Navbar = () => {
         <Link to='/Company' onClick={closeLinks}>Company</Link>
         <Link to='/Contact' onClick={closeLinks}>Contact</Link>
         <Link id='navbarButton' to='/AirMap' onClick={closeLinks}>AirMap</Link>
-        <Link to='/Signup' onClick={closeLinks}>Login</Link>
+        <div id='profil' onClick={setShowDropdown}></div>
+        <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
+              <Link to='/Guide' onClick={toggleDropdown}>Guide</Link>
+              <Link to='/signup' onClick={toggleDropdown}>Login</Link>
       </div>
     </nav>
   );

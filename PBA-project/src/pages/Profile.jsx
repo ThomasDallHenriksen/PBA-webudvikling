@@ -97,7 +97,7 @@ const Profile = () => {
                     </div>
                     {openAccordions.includes(3) && (
                         <div className="accordion-content">
-                        <div className='contact'>
+                        <div className='contact-accordion'>
                             <div className="email">
                                 <div className="email-title">Your E-mail</div>
                                 <div className="email-output">lala@hotmail.com</div>

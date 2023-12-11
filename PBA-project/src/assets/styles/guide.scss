@@ -1,0 +1,23 @@
+@import '../main/colors.scss';
+@import '../global/breakpoints.scss';
+
+.block {
+    color: black;
+}
+
+.element {
+    padding-top: 5rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    font-size: 1rem;
+    max-width: 106.25rem;
+}
+
+.title {
+    text-decoration: underline;
+    font-weight: 400;
+}
+
+.bread {
+    font-weight: 400;
+}

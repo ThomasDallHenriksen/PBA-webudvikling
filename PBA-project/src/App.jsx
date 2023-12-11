@@ -8,6 +8,7 @@ import Signup from './pages/Signup'
 import Login from './pages/Login'
 import AirMap from './pages/AirMap'
 import Profile from './pages/Profile'
+import Guide from './pages/Guide'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -25,6 +26,7 @@ return (
           <Route path="/Login" element={<Login />}></Route>
           <Route path="/AirMap" element={<AirMap />}></Route>
           <Route path="/Profile" element={<Profile />}></Route>
+          <Route path="/Guide" element={<Guide />}></Route>
           
 
         </Routes>

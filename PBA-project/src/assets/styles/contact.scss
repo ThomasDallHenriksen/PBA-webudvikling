@@ -21,7 +21,7 @@
 
     &__box {
         width: 58.750vw;
-        height: 33.385vw;
+        height: 34.385vw;
         display: flex;
         margin-top: 1.042vw;
         box-shadow: 1.25rem 0 1.875rem -0.9375rem rgba(0, 0, 0, 0.2), -2.5rem 0 1.875rem -0.9375rem rgba(0, 0, 0, 0.5), 0 1.25rem 1.875rem -0.9375rem rgba(0, 0, 0, 0.5),;
@@ -29,13 +29,13 @@
 
     &__left {
         width: 29.271vw;
-        height: 33.385vw;
+        height: 34.385vw;
         background-image: linear-gradient(var(--color-skyblue), var(--color-skyblue), var(--color-white));
     }
     
     &__right {
         width: 29.271vw;
-        height: 33.385vw;
+        height: 34.385vw;
         background-color: var(--color-white);
     }
 }
@@ -186,12 +186,14 @@ p {
     margin-left: 0.052vw;
 }
 &__info h4 {
+    padding-left: 3%;
     font-size: 1.250vw;
     font-weight: bold;
     margin: 0;
     color: var(--color-white);
 }
 &__info p {
+    padding-left: 3%;
     font-size: 1.250vw;
     margin: 0;
     color: var(--color-white);

@@ -14,22 +14,15 @@ const Signup = () => {
                 </div>
             </div>
             <div className="column">
-                <div className="create">Create Account</div>
-                <div className="buttons">
-                    <a href="#" className="button">
-                        <img src="images/google.png" alt="Google Logo" className="button-logo" />
-                        Sign up with Google
-                    </a>
-                    <a href="#" className="button">
-                        <img src="images/facebook.png" alt="Facebook Logo" className="button-logo" />
-                        Sign up with Facebook
-                    </a>
-                </div>
-                <div className="or">-OR-</div>
+                <h1 className='headline'>Create account</h1>
                 <div className="input-column">
-                    <input type="text" placeholder="Full Name" className="underline-input" />
-                    <input type="text" placeholder="Email Address" className="underline-input" />
+                    <input type="text" placeholder="First name" className="underline-input" />
+                    <input type="text" placeholder="Last name" className="underline-input" />
+                    <input type="text" placeholder="Date of birth" className="underline-input" />
+                    <input type="text" placeholder="Gender" className="underline-input" />
                     <input type="text" placeholder="Password" className="underline-input" />
+                    <input type="text" placeholder="E-mail adress" className="underline-input" />
+                    <input type="text" placeholder="Phone number" className="underline-input" />
                 </div>
                 <div className="test">
                     <a href="#" className="newacc">Create Account</a>
@@ -37,7 +30,7 @@ const Signup = () => {
                 <div className="container">
                     <div className="account">Already have an account?</div>
                     <div className="login">
-                        <a href='/'>Log in</a>
+                        <a href='/login'>Log in</a>
                     </div>
                 </div>
             </div>

@@ -15,29 +15,19 @@ const Login = () => {
                 </div>
             </div>
             <div className="column">
-                <div className="create">Login</div>
-                <div className="buttons">
-                    <a href="#" className="button">
-                        <img src="images/google.png" alt="Google Logo" className="button-logo" />
-                        Sign up with Google
-                    </a>
-                    <a href="#" className="button">
-                        <img src="images/facebook.png" alt="Facebook Logo" className="button-logo" />
-                        Sign up with Facebook
-                    </a>
-                </div>
-                <div className="or">-OR-</div>
+                <h1 className="headline">Login</h1>
                 <div className="input-column">
-                    <input type="text" placeholder="Email Address" className="underline-input" />
+                    <input type="text" placeholder="E-mail Address" className="underline-input" />
                     <input type="text" placeholder="Password" className="underline-input" />
                 </div>
+                <div className="forgotpsw"><a href='/'>Glemt kodeord?</a></div>
                 <div className="test">
                     <a href="#" className="newacc">Login</a>
                 </div>
                 <div className="container">
                     <div className="account">Don't have an account?</div>
                     <div className="login">
-                        <a href='/'>Sign up</a>
+                        <a href='/signup'>Sign up</a>
                     </div>
                 </div>
             </div>

@@ -19,7 +19,7 @@ const Guide = () => {
                 <h2 className='title'>Step 1. Website</h2>
                 <h2 className='bread'>Go to www.airplate.dk/guide or scan the QR-code that comes with the package to continue registration of your new AirPlate.</h2>
                 <div className="stepone">
-                    <img src="images/airplate.dk:guide.png" />
+                    <img src="images/airplate.dk-guide.png" />
                     <img src="images/scan-qr.png" />
                 </div>
             </div>

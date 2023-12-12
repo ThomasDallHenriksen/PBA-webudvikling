@@ -8,11 +8,14 @@ const Signup = () => {
     first_name: '',
     last_name: '',
     email: '',
-    password: ''
+    password: '',
+    gender: '',
+    phone: '',
+    organisation: '',
+    birth: ''
   });
 
   const handleSignup = async() => {
-    console.log("hej")
     try{
         const response = await axios.post('http://kienzhe.dk/backend/login.php', userData, {
             headers: {
@@ -108,10 +111,41 @@ const Signup = () => {
                         value={userData.password}
                         onChange={(e) => setUserData({...userData, password: e.target.value})}
                     />
-                    <input type="text" placeholder="Gender" className="underline-input" />
-                    <input type="text" placeholder="Phone number" className="underline-input" />
-                    <input  type="submit" value="Create Account" className="newacc"/>
-                </form>
+                    <input 
+                    type="text" 
+                        placeholder="Gender" 
+                        className="underline-input"
+                        name='gender'
+                        value={userData.gender} 
+                        onChange={(e) => setUserData({...userData, gender: e.target.value})}
+                    />
+
+                    <input 
+                    type='text' 
+                        placeholder="Birth" 
+                        className="underline-input"
+                        name='birth'
+                        value={userData.birth} 
+                        onChange={(e) => setUserData({...userData, birth: e.target.value})}
+                    />
+
+                    <input
+                        type="text"
+                        placeholder="Phone number"
+                        className="underline-input"
+                        name='phone'
+                        value={userData.phone}
+                        onChange={(e) => setUserData({...userData, phone: e.target.value})}
+                    />
+
+                    <input  
+                        type="text"
+                        placeholder="Organisation"
+                        className="underline-input"
+                        name='organisation'
+                        value={userData.organisation}
+                        onChange={(e) => setUserData({...userData, organisation: e.target.value})}
+                    />
             <div className="column">
                 
                 <div className="test">
@@ -124,6 +158,7 @@ const Signup = () => {
                     </div>
                 </div>
             </div>
+                </form>
         </div>
         </div>
 

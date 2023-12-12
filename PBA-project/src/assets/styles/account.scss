@@ -64,7 +64,6 @@
 }
 
 .input-column {
-    opacity: 30%;
     margin-left: 5rem;
     max-width: 32.5rem;
     display: flex;
@@ -107,6 +106,7 @@
 }
 
 .underline-input {
+    opacity: 30%;
     border: none;
     border-bottom: .125rem solid var(--color-lightgrey);
     margin-bottom: 3.625rem;

@@ -432,6 +432,7 @@ p {
     height: 2.448vw;
     background-color: var(--color-white);
     border: none;
+    color: var(--color-black);
 
     @include media("sm") {
         width: 28.906vw;

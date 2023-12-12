@@ -1,9 +1,33 @@
+import React, {useState} from 'react';
+import axios from 'axios';
 import '../assets/global/breakpoints.scss';
 import '../assets/main/font.scss';
 import '../assets/styles/home.scss';
 
 
 const Home = () => {
+    const [email, setEmail] = useState('');
+
+    const handleNewsletter = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('https://kienzhe.dk/backend/newsletter.php', {
+                email: email,
+            }, {
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            console.log(response.data);
+
+            setEmail('');
+        } catch (error) {
+            console.error('error:', error);
+        }
+    };
+
     return (
         <div className="home">
             <div className="home-sectionOne">
@@ -119,7 +143,7 @@ const Home = () => {
             </div>
 
             <div className="home-sectionFive">
-                <form className='sectionFive-form'>
+                <form className='sectionFive-form' onSubmit={handleNewsletter}>
                     <h3>Newsletter Module</h3>
                     <p>Sign up to our newslatter to receive 
                     <br />the lastest updates</p>
@@ -128,6 +152,8 @@ const Home = () => {
                             className='sectionFive-form__email'
                             placeholder='Your E-mail address...'
                             name='email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             required>
                         </input>
 

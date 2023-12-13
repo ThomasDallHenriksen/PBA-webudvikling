@@ -1,7 +1,34 @@
+import React, { useState } from 'react';
+import axios from 'axios';
 import '../assets/styles/account.scss';
 
 
 const Login = () => {
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleLogin = async (e) => {
+        e.preventDefault();
+
+        try {
+            const response = await axios.post('https://kienzhe.dk/backend/login.php', {
+              email: email,
+              password: password,
+            });
+      
+            if (response.data.success) {
+              // Redirect to a new page or perform other actions upon successful login
+              console.log('Login successful');
+            } else {
+              // Handle login failure
+              console.error('Login failed:', response.data.message);
+            }
+          } catch (error) {
+            console.error('An error occurred during login:', error);
+          }
+    };
+
     return (
         <div className="signup">
             <div className="column column1">
@@ -17,12 +44,29 @@ const Login = () => {
             <div className="column">
                 <h1 className="headline">Login</h1>
                 <div className="input-column">
-                    <input type="text" placeholder="E-mail Address" className="underline-input" />
-                    <input type="text" placeholder="Password" className="underline-input" />
+                    <input 
+                        type="text"
+                        placeholder="E-mail Address"
+                        className="underline-input"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+
+                    <input
+                        type="password"
+                        placeholder="Password"
+                        className="underline-input"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
                 </div>
-                <div className="forgotpsw"><a href='/'>Glemt kodeord?</a></div>
+                <div className="forgotpsw">
+                    <a href='/'>Glemt kodeord?</a>
+                </div>
                 <div className="test">
-                    <a href="#" className="newacc">Login</a>
+                    <button onClick={handleLogin} className="newacc">
+                        Login
+                    </button>
                 </div>
                 <div className="container">
                     <div className="account">Don't have an account?</div>

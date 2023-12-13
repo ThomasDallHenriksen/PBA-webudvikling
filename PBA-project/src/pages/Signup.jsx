@@ -94,6 +94,7 @@ const Signup = () => {
                         name="first_name"
                         value={userData.first_name}
                         onChange={handleChange}
+                        required
                     />
                     <input
                         type="text"
@@ -102,6 +103,7 @@ const Signup = () => {
                         name="last_name"
                         value={userData.last_name}
                         onChange={handleChange}
+                        required
                     />
                     <input
                         type="text"
@@ -110,6 +112,7 @@ const Signup = () => {
                         name='phone'
                         value={userData.phone}
                         onChange={handleChange}
+                        required
                     />
                     <input
                         type="text"
@@ -118,6 +121,7 @@ const Signup = () => {
                         name="email"
                         value={userData.email}
                         onChange={handleChange}
+                        required
                     />
 
 
@@ -125,6 +129,7 @@ const Signup = () => {
                         name="account_type"
                         value={userData.account_type}
                         onChange={(e) => setUserData({ ...userData, account_type: e.target.value })}
+                        required
                     >
                         <option value="private">Private</option>
                         <option value="organisation">Organisation</option>
@@ -138,6 +143,7 @@ const Signup = () => {
                             name="organisation"
                             value={userData.organization}
                             onChange={handleChange}
+                            required
                         />
                     )}
                     <input
@@ -147,10 +153,11 @@ const Signup = () => {
                         name="password"
                         value={userData.password}
                         onChange={handleChange}
+                        required
                     />
             <div className="column">
                 
-                <div className="test">
+                <div className="createButton">
                 <button type='submit' className="newacc">Create Account</button>
                 </div>
                 <div className="container">

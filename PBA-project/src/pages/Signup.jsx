@@ -9,10 +9,9 @@ const Signup = () => {
     last_name: '',
     email: '',
     password: '',
-    gender: '',
     phone: '',
     organisation: '',
-    birth: ''
+    account_type: 'private'
   });
 
   const handleSignup = async() => {
@@ -97,12 +96,42 @@ const Signup = () => {
                     />
                     <input
                         type="text"
+                        placeholder="Phone number"
+                        className="underline-input"
+                        name='phone'
+                        value={userData.phone}
+                        onChange={(e) => setUserData({...userData, phone: e.target.value})}
+                    />
+                    <input
+                        type="text"
                         placeholder="Email Address"
                         className="underline-input"
                         name="email"
                         value={userData.email}
                         onChange={(e) => setUserData({...userData, email: e.target.value})}
                     />
+
+
+                    <select
+                        name="" 
+                        id=""
+                        value={userData.account_type}
+                        onChange={(e) => setUserData({...userData, account_type: e.target.value})}
+                    >
+                        <option value="private">Private</option>
+                        <option value="organisation">Organisation</option>
+                    </select>
+
+                    {userData.account_type === 'organisation' && (
+                        <input
+                            type="text"
+                            placeholder="Organization Name"
+                            className="underline-input"
+                            name="organisation"
+                            value={userData.organization}
+                            onChange={(e) => setUserData({ ...userData, organization: e.target.value })}
+                        />
+                    )}
                     <input
                         type="password"
                         placeholder="Password"
@@ -110,41 +139,6 @@ const Signup = () => {
                         name="password"
                         value={userData.password}
                         onChange={(e) => setUserData({...userData, password: e.target.value})}
-                    />
-                    <input 
-                    type="text" 
-                        placeholder="Gender" 
-                        className="underline-input"
-                        name='gender'
-                        value={userData.gender} 
-                        onChange={(e) => setUserData({...userData, gender: e.target.value})}
-                    />
-
-                    <input 
-                    type='text' 
-                        placeholder="Birth" 
-                        className="underline-input"
-                        name='birth'
-                        value={userData.birth} 
-                        onChange={(e) => setUserData({...userData, birth: e.target.value})}
-                    />
-
-                    <input
-                        type="text"
-                        placeholder="Phone number"
-                        className="underline-input"
-                        name='phone'
-                        value={userData.phone}
-                        onChange={(e) => setUserData({...userData, phone: e.target.value})}
-                    />
-
-                    <input  
-                        type="text"
-                        placeholder="Organisation"
-                        className="underline-input"
-                        name='organisation'
-                        value={userData.organisation}
-                        onChange={(e) => setUserData({...userData, organisation: e.target.value})}
                     />
             <div className="column">
                 

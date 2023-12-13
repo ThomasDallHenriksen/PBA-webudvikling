@@ -55,7 +55,7 @@ const Navbar = () => {
           {showDropdown && (
             <div className="dropdown-content">
               <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
-              <Link to='/Guide' onClick={toggleDropdown}>Guide</Link>
+              <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
               <Link to='/signup' onClick={toggleDropdown}>Login</Link>
             </div>
           )}
@@ -70,9 +70,9 @@ const Navbar = () => {
         <Link to='/Contact' onClick={closeLinks}>Contact</Link>
         <Link id='navbarButton' to='/AirMap' onClick={closeLinks}>AirMap</Link>
         <div id='profil' onClick={setShowDropdown}></div>
-        <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
-              <Link to='/Guide' onClick={toggleDropdown}>Guide</Link>
-              <Link to='/signup' onClick={toggleDropdown}>Login</Link>
+          <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
+          <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
+          <Link to='/signup' onClick={toggleDropdown}>Login</Link>
       </div>
     </nav>
   );

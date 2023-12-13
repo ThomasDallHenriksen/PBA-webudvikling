@@ -2,7 +2,6 @@
 @import '../global/breakpoints.scss';
 
 .signup {
-    color: var(--color-white);
     max-width: 100%;
     display: flex;
 
@@ -32,6 +31,7 @@
 
     @include media("md") {
         background-color: var(--color-white);
+
         .text-to-hide {
             display: none;
         }
@@ -64,7 +64,6 @@
 }
 
 .input-column {
-    opacity: 30%;
     margin-left: 5rem;
     max-width: 32.5rem;
     display: flex;
@@ -75,6 +74,17 @@
 .container {
     margin-left: 5rem;
     display: flex;
+}
+
+.headline {
+    color: var(--color-black);
+    margin-left: 5rem;
+}
+
+.forgotpsw a {
+    color: var(--color-darkblue);
+    margin-left: 5rem;
+    font-size: 1rem;
 }
 
 .account,
@@ -96,6 +106,7 @@
 }
 
 .underline-input {
+    opacity: 30%;
     border: none;
     border-bottom: .125rem solid var(--color-lightgrey);
     margin-bottom: 3.625rem;

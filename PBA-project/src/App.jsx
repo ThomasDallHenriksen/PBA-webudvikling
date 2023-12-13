@@ -10,6 +10,8 @@ import AirMap from './pages/AirMap'
 import Profile from './pages/Profile'
 import Guidedk from './pages/Guidedk'
 import Guideeng from './pages/Guideeng'
+import Addairplate from './pages/Addairplate'
+import Adddrone from './pages/Adddrone'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 function App() {
@@ -29,8 +31,9 @@ return (
           <Route path="/Profile" element={<Profile />}></Route>
           <Route path="/Guidedk" element={<Guidedk />}></Route>
           <Route path="/Guideeng" element={<Guideeng />}></Route>
+          <Route path="/Addairplate" element={<Addairplate />}></Route>
+          <Route path="/Adddrone" element={<Adddrone />}></Route>
 
-          
 
         </Routes>
       </div>

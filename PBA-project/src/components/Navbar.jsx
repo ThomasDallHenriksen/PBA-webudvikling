@@ -47,7 +47,7 @@ const Navbar = () => {
         <Link to='/Product'>Product</Link>
         <Link to='/Company'>Company</Link>
         <Link to='/Contact'>Contact</Link>
-        <Link id='navbarButton' to='/AirMap'>AirMap</Link>
+        <Link id='navbarButton' to='/Addairplate'>Add Airplate</Link>
         <div className="dropdown-btn" onClick={toggleDropdown}>
           <button id='profil'></button>
         </div>

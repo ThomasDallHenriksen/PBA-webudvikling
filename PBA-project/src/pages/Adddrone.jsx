@@ -12,7 +12,16 @@ const Adddrone = () => {
             <div className="input-container">
                 <div className="dropdown-container">
                     <div className="dropdown">
-                        <label htmlFor="dropdown1">Class: Bits (3..0)</label>
+                        <div className="input-wrapper2">Class
+                            <div className="infopic-container">
+                                <img
+                                    className='infopic'
+                                    src="/images/info-button.png"
+                                    alt="info-button"
+                                />
+                                <span className="infopic-text">EU Class label introduced January 1st 2024. This label will be clearly visible on the drone.</span>
+                            </div>
+                        </div>
                         <select id="dropdown1" name="dropdown1">
                             <option value="option1">Undefined</option>
                             <option value="option2">class 0</option>
@@ -26,7 +35,16 @@ const Adddrone = () => {
                     </div>
 
                     <div className="dropdown">
-                        <label htmlFor="dropdown2">UA type</label>
+                        <div className="input-wrapper2">UA type
+                            <div className="infopic-container">
+                                <img
+                                    className='infopic'
+                                    src="/images/info-button.png"
+                                    alt="info-button"
+                                />
+                                <span className="infopic-text">What type is your aircraft? If your drone is a quadcopter or similar, choose 2 (Helicopter or multirotor). If the drone is a fixed-wing choose 1 (Aeroplane or fixed wing)</span>
+                            </div>
+                        </div>
                         <select id="dropdown2" name="dropdown2">
                             <option value="option1">Undefined</option>
                             <option value="option1">0: None or not declared</option>
@@ -49,23 +67,30 @@ const Adddrone = () => {
                     </div>
 
                     <div className="dropdown">
-                        <label htmlFor="dropdown3">UAS ID Type</label>
+                        <div className="input-wrapper2">Classification
+                            <div className="infopic-container">
+                                <img
+                                    className='infopic'
+                                    src="/images/info-button.png"
+                                    alt="info-button"
+                                />
+                                <span className="infopic-text">Specifies the type of data in the UA Category and UA Class fields. Is your drone flying under EASA (EU) rules or not.</span>
+                            </div>
+                        </div>
                         <select id="dropdown3" name="dropdown3">
-                            <option value="option1">Undefined</option>
-                            <option value="option1">1. serial number;</option>
-                            <option value="option2">2. registration ID; or</option>
-                            <option value="option3">3. UTM UUID;</option>
-                            <option value="option3">4. specfici session ID</option>
-
+                            <option value="option1">Undeclared</option>
+                            <option value="option2">EU</option>
                         </select>
                     </div>
                 </div>
-                <Link to="/Addairplate">
-                    <button className="next-button">Back</button>
-                </Link>
-                <Link to="/">
-                    <button className="next-button">Submit</button>
-                </Link>
+                <div className='wrapper-buttons'>
+                    <Link to="/Addairplate">
+                        <button className="next-button">Back</button>
+                    </Link>
+                    <Link to="/">
+                        <button className="next-button">Submit</button>
+                    </Link>
+                </div>
             </div>
         </div>
     );

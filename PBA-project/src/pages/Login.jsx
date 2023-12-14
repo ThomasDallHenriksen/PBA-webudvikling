@@ -20,6 +20,10 @@ const Login = () => {
             if (response.data.success) {
               // Redirect to a new page or perform other actions upon successful login
               console.log('Login successful');
+              sessionStorage.setItem('user', response.data.user);
+              sessionStorage.setItem('userName', response.data.userName);
+
+              window.location.reload();
             } else {
               // Handle login failure
               console.error('Login failed:', response.data.message);

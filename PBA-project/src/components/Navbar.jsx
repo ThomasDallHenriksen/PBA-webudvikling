@@ -9,6 +9,9 @@ const Navbar = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState('');
+  const [logoutMessage, setLogoutMessage] = useState('');
+
+
 
 
   useEffect(() => {
@@ -16,10 +19,26 @@ const Navbar = () => {
     const name = sessionStorage.getItem('userName');
     if (user) {
       setIsLoggedIn(true);
-      console.log(setIsLoggedIn)
       setUserName(name || '');
     }
   }, []);
+
+  const handleLogout = async () => {
+    try {
+      // Your logout logic here
+
+      // Clear session storage
+      sessionStorage.removeItem('user');
+      sessionStorage.removeItem('userName');
+
+      // Update state and log to console
+      setIsLoggedIn(false);
+      setUserName('');
+      console.log('Logout successful'); // Log the message to console
+    } catch (error) {
+      console.error('An error occurred during logout:', error);
+    }
+  };
 
   const toggleLinks = () => {
     setShowLinks(!showLinks);
@@ -39,7 +58,7 @@ const Navbar = () => {
     setShowDropdown(!showDropdown);
   };
 
-  m
+
 
   return (
     <nav className="navbar">
@@ -64,7 +83,7 @@ const Navbar = () => {
         <Link to='/Contact'>Contact</Link>
         <Link id='navbarButton' to='/AirMap'>AirMap</Link>
         <div className="dropdown-btn" onClick={toggleDropdown}>
-          <button id='profil'>{isLoggedIn ? userName : ''}</button>
+          <button id='profil'>{isLoggedIn ? 'userName' : ''}</button>
         </div>
           {/* Dropdown content */}
           {showDropdown && (
@@ -73,13 +92,13 @@ const Navbar = () => {
               <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
               {isLoggedIn ? (
                 <>
-                  <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
-                  <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
                   <button onClick={handleLogout}>Logout</button>
                 </>
               ) : (
                 
-                <Link to='/signup' onClick={toggleDropdown}>Login</Link>
+                <Link to='/login' onClick={() => setShowDropdown(false)}>
+                  Login
+                </Link>
                 
               )}
             </div>

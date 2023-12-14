@@ -69,7 +69,7 @@ const Navbar = () => {
           {showDropdown && (
             <div className="dropdown-content">
               <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
-              <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
+              <Link to='/Guideeng' onClick={toggleDropdown}>Guide</Link>
               {isLoggedIn ? (
                 <>
                   <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>

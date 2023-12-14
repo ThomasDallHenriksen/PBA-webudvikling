@@ -28,7 +28,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer__column">
-                <a href="/AirMap">
+                <a href="/">
                     <div className="airmap">AirMap</div>
                     <img src="images/map.png" alt="Map" />
                 </a>

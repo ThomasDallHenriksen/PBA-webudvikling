@@ -92,7 +92,7 @@ const Navbar = () => {
         <Link to='/Product' onClick={closeLinks}>Product</Link>
         <Link to='/Company' onClick={closeLinks}>Company</Link>
         <Link to='/Contact' onClick={closeLinks}>Contact</Link>
-        <Link id='navbarButton' to='/AirMap' onClick={closeLinks}>AirMap</Link>
+        <Link id='navbarButton' to='/' onClick={closeLinks}>Company</Link>
         <div id='profil' onClick={setShowDropdown}></div>
           <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
           <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>

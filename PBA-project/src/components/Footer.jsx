@@ -28,8 +28,8 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer__column">
-                <a href="/">
-                    <div className="airmap">AirMap</div>
+                <a href="/Addairplate">
+                    <div className="airmap">Add AirPlate</div>
                     <img src="images/map.png" alt="Map" />
                 </a>
             </div>

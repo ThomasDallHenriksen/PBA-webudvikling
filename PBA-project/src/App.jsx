@@ -6,7 +6,6 @@ import Company from './pages/Company'
 import Contact from './pages/Contact'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
-import AirMap from './pages/AirMap'
 import Profile from './pages/Profile'
 import Guidedk from './pages/Guidedk'
 import Guideeng from './pages/Guideeng'
@@ -27,7 +26,6 @@ return (
           <Route path="/Contact" element={<Contact />}></Route>
           <Route path="/Signup" element={<Signup />}></Route>
           <Route path="/Login" element={<Login />}></Route>
-          <Route path="/AirMap" element={<AirMap />}></Route>
           <Route path="/Profile" element={<Profile />}></Route>
           <Route path="/Guidedk" element={<Guidedk />}></Route>
           <Route path="/Guideeng" element={<Guideeng />}></Route>

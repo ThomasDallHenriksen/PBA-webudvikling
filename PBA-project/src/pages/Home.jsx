@@ -39,8 +39,8 @@ const Home = () => {
                     <br></br>
 
                     <div className="sectionOne-info__airmap">
-                    <a id='sectionButton' href='/AirMap'>Learn more</a>
-                    <a href='/AirMap'>Go To Airmap</a>
+                    <a id='sectionButton' href='/Company'>Learn more</a>
+                    <a href='/Product'>Product</a>
                     </div>
 
                     <div className="sectionOne-info__50k">
@@ -83,7 +83,7 @@ const Home = () => {
 
             <div className="home-sectionThree">
                 <p>Real Time Interface</p>
-                <a id='airmapButton' href='/AirMap'>AirMap</a>
+                <a id='airmapButton' href='/Addairplate'>Add AirPlate</a>
                 
             </div>
 

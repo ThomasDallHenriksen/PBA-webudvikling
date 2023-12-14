@@ -46,7 +46,7 @@ const Contact = () => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm('service_rfe6anl', 'template_ul09dy1', form.current, 'wWPM2HnD6d_lsPqgw')
+        emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, import.meta.env.VITE_PUBLIC_ID)
         .then((result) => {
             console.log(result.text);
         }, (error) => {

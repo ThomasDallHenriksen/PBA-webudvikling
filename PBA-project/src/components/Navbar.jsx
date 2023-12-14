@@ -39,7 +39,6 @@ const Navbar = () => {
     setShowDropdown(!showDropdown);
   };
 
-  m
 
   return (
     <nav className="navbar">

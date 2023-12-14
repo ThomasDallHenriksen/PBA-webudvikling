@@ -7,25 +7,37 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);  // Tilføjet denne linje
+    const [userName, setUserName] = useState('');  // Tilføjet denne linjeq
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('https://kienzhe.dk/backend/login.php', {
+            const response = await axios.post('https://kienzhe.dk/backend/contactForm.php', {
               email: email,
               password: password,
             });
       
             if (response.data.success) {
-              // Redirect to a new page or perform other actions upon successful login
-              console.log('Login successful');
+                setIsLoggedIn(true);
+                setUserName(response.data.userName);
+                
+                sessionStorage.setItem('user', response.data.message);
+                sessionStorage.setItem('userName', response.data.userName);
+                
+                
+                console.log('Login successful');
+                console.log('IsLoggedIn:', isLoggedIn);
+                console.log('UserName:', userName);
+
+                window.location.reload();
             } else {
               // Handle login failure
-              console.error('Login failed:', response.data.message);
+                console.error('Login failed:', response.data.message);
             }
           } catch (error) {
-            console.error('An error occurred during login:', error);
+                console.error('An error occurred during login:', error);
           }
     };
 

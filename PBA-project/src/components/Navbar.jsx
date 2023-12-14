@@ -14,12 +14,12 @@ const Navbar = () => {
   useEffect(() => {
     const user = sessionStorage.getItem('user');
     const name = sessionStorage.getItem('userName');
-    if (user) {
+    
+    if (user && name) {
       setIsLoggedIn(true);
-      console.log(setIsLoggedIn)
       setUserName(name || '');
     }
-  }, []);
+  }, [isLoggedIn, userName]);
 
   const toggleLinks = () => {
     setShowLinks(!showLinks);
@@ -39,7 +39,27 @@ const Navbar = () => {
     setShowDropdown(!showDropdown);
   };
 
-  m
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post('https://kienzhe.dk/backend/getData.php');
+      console.log('Logout Response:', response);
+      if (response.data.success) {
+        setIsLoggedIn(false);
+        setUserName('');
+
+        sessionStorage.removeItem('user');
+        sessionStorage.removeItem('userName');
+
+        console.log('Logout successful');
+      console.log('IsLoggedIn:', isLoggedIn);
+      console.log('UserName:', userName);
+      } else {
+        console.error('logout failed:' , response.data.message);
+      }
+    } catch (error) {
+      console.error('an error occured:', error);
+    }
+  };
 
   return (
     <nav className="navbar">
@@ -73,14 +93,10 @@ const Navbar = () => {
               <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
               {isLoggedIn ? (
                 <>
-                  <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
-                  <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
                   <button onClick={handleLogout}>Logout</button>
                 </>
               ) : (
-                
-                <Link to='/signup' onClick={toggleDropdown}>Login</Link>
-                
+                <Link to='/signup' onClick={toggleDropdown}>Login</Link>   
               )}
             </div>
           )}

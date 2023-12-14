@@ -4,20 +4,28 @@ import axios from 'axios';
 import '../assets/styles/account.scss';
 
 const Signup = () => {
-  const [userData, setUserData] = useState({
-    first_name: '',
-    last_name: '',
-    email: '',
-    password: '',
-    gender: '',
-    phone: '',
-    organisation: '',
-    birth: ''
-  });
+    const [userData, setUserData] = useState({
+        first_name: '',
+        last_name: '',
+        email: '',
+        password: '',
+        phone: '',
+        organisation: '',
+        account_type: 'private'
+    });
 
-  const handleSignup = async() => {
+    const handleChange = (e) => {
+        setUserData({
+            ...userData,
+            [e.target.name]: e.target.value,
+        });
+    };
+
+  const handleSignup = async(e) => {
+    e.preventDefault();
+
     try{
-        const response = await axios.post('http://kienzhe.dk/backend/login.php', userData, {
+        const response = await axios.post(import.meta.env.VITE_SIGNUP_ROUTE, userData, {
             headers: {
                 'Content-Type': 'application/json'
             },
@@ -85,7 +93,8 @@ const Signup = () => {
                         className="underline-input"
                         name="first_name"
                         value={userData.first_name}
-                        onChange={(e) => setUserData({...userData, first_name: e.target.value})}
+                        onChange={handleChange}
+                        required
                     />
                     <input
                         type="text"
@@ -93,7 +102,17 @@ const Signup = () => {
                         className="underline-input"
                         name="last_name"
                         value={userData.last_name}
-                        onChange={(e) => setUserData({...userData, last_name: e.target.value})}
+                        onChange={handleChange}
+                        required
+                    />
+                    <input
+                        type="text"
+                        placeholder="Phone number"
+                        className="underline-input"
+                        name='phone'
+                        value={userData.phone}
+                        onChange={handleChange}
+                        required
                     />
                     <input
                         type="text"
@@ -101,55 +120,45 @@ const Signup = () => {
                         className="underline-input"
                         name="email"
                         value={userData.email}
-                        onChange={(e) => setUserData({...userData, email: e.target.value})}
+                        onChange={handleChange}
+                        required
                     />
+
+
+                    <select
+                        name="account_type"
+                        value={userData.account_type}
+                        onChange={(e) => setUserData({ ...userData, account_type: e.target.value })}
+                        required
+                    >
+                        <option value="private">Private</option>
+                        <option value="organisation">Organisation</option>
+                    </select>
+
+                    {userData.account_type === 'organisation' && (
+                        <input
+                            type="text"
+                            placeholder="Organization Name"
+                            className="underline-input"
+                            name="organisation"
+                            value={userData.organization}
+                            onChange={handleChange}
+                            required
+                        />
+                    )}
                     <input
                         type="password"
                         placeholder="Password"
                         className="underline-input"
                         name="password"
                         value={userData.password}
-                        onChange={(e) => setUserData({...userData, password: e.target.value})}
-                    />
-                    <input 
-                    type="text" 
-                        placeholder="Gender" 
-                        className="underline-input"
-                        name='gender'
-                        value={userData.gender} 
-                        onChange={(e) => setUserData({...userData, gender: e.target.value})}
-                    />
-
-                    <input 
-                    type='text' 
-                        placeholder="Birth" 
-                        className="underline-input"
-                        name='birth'
-                        value={userData.birth} 
-                        onChange={(e) => setUserData({...userData, birth: e.target.value})}
-                    />
-
-                    <input
-                        type="text"
-                        placeholder="Phone number"
-                        className="underline-input"
-                        name='phone'
-                        value={userData.phone}
-                        onChange={(e) => setUserData({...userData, phone: e.target.value})}
-                    />
-
-                    <input  
-                        type="text"
-                        placeholder="Organisation"
-                        className="underline-input"
-                        name='organisation'
-                        value={userData.organisation}
-                        onChange={(e) => setUserData({...userData, organisation: e.target.value})}
+                        onChange={handleChange}
+                        required
                     />
             <div className="column">
                 
-                <div className="test">
-                    <a type='submit' href="#" className="newacc">Create Account</a>
+                <div className="createButton">
+                <button type='submit' className="newacc">Create Account</button>
                 </div>
                 <div className="container">
                     <div className="account">Already have an account?</div>

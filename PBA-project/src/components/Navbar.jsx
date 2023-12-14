@@ -1,12 +1,25 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles/navbar.scss';
+import axios from 'axios';
 
 const Navbar = () => {
   const [showLinks, setShowLinks] = useState(false);
   const [showLinkContainer, setShowLinkContainer] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState('');
 
+
+  useEffect(() => {
+    const user = sessionStorage.getItem('user');
+    const name = sessionStorage.getItem('userName');
+    if (user) {
+      setIsLoggedIn(true);
+      console.log(setIsLoggedIn)
+      setUserName(name || '');
+    }
+  }, []);
 
   const toggleLinks = () => {
     setShowLinks(!showLinks);
@@ -25,6 +38,8 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setShowDropdown(!showDropdown);
   };
+
+  m
 
   return (
     <nav className="navbar">
@@ -49,14 +64,24 @@ const Navbar = () => {
         <Link to='/Contact'>Contact</Link>
         <Link id='navbarButton' to='/Addairplate'>Add Airplate</Link>
         <div className="dropdown-btn" onClick={toggleDropdown}>
-          <button id='profil'></button>
+          <button id='profil'>{isLoggedIn ? userName : ''}</button>
         </div>
           {/* Dropdown content */}
           {showDropdown && (
             <div className="dropdown-content">
               <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
               <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
-              <Link to='/signup' onClick={toggleDropdown}>Login</Link>
+              {isLoggedIn ? (
+                <>
+                  <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
+                  <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
+                  <button onClick={handleLogout}>Logout</button>
+                </>
+              ) : (
+                
+                <Link to='/signup' onClick={toggleDropdown}>Login</Link>
+                
+              )}
             </div>
           )}
       </div>

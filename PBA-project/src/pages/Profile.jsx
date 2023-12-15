@@ -1,10 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../assets/global/breakpoints.scss';
 import '../assets/main/font.scss';
 import '../assets/styles/profile.scss';
 
+
 const Profile = () => {
     const [openAccordions, setOpenAccordions] = useState([]);
+    const [userData, setUserData] = useState(null);
+
+    useEffect(() => {
+        const storedUserData = sessionStorage.getItem('user');
+        if(storedUserData) {
+            setUserData(JSON.parse(storedUserData));
+        }
+    }, []);
 
     const handleAccordionToggle = (index) => {
         if (openAccordions.includes(index)) {
@@ -15,6 +24,10 @@ const Profile = () => {
             setOpenAccordions((prev) => [...prev, index]);
         }
     };
+
+    if(!userData) {
+        return <div>Loading...</div>
+    }
 
     return (
         <div className="profile">
@@ -40,7 +53,7 @@ const Profile = () => {
                             <div className="personal-info">
                                 <div className="name">
                                     <div className='fullName'>Full name</div>
-                                    <div className='fullName-output'>Morten Breum</div>
+                                    <div className='fullName-output'>{userData.first_name} {userData.last_name}</div>
                                 </div>
                                 <div className='dob'>
                                     <div className='dob-hover'>Date of birth</div>
@@ -100,11 +113,11 @@ const Profile = () => {
                         <div className='contact-accordion'>
                             <div className="email">
                                 <div className="email-title">Your E-mail</div>
-                                <div className="email-output">lala@hotmail.com</div>
+                                <div className="email-output">{userData.email}</div>
                             </div>
                             <div className="phone-number">
                                 <div className="phone-title">Your phone number</div>
-                                <div className="phone-output">88 88 88 88</div>
+                                <div className="phone-output">{userData.phone}</div>
                             </div>
                         </div>
                         <button className='gear'>

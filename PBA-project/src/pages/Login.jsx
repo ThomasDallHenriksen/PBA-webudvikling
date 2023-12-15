@@ -20,8 +20,13 @@ const Login = () => {
             if (response.data.success) {
               // Redirect to a new page or perform other actions upon successful login
               console.log('Login successful');
-              sessionStorage.setItem('user', response.data.user);
+              sessionStorage.setItem('user', JSON.stringify (response.data.user));
               sessionStorage.setItem('userName', response.data.userName);
+              console.log('login successful');
+              console.log('isLoggedIn:', response.data.isLoggedIn);
+              console.log('userName:', response.data.isLoggedIn);
+
+
 
               window.location.reload();
             } else {

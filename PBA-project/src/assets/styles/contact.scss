@@ -3,7 +3,7 @@
 
 .contact {
     width: 100%;
-    height: auto; 
+    height: auto;
 }
 
 .contact-info {
@@ -13,7 +13,7 @@
     justify-content: center;
     background-color: #013A6B;
     background-image: -webkit-linear-gradient(60deg, var(--color-skyblue) 58%, var(--color-white) 40%);
-    padding-top: 5%;
+    padding-top: 6rem;
 
     @include media("sm") {
         display: none;
@@ -24,7 +24,7 @@
         height: 34.385vw;
         display: flex;
         margin-top: 1.042vw;
-        box-shadow: 1.25rem 0 1.875rem -0.9375rem rgba(0, 0, 0, 0.2), -2.5rem 0 1.875rem -0.9375rem rgba(0, 0, 0, 0.5), 0 1.25rem 1.875rem -0.9375rem rgba(0, 0, 0, 0.5),;
+        box-shadow: 1.25rem 0 1.875rem -0.9375rem rgba(0, 0, 0, 0.2), -2.5rem 0 1.875rem -0.9375rem rgba(0, 0, 0, 0.5), 0 1.25rem 1.875rem -0.9375rem rgba(0, 0, 0, 0.5), ;
     }
 
     &__left {
@@ -32,7 +32,7 @@
         height: 34.385vw;
         background-image: linear-gradient(var(--color-skyblue), var(--color-skyblue), var(--color-white));
     }
-    
+
     &__right {
         width: 29.271vw;
         height: 34.385vw;
@@ -49,7 +49,7 @@
     @include media("sm") {
         display: none;
     }
-    
+
     &__name {
         width: 25.625vw;
         height: 2.917vw;
@@ -57,6 +57,7 @@
         color: var(--color-black);
         margin: 0.833vw;
     }
+
     &__email {
         width: 25.625vw;
         height: 2.917vw;
@@ -64,6 +65,7 @@
         color: var(--color-black);
         margin: 0.833vw;
     }
+
     &__phone {
         width: 25.625vw;
         height: 2.917vw;
@@ -71,6 +73,7 @@
         color: var(--color-black);
         margin: 0.833vw;
     }
+
     &__message {
         width: 25.625vw;
         height: 7.865vw;
@@ -78,6 +81,7 @@
         color: var(--color-black);
         margin: 0.833vw;
     }
+
     &__submit {
         width: 8.750vw;
         height: 3.021vw;
@@ -119,16 +123,17 @@
         display: none;
     }
 
-h2 {
-    font-size: 2.500vw;
-    text-align: justify;
-    margin-left: 5.667vw;
-}
-p {
-    font-size: 1.042vw;
-    text-align: justify;
-    margin-left: 5.833vw;
-}
+    h2 {
+        font-size: 2.500vw;
+        text-align: justify;
+        margin-left: 5.667vw;
+    }
+
+    p {
+        font-size: 1.042vw;
+        text-align: justify;
+        margin-left: 5.833vw;
+    }
 }
 
 .phone {
@@ -141,27 +146,29 @@ p {
         display: none;
     }
 
-&__icon {
-    width: 17%;
-    background-image: url(../../../public/spritesheet.png);
-    background-size: cover;
-}
+    &__icon {
+        width: 17%;
+        background-image: url(../../../public/spritesheet.png);
+        background-size: cover;
+    }
 
-&__info {
-    width: 83%;
-    margin-left: 0.833vw;
-}
-&__info h4 {
-    font-size: 1.250vw;
-    font-weight: bold;
-    margin: 0;
-    color: var(--color-white);
-}
-&__info p {
-    font-size: 1.250vw;
-    margin: 0;
-    color: var(--color-white);
-}
+    &__info {
+        width: 83%;
+        margin-left: 0.833vw;
+    }
+
+    &__info h4 {
+        font-size: 1.250vw;
+        font-weight: bold;
+        margin: 0;
+        color: var(--color-white);
+    }
+
+    &__info p {
+        font-size: 1.250vw;
+        margin: 0;
+        color: var(--color-white);
+    }
 }
 
 .mail {
@@ -174,30 +181,32 @@ p {
         display: none;
     }
 
-&__icon {
-    width: 17%;
-    background-image: url(../../../public/spritesheet.png);
-    background-position: 0.052vw -4.271vw;
-    background-size: cover;
-}
+    &__icon {
+        width: 17%;
+        background-image: url(../../../public/spritesheet.png);
+        background-position: 0.052vw -4.271vw;
+        background-size: cover;
+    }
 
-&__info {
-    width: 83%;
-    margin-left: 0.052vw;
-}
-&__info h4 {
-    padding-left: 3%;
-    font-size: 1.250vw;
-    font-weight: bold;
-    margin: 0;
-    color: var(--color-white);
-}
-&__info p {
-    padding-left: 3%;
-    font-size: 1.250vw;
-    margin: 0;
-    color: var(--color-white);
-}
+    &__info {
+        width: 83%;
+        margin-left: 0.052vw;
+    }
+
+    &__info h4 {
+        padding-left: 3%;
+        font-size: 1.250vw;
+        font-weight: bold;
+        margin: 0;
+        color: var(--color-white);
+    }
+
+    &__info p {
+        padding-left: 3%;
+        font-size: 1.250vw;
+        margin: 0;
+        color: var(--color-white);
+    }
 }
 
 .location {
@@ -210,33 +219,35 @@ p {
         display: none;
     }
 
-&__icon {
-    width: 17%;
-    background-image: url(../../../public/spritesheet.png);
-    background-position: 0.052vw -10.104vw;
-    background-size: cover;
-}
+    &__icon {
+        width: 17%;
+        background-image: url(../../../public/spritesheet.png);
+        background-position: 0.052vw -10.104vw;
+        background-size: cover;
+    }
 
-&__info {
-    width: 83%;
-    margin-left: 0.833vw;
-}
-&__info h4 {
-    font-size: 1.250vw;
-    font-weight: bold;
-    margin: 0;
-    color: var(--color-white);
-}
-&__info p {
-    font-size: 1.250vw;
-    margin: 0;
-    color: var(--color-white);
-}
+    &__info {
+        width: 83%;
+        margin-left: 0.833vw;
+    }
+
+    &__info h4 {
+        font-size: 1.250vw;
+        font-weight: bold;
+        margin: 0;
+        color: var(--color-white);
+    }
+
+    &__info p {
+        font-size: 1.250vw;
+        margin: 0;
+        color: var(--color-white);
+    }
 }
 
 .contact-personal {
     width: 100%;
-    height: 33.385vw;
+    height: 36.385vw;
     background-color: var(--color-white);
     color: #7B7979;
     font-size: 3.333vw;
@@ -250,35 +261,37 @@ p {
         margin-top: 1.953vw;
     }
 
-&__founders {
-     display: flex;
-    justify-content: space-around;
-
-    @include media("sm") {
+    &__founders {
         display: flex;
-        flex-direction: column;
+        justify-content: space-evenly;
+
+        @include media("sm") {
+            display: flex;
+            flex-direction: column;
+        }
     }
-}
 
-&__director {
-    font-size: 1.250vw;
-}
-&__director p {
-    font-size: 0.781vw;
-}
+    &__director {
+        font-size: 1.250vw;
+    }
 
-&__ceo {
-    font-size: 1.250vw;
-}
-&__ceo p{
-    font-size: 0.781vw;
-}
+    &__director p {
+        font-size: 0.781vw;
+    }
+
+    &__ceo {
+        font-size: 1.250vw;
+    }
+
+    &__ceo p {
+        font-size: 0.781vw;
+    }
 }
 
 //mobile version
 .contact-mobile {
     display: none;
-    
+
     @include media("sm") {
         width: 100%;
         height: auto;
@@ -288,28 +301,29 @@ p {
         background-color: var(--color-white);
     }
 
-&__text {
-    @include media("sm") {
-        width: 100%;
-        height: 35.254vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-image: linear-gradient(var(--color-skyblue), var(--color-skyblue), var(--color-skyblue), var(--color-white));
-    }    
-}
+    &__text {
+        @include media("sm") {
+            padding-top: 5rem;
+            width: 100%;
+            height: 28.254vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(var(--color-skyblue), var(--color-skyblue), var(--color-skyblue), var(--color-white));
+        }
+    }
 
-&__text h2 {
-    @include media("sm") {
-        font-size: 3.906vw;
-    }   
-}
+    &__text h2 {
+        @include media("sm") {
+            font-size: 3.906vw;
+        }
+    }
 
-&__text p {
-    @include media("sm") {
-        font-size: 1.953vw;
-    }  
-}
+    &__text p {
+        @include media("sm") {
+            font-size: 1.953vw;
+        }
+    }
 }
 
 .mobile-content {
@@ -322,12 +336,12 @@ p {
         align-items: center;
     }
 
-p {
-    @include media("sm") {
-        font-size: 1.953vw;
-        color: #B1B0B0;
+    p {
+        @include media("sm") {
+            font-size: 1.953vw;
+            color: #B1B0B0;
+        }
     }
-}
 }
 
 .mobile-form {
@@ -342,50 +356,50 @@ p {
         align-items: center;
     }
 
-&__name {
-    @include media("sm") {
-        width: 33.691vw;
-        height: 5.469vw;
-        background-color: var(--color-white);
+    &__name {
+        @include media("sm") {
+            width: 33.691vw;
+            height: 5.469vw;
+            background-color: var(--color-white);
+        }
     }
-}
 
-&__email {
-    @include media("sm") {
-        width: 33.691vw;
-        height: 5.469vw;
-        background-color: var(--color-white);
-        margin-top: 0.977vw;
+    &__email {
+        @include media("sm") {
+            width: 33.691vw;
+            height: 5.469vw;
+            background-color: var(--color-white);
+            margin-top: 0.977vw;
+        }
     }
-}
 
-&__phone {
-    @include media("sm") {
-        width: 33.691vw;
-        height: 5.469vw;
-        background-color: var(--color-white);
-        margin-top: 0.977vw;
+    &__phone {
+        @include media("sm") {
+            width: 33.691vw;
+            height: 5.469vw;
+            background-color: var(--color-white);
+            margin-top: 0.977vw;
+        }
     }
-}
 
-&__message {
-    @include media("sm") {
-        width: 33.691vw;
-        height: 14.746vw;
-        background-color: var(--color-white);
-        margin-top: 0.977vw;
+    &__message {
+        @include media("sm") {
+            width: 33.691vw;
+            height: 14.746vw;
+            background-color: var(--color-white);
+            margin-top: 0.977vw;
+        }
     }
-}
 
-&__submit {
-    @include media("sm") {
-        width: 16.406vw;
-        height: 5.469vw;
-        background-color: var(--color-skyblue);
-        margin-top: 0.977vw;
-        border-radius: 2.441vw;
+    &__submit {
+        @include media("sm") {
+            width: 16.406vw;
+            height: 5.469vw;
+            background-color: var(--color-skyblue);
+            margin-top: 0.977vw;
+            border-radius: 2.441vw;
+        }
     }
-}
 }
 
 .mobile-airplate {
@@ -409,35 +423,37 @@ p {
         margin: 0;
     }
 
-&__icon {
-    @include media("sm") {
-        width: 7.813vw;
-        height: 7.813vw;
-        background-image: url(../../../public/spritesheet.png);
-        background-size: cover;
+    &__icon {
+        @include media("sm") {
+            width: 7.813vw;
+            height: 7.813vw;
+            background-image: url(../../../public/spritesheet.png);
+            background-size: cover;
+        }
     }
-}
 
-&__info {
-    @include media("sm") {
-        margin-left: 1.563vw;
+    &__info {
+        @include media("sm") {
+            margin-left: 1.563vw;
+        }
+
+        h4 {
+            @include media("sm") {
+                font-size: 2.344vw;
+                font-weight: bold;
+                margin: 0;
+                color: var(--color-white);
+            }
+        }
+
+        p {
+            @include media("sm") {
+                font-size: 2.344vw;
+                margin: 0;
+                color: var(--color-white);
+            }
+        }
     }
-h4 {
-    @include media("sm") {
-        font-size: 2.344vw;
-        font-weight: bold;
-        margin: 0;
-        color: var(--color-white);
-    }
-}
-p {
-    @include media("sm") {
-        font-size: 2.344vw;
-        margin: 0;
-        color: var(--color-white);
-    }
-}
-}
 }
 
 .mobile-mail {
@@ -448,36 +464,38 @@ p {
         margin-left: 4.688vw;
     }
 
-&__icon {
-    @include media("sm") {
-        width: 7.813vw;
-        height: 7.813vw;
-        background-image: url(../../../public/spritesheet.png);
-        background-position: 0.098vw -8.008vw;
-        background-size: cover;
+    &__icon {
+        @include media("sm") {
+            width: 7.813vw;
+            height: 7.813vw;
+            background-image: url(../../../public/spritesheet.png);
+            background-position: 0.098vw -8.008vw;
+            background-size: cover;
+        }
     }
-}
 
-&__info {
-    @include media("sm") {
-        margin-left: 1.563vw;
+    &__info {
+        @include media("sm") {
+            margin-left: 1.563vw;
+        }
+
+        h4 {
+            @include media("sm") {
+                font-size: 2.344vw;
+                font-weight: bold;
+                margin: 0;
+                color: var(--color-white);
+            }
+        }
+
+        p {
+            @include media("sm") {
+                font-size: 2.344vw;
+                margin: 0;
+                color: var(--color-white);
+            }
+        }
     }
-h4 {
-    @include media("sm") {
-        font-size: 2.344vw;
-        font-weight: bold;
-        margin: 0;
-        color: var(--color-white);
-    }
-}
-p {
-    @include media("sm") {
-        font-size: 2.344vw;
-        margin: 0;
-        color: var(--color-white);
-    }
-}
-}
 }
 
 .mobile-location {
@@ -488,34 +506,36 @@ p {
         margin-left: 5.938vw;
     }
 
-&__icon {
-    @include media("sm") {
-        width: 7.813vw;
-        height: 7.813vw;
-        background-image: url(../../../public/spritesheet.png);
-        background-position: 0.098vw -19.945vw;
-        background-size: cover;
+    &__icon {
+        @include media("sm") {
+            width: 7.813vw;
+            height: 7.813vw;
+            background-image: url(../../../public/spritesheet.png);
+            background-position: 0.098vw -19.945vw;
+            background-size: cover;
+        }
     }
-}
 
-&__info {
-    @include media("sm") {
-        margin-left: 1.563vw;
+    &__info {
+        @include media("sm") {
+            margin-left: 1.563vw;
+        }
+
+        h4 {
+            @include media("sm") {
+                font-size: 2.344vw;
+                font-weight: bold;
+                margin: 0;
+                color: var(--color-white);
+            }
+        }
+
+        p {
+            @include media("sm") {
+                font-size: 2.344vw;
+                margin: 0;
+                color: var(--color-white);
+            }
+        }
     }
-h4 {
-    @include media("sm") {
-        font-size: 2.344vw;
-        font-weight: bold;
-        margin: 0;
-        color: var(--color-white);
-    }
-}
-p {
-    @include media("sm") {
-        font-size: 2.344vw;
-        margin: 0;
-        color: var(--color-white);
-    }
-}
-}
 }

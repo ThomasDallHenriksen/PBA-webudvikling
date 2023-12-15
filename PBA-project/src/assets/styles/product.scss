@@ -14,10 +14,13 @@
     }
 }
 
+.titletop {
+    margin-bottom: 0;
+}
 .drone-carousel{
-    width: 50%;
-    padding: 16px;
+    width: 45%;
     padding-left: 5%;
+    margin-top: 4rem;
     @include media("sm"){
         display: none;
     }
@@ -26,11 +29,12 @@
 .demo-description{
     width: 50%;
     color: var(--color-black);
-    padding: 16px 143px 16px 143px;
+    padding: 3rem 8.9375rem 1rem 1.875rem;
     @include media("sm"){
         width: auto;
+        margin-top: 4rem;
         color: var(--color-black);
-        padding: 16px 143px 16px 143px;
+        padding: 1rem 1.875rem 1rem 1.875rem;
     }
 
 }
@@ -39,28 +43,12 @@ h1{
     margin-top: 0;
 }
 
-#demo-button{
-    background-color: var(--color-blue);
-    color: var(--color-white);
-    border: none;
-    border-radius: 25px;
-    font-size: 16px;
-    padding:  16px 32px 16px 32px;
-    cursor: pointer;
-    transition: background-color 0.5s ease; /* Adding a smooth transition */
-
-}
-
-#demo-button:hover{
-    background-color: var(--color-skyblue);
-}
-
 //mobile version
 .mobile-drone-carousel{
     display: none;
     @include media("sm"){
         display: block;
-        padding: 16px;
+        padding: 1rem;
     }
 }
 

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-
 import '../assets/styles/account.scss';
 
 const Signup = () => {
@@ -21,56 +20,56 @@ const Signup = () => {
         });
     };
 
-  const handleSignup = async(e) => {
-    e.preventDefault();
+    const handleSignup = async (e) => {
+        e.preventDefault();
 
-    try{
-        const response = await axios.post(import.meta.env.VITE_SIGNUP_ROUTE, userData, {
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        });
+        try {
+            const response = await axios.post(import.meta.env.VITE_SIGNUP_ROUTE, userData, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            });
 
-        console.log(response.data);
+            console.log(response.data);
 
-    }catch (error){
-        console.error('Fejl:', error);
-    }
-    
-};
+        } catch (error) {
+            console.error('Fejl:', error);
+        }
 
-// const handleChange = (e) => {
-//     setUserData({
-//         ...userData,
-//         [e.target.name]: e.target.value,
-//     })
-// };
+    };
 
-//   const handleFormSubmit = async (e) => {
-//     e.preventDefault();
+    // const handleChange = (e) => {
+    //     setUserData({
+    //         ...userData,
+    //         [e.target.name]: e.target.value,
+    //     })
+    // };
 
-//     const transformedFormData = {
-//         first_name: formData.firstName,
-//         last_name: formData.lastName,
-//         email: formData.email,
-//         password: formData.password,
-//       };
+    //   const handleFormSubmit = async (e) => {
+    //     e.preventDefault();
 
-//       try {
-//         const response = await axios.post('http://kienzhe.dk/backend/login.php', transformedFormData);
-    
-//         if (response.status === 200) {
-//           // Handle successful registration
-//           console.log('User registered successfully');
-//         } else {
-//           // Handle registration failure
-//           console.error('Registration failed with status:', response.status);
-//           console.error('Response data:', response.data);
-//         }
-//       } catch (error) {
-//         console.error('Error during registration:', error);
-//       }
-//   };
+    //     const transformedFormData = {
+    //         first_name: formData.firstName,
+    //         last_name: formData.lastName,
+    //         email: formData.email,
+    //         password: formData.password,
+    //       };
+
+    //       try {
+    //         const response = await axios.post('http://kienzhe.dk/backend/login.php', transformedFormData);
+
+    //         if (response.status === 200) {
+    //           // Handle successful registration
+    //           console.log('User registered successfully');
+    //         } else {
+    //           // Handle registration failure
+    //           console.error('Registration failed with status:', response.status);
+    //           console.error('Response data:', response.data);
+    //         }
+    //       } catch (error) {
+    //         console.error('Error during registration:', error);
+    //       }
+    //   };
 
     return (
         <div className="signup">
@@ -80,12 +79,12 @@ const Signup = () => {
                 </div>
                 <div className="globe-container">
                     <div className="globe">
-                        <img src="images/bigglobe.png" alt="Globe" />
+                        <img className="globeimg" src="images/bigglobe.png" alt="Globe" />
                     </div>
                 </div>
             </div>
-            <div className="column">    
-
+            <div className="column">
+                <h2 className='headline'>Create Account</h2>
                 <form className='input-column' onSubmit={handleSignup}>
                     <input
                         type="text"
@@ -127,6 +126,7 @@ const Signup = () => {
 
                     <select
                         name="account_type"
+                        className='private'
                         value={userData.account_type}
                         onChange={(e) => setUserData({ ...userData, account_type: e.target.value })}
                         required
@@ -155,20 +155,20 @@ const Signup = () => {
                         onChange={handleChange}
                         required
                     />
-            <div className="column">
-                
-                <div className="createButton">
-                <button type='submit' className="newacc">Create Account</button>
-                </div>
-                <div className="container">
-                    <div className="account">Already have an account?</div>
-                    <div className="login">
-                        <a href='/login'>Log in</a>
+                    <div className="column3">
+
+                        <div className="createButton">
+                            <button type='submit' className="newacc">Create Account</button>
+                        </div>
+                        <div className="container">
+                            <div className="account">Already have an account?</div>
+                            <div className="login">
+                                <a href='/login'>Log in</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
                 </form>
-        </div>
+            </div>
         </div>
 
     );

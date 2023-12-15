@@ -5,7 +5,7 @@ const Guide = () => {
         <div className="block">
             <div className="element">
                 <div className="header-container">
-                    <h1>Guide</h1>
+                    <h1 className='guide'>Guide</h1>
                     <div className="flag-container">
                         <a className="flag" href="/Guidedk">
                             <img src="images/denmark.png" alt="Denmark" />

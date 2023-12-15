@@ -41,12 +41,12 @@ const Login = () => {
                 </div>
                 <div className="globe-container">
                     <div className="globe">
-                        <img src="images/bigglobe.png" alt="Globe" />
+                        <img className="globeimg" src="images/bigglobe.png" alt="Globe" />
                     </div>
                 </div>
             </div>
             <div className="column">
-                <h1 className="headline">Login</h1>
+                <h2 className="headline">Login</h2>
                 <div className="input-column">
                     <input 
                         type="text"

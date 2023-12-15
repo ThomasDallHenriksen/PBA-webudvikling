@@ -27,9 +27,8 @@ const Product = () => {
                         production. It can be charged through USB-C and has 2+ hrs of battery
                         operation from a single full charge. It can also be integrated without
                         battery, directly powered from the drone with 5 V.
-                        <br/><br/>-lorem ipsum
-                        <br/><br/>-lorem ipsum
-                        <br/><br/>-lorem ipsum
+                        <br/><br/>-Easy configuration
+                        <br/><br/>-Compatible with any drone
                     </p>
                     <div>
                         <input id='demo-button' type="button" value="Demo request" />

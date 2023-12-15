@@ -83,7 +83,7 @@ const Navbar = () => {
         <Link to='/Contact'>Contact</Link>
         <Link id='navbarButton' to='/Addairplate'>Add Airplate</Link>
         <div className="dropdown-btn" onClick={toggleDropdown}>
-          <button id='profil'>{isLoggedIn ? 'userName' : ''}</button>
+          <button id='profil'>{isLoggedIn ? '' : ''}</button>
         </div>
           {/* Dropdown content */}
           {showDropdown && (

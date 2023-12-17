@@ -1,7 +1,37 @@
+import React, { useState } from 'react';
 import '../assets/styles/add.scss';
 import { Link } from 'react-router-dom';
 
 const Addairplate = () => {
+
+    const [serialNumber, setSerialNumber] = useState('');
+
+    const checkAirplate = async () => {
+        try {
+            const response = await fetch('https://kienzhe.dk/backend/addAirplate.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ serialNumber }),
+            });
+
+            const result = await response.json();
+
+            if (result.status === 'success') {
+                // Handle success, e.g., show a success message to the user
+                console.log('AirPlate added successfully');
+            } else if (result.status === 'not_found') {
+                // Handle case where the serial number is not found
+                console.log('Serial number not found');
+            } else {
+                // Handle other errors
+                console.error('Error:', result.message);
+            }
+        } catch (error) {
+            console.error('Error:', error.message);
+        }
+    };
     
     return (
         <div className="block">
@@ -24,10 +54,10 @@ const Addairplate = () => {
                         />
                         <span className="infopic-text">The serial number is unique and is used to identify the individual AirPlate in our database.</span>
                     </div>
-                </form>
                 <Link to="/Adddrone">
                     <button className="next-button">Next</button>
                 </Link>
+                </form>
             </div>
         </div>
     );

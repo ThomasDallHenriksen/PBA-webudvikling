@@ -4,30 +4,42 @@
 .signup {
     max-width: 100%;
     display: flex;
+    min-height: 1080px;
 
     @include media("md") {
         flex-direction: column;
         align-items: center;
+        min-height: auto;
     }
 }
 
 .column {
     flex: 1;
-    padding: 1.25rem;
     display: flex;
+    padding-top: 6rem;
     flex-direction: column;
-    padding-top: 5%;
+    padding-right: 5%;
+    padding-left: 5%;
+    max-width: 25rem;
+    color: var(--color-white);
+
+    @include media("md") {
+        padding-top: 0;
+    }
 }
 
 .column1 {
+    padding-left: 5%;
+    padding-right: 5%;
     background-color: var(--color-darkblue);
     max-width: 37.5rem;
-    padding: 4rem;
+    padding-top: 6rem;
     font-weight: 400;
     font-size: 1.5rem;
     line-height: 29.0496px;
     display: flex;
     flex-direction: column;
+    font-size: 10px;
 
     @include media("md") {
         background-color: var(--color-white);
@@ -39,15 +51,26 @@
 }
 
 .content {
-    font-size: 1.5rem;
+    font-size: 1rem;
     font-weight: 400;
-    min-height: 41.875rem
+    min-height: 7.875rem;
 }
 
 .globe {
-    padding: 15%;
-    max-width: 100%;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 5rem;
     height: auto;
+
+    @include media("md") {
+        padding: 0;
+    }
+}
+
+.globeimg {
+    @include media("md") {
+        max-width: 18.75rem;
+    }
 }
 
 .create {
@@ -65,7 +88,6 @@
 }
 
 .input-column {
-    margin-left: 5rem;
     max-width: 32.5rem;
     display: flex;
     flex-direction: column;
@@ -73,27 +95,24 @@
 }
 
 .container {
-    margin-left: 5rem;
     display: flex;
+    min-width: 18.75rem;
 }
 
 .headline {
     color: var(--color-black);
-    margin-left: 5rem;
 }
 
 .forgotpsw a {
     color: var(--color-darkblue);
-    margin-left: 5rem;
     font-size: 1rem;
 }
 
 .account,
 .login {
     display: flex;
-    align-items: center;
     font-size: 1rem;
-    color: var(--color-lightestgrey);
+    color: var(--color-black);
     margin-top: 1rem;
 }
 
@@ -107,9 +126,8 @@
 }
 
 .underline-input {
-    opacity: 30%;
     border: none;
-    border-bottom: .125rem solid var(--color-lightgrey);
+    border-bottom: .125rem solid var(--color-black);
     margin-bottom: 3.625rem;
     padding: .3125rem;
     font-size: 1rem;
@@ -145,12 +163,15 @@
 
 .createButton {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
+.private {
+    padding: 0.5rem;
+}
+
 .newacc {
-    width: 25vw;
+    min-width: 18.75rem;
     border-radius: .5rem;
     padding: .5rem;
     max-width: 31.25rem;

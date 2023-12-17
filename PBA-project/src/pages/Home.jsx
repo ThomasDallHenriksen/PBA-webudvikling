@@ -32,11 +32,8 @@ const Home = () => {
         <div className="home">
             <div className="home-sectionOne">
                 <div className="sectionOne-info">
-                    <h2>Lorem Ipsum</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and <br></br>
-                    typesetting industry. Lorem Ipsum has been the <br></br>
-                    industry's standard dummy text ever since the 1500s.</p>
-                    <br></br>
+                    <h2>Welcome to AirPlate</h2>
+                    <p>At AirPlate we make it possible to combine any drone with our license plate AirPlate. In 2024 it will be a legal requirement that drone operators have a so-called 'plate' for their drone so that it is identifiable.</p>
 
                     <div className="sectionOne-info__airmap">
                     <a id='sectionButton' href='/Company'>Learn more</a>
@@ -45,9 +42,9 @@ const Home = () => {
 
                     <div className="sectionOne-info__50k">
                         <h2>50K</h2>
-                        <p>Lorem Ipsum is simply dummy text of the printing and <br></br> 
-                        typesetting industry. Lorem Ipsum has been the <br></br>
-                        industry's standard dummy text ever since the 1500s.</p>
+                        <p>With AirPlate you are covered under the new<br /> 
+                        legislation with guarantee and can fly safely<br />
+                        with your drone when you want going forward.</p>
                     </div>
                 </div>
 
@@ -91,16 +88,7 @@ const Home = () => {
                 <div className="sectionFour-internet">
                     <div className="sectionFour-internet__left">
                         <h3>Internet</h3>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                        <br />industry. Lorem Ipsum has been the industry's standard dummy
-                        <br />text ever since the 1500s,when an unknown printer took a 
-                        <br /> galley of type and scrambled it to make a type specimen
-                        <br /> book. It has survived not only five centuries, but also 
-                        <br />the leap into electronic typesetting, remaining essentially
-                        <br />unchanged. It was popularised in the 1960s with the release
-                        <br />of Letraset sheets containing Lorem Ipsum passages, and more 
-                        <br />recently with desktop publishing software like Aldus PageMaker
-                        <br />including versions of Lorem Ipsum.</p>
+                        <p>The internet is a global system of interconnected computer networks that uses internet protocol suite (TCP/IP) to communicate between networks and devices. It is a network of networks that consists of private, public, academic, business, and government networks. The internet carries a vast range of information resources and services, such as the inter-linked hypertext documents of the World Wide Web (WWW) and the infrastructure to support email. The origins of the internet date back to research commissioned by the federal government of the United States in the 1960s to build robust, fault-tolerant communication with computer networks. Today, the internet has become a worldwide broadcast medium for all kinds of data communication from simple text to complex graphics, video and computing applications. The internet has enabled entirely new forms of social interaction, activities, and organizing, thanks to its basic features such as widespread usability and access.</p>
                     </div>
 
                     <div className="sectionFour-internet__mid">
@@ -123,16 +111,7 @@ const Home = () => {
 
                     <div className="sectionFour-bluetooth__right">
                     <h3>Bluetooth</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting
-                        <br />industry. Lorem Ipsum has been the industry's standard dummy
-                        <br />text ever since the 1500s,when an unknown printer took a 
-                        <br /> galley of type and scrambled it to make a type specimen
-                        <br /> book. It has survived not only five centuries, but also 
-                        <br />the leap into electronic typesetting, remaining essentially
-                        <br />unchanged. It was popularised in the 1960s with the release
-                        <br />of Letraset sheets containing Lorem Ipsum passages, and more 
-                        <br />recently with desktop publishing software like Aldus PageMaker
-                        <br />including versions of Lorem Ipsum.</p>
+                    <p>Bluetooth is a wireless technology standard used for exchanging data between fixed and mobile devices over short distances. It operates at 2.4 to 2.485 GHz and uses frequency-hopping spread spectrum technology. Bluetooth was originally conceived as a wireless alternative to RS-232 data cables by Jaap Haartsen and Sven Mattisson in 1994. The first Bluetooth product came out in 1999 produced by Ericsson. Bluetooth is managed by the Bluetooth Special Interest Group founded in 1998 by Ericsson, IBM, Intel, Nokia and Toshiba. Bluetooth protocols simplify the discovery and setup of services between devices. Bluetooth Low Energy, marketed as Bluetooth Smart, was introduced in 2011. It is targeted at applications in healthcare, fitness, beacons, security, and home entertainment. Bluetooth mesh networking was introduced in July 2017 and enables many-to-many communication over Bluetooth Low Energy. As of 2018, over 8 billion Bluetooth products have been shipped worldwide.</p>
                     </div>
                 </div>
 

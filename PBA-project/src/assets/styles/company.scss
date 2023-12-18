@@ -1,36 +1,38 @@
 @import '../main/colors.scss';
 @import '../global/breakpoints.scss';
 
-.company{
+.company {
 
     .company-section-1 {
         display: flex;
-        padding-left: 5rem;
-        padding-right: 5rem;
+        padding-left: 5%;
+        padding-right: 5%;
         height: auto;
         background-color: var(--color-grey);
-        padding-top: 5%;
+        padding-top: 5rem;
 
         @include media("sm") {
             flex-direction: column;
             height: auto;
-            padding-bottom: 10px;
+            padding-bottom: 2rem;
         }
+
         @include media("xs") {
             flex-direction: column;
             height: auto;
-            padding-bottom: 10px;
+            padding-bottom: 2rem;
 
         }
+
         @include media("xxs") {
             flex-direction: column;
             height: auto;
-            padding-bottom: 10px;
+            padding-bottom: 2rem;
 
         }
     }
 
-    .company-section-2{
+    .company-section-2 {
         display: flex;
         height: auto;
         padding-left: 5rem;
@@ -44,22 +46,28 @@
             width: 100%;
         }
     }
-    .company-section-3{
+
+    .company-section-3 {
         padding-top: 2.5rem;
+
+        @include media("sm") {
+            padding-top: 0;
+        }
     }
 
-    .company-section-4{
+    .company-section-4 {
         display: flex;
         padding-top: 2.5rem;
-        padding-left: 5rem;
-        padding-right: 5rem;
+        padding-left: 5%;
+        padding-right: 5%;
+
         @include media("sm") {
             flex-direction: column;
             color: var(--color-black);
         }
     }
 
-    .company-section-5{
+    .company-section-5 {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -68,22 +76,30 @@
         padding-right: 5rem;
     }
 
-    .about-us{
-        width: 50%;
+    .about-us {
+        max-width: 37.5rem;
         text-align: start;
         color: var(--color-black);
+
         @include media("sm") {
             width: 100%;
         }
     }
 
-    .our-succes-story{
+    .core {
+        margin: 0;
+    }
+
+    .our-succes-story {
+        margin-left: 2rem;
+        margin-bottom: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 50%;
         text-align: start;
         color: var(--color-black);
+
         @include media("sm") {
             color: var(--color-black);
             padding-left: 5rem;
@@ -91,36 +107,40 @@
         }
     }
 
-    .our-succes-story h4{
+    .our-succes-story h4 {
         margin-top: 0;
+
         @include media("md") {
             margin: 0;
         }
     }
 
-    .team-description{
+    .team-description {
         width: 50%;
         text-align: start;
         font-size: 1.25rem;
         color: var(--color-black);
-        padding-right: .625rem;
+        padding-right: 5%;
+
         @include media("sm") {
             width: 100%;
             color: var(--color-black);
-            }
-    }
-
-    .portraits{
-        width: 50%;
-        padding-left: .625rem;
-        @include media("sm") {
-        display: none;
-        width: 100%;
         }
     }
 
-    .portraits-mobile{
+    .portraits {
+        width: 50%;
+        padding-left: .625rem;
+
+        @include media("sm") {
+            display: none;
+            width: 100%;
+        }
+    }
+
+    .portraits-mobile {
         display: none;
+
         @include media("sm") {
             width: auto;
             display: flex;
@@ -129,21 +149,25 @@
         }
     }
 
-    .title{
+    .title {
         display: flex;
-        justify-content:start;
+        justify-content: start;
+        color: var(--color-black);
+        font-size: 11px;
+
         @include media("sm") {
             display: flex;
             justify-content: center;
         }
     }
 
-    .activities{
+    .activities {
         width: 100%;
         height: auto;
         display: flex;
         justify-content: space-around;
         color: var(--color-black);
+
         @include media("sm") {
             flex-direction: column;
             color: var(--color-black);
@@ -154,40 +178,46 @@
         }
     }
 
-    .img-drone{
+    .img-drone {
         display: flex;
         width: 100%;
         height: auto;
         justify-content: center;
         align-items: center;
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+
         @include media("sm") {
             width: 100%;
         }
     }
 
-    .img-drone2{
+    .img-drone2 {
         display: flex;
         width: 100%;
         height: auto;
         justify-content: center;
         align-items: center;
+
         @include media("sm") {
             display: none;
         }
     }
 
-    .img-beach{
+    .img-beach {
         display: flex;
         align-items: center;
         padding: 0px 80px 0px 0px;
         width: 50%;
+
         @include media("sm") {
             display: none;
         }
     }
 
-    #drone{
+    #drone {
         width: 300px;
+
         @include media("sm") {
             width: 250px;
             display: flex;
@@ -195,40 +225,43 @@
         }
     }
 
-    #beach{
-        width: 650px;;
+    #beach {
+        width: 650px;
+        ;
     }
 
-    #drone2{
+    #drone2 {
         width: 100%;
     }
 
-    #portraits{
+    #portraits {
         width: 100%;
     }
 
-    .carousel{
+    .carousel {
         display: none;
+
         @include media("sm") {
             display: block;
         }
     }
 
-    .activities-images{
+    .activities-images {
         width: 100%;
         display: flex;
         justify-content: space-between;
+
         @include media("sm") {
             display: none;
         }
     }
 
-    #bigger-p{
+    #bigger-p {
         font-size: 32px;
+        margin: 0;
+
         @include media("md") {
             margin: 0;
         }
     }
-
 }
-    

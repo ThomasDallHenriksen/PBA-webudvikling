@@ -1,8 +1,27 @@
+import React, { useState, useEffect } from 'react';
 import '../assets/styles/add.scss';
 import { Link } from 'react-router-dom';
 
 
 const Adddrone = () => {
+    const [options, setOptions] = useState([]);
+
+    useEffect(() => {
+        // Fetch data from PHP backend
+        fetch('https://kienzhe.dk/backend/addDrone.php')
+        .then(response => response.json())
+        .then(data => {
+
+          // Ensure data is an array before setting it in state
+          if (Array.isArray(data)) {
+            setOptions(data);
+          } else {
+            console.error('Invalid data format:', data);
+          }
+        })
+        .catch(error => console.error('Error fetching data:', error));
+      }, []);
+
     return (
         <div className="block">
             <div className="top">
@@ -22,6 +41,13 @@ const Adddrone = () => {
                                 <span className="infopic-text">EU Class label introduced January 1st 2024. This label will be clearly visible on the drone.</span>
                             </div>
                         </div>
+                        <select>
+                        {options.map((option, index) => (
+                            <option value={option.value}>
+                            {option.label}
+                            </option>
+                            ))}
+                        </select>
                         <select id="dropdown1" name="dropdown1">
                             <option value="option1">Undefined</option>
                             <option value="option2">class 0</option>

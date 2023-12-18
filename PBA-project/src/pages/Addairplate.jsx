@@ -45,7 +45,7 @@ const Addairplate = () => {
                 <h2 className='bottom_text'>Here you have the opportunity to register your AirPlate for a drone. Enter the provided serial number of your AirPlate in the field below.</h2>
             </div>
             <div className="input-container">
-                <div className="input-wrapper">
+                <form className="input-wrapper" onSubmit={checkAirplate}>
                     <input
                         type="text"
                         className="serial-input"
@@ -61,10 +61,10 @@ const Addairplate = () => {
                         />
                         <span className="infopic-text">The serial number is unique and is used to identify the individual AirPlate in our database.</span>
                     </div>
-                </div>
                 <Link to="/Adddrone">
                     <button className="next-button" onClick={handleAdd}>Next</button>
                 </Link>
+                </form>
             </div>
         </div>
     );

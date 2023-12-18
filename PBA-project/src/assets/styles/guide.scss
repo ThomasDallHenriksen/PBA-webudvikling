@@ -4,17 +4,20 @@
 .block {
     color: var(--color-black);
 }
+
 .element {
     padding-top: 5rem;
     padding-left: 5%;
     padding-right: 5%;
     font-size: 1rem;
-    max-width: 106.25rem;
 
     .header-container {
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        gap: 40rem;
+        margin-top: 5rem;
+        margin-bottom: 0;
     }
 
     .title {
@@ -25,8 +28,12 @@
     .flag-container {
         display: flex;
         gap: 10%;
-    }}
-    
+    }
+}
+
+.guide, h1 {
+    margin-bottom: 0;
+}
 
 .bread {
     font-weight: 400;

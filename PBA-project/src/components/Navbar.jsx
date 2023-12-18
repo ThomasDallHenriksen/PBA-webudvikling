@@ -45,7 +45,7 @@ const Navbar = () => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post('https://kienzhe.dk/backend/getData.php');
+      const response = await axios.post('https://kienzhe.dk/backend/logout.php');
       console.log('Logout Response:', response);
       if (response.data.success) {
         setIsLoggedIn(false);

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import * as bcrypt from 'bcryptjs';
 import '../assets/styles/account.scss';
 
 
@@ -8,45 +7,35 @@ const Login = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [isLoggedIn, setIsLoggedIn] = useState(false);  // Tilføjet denne linje
-    const [userName, setUserName] = useState('');  // Tilføjet denne linjeq
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
-        const hashedPassword = bcrypt.hashSync(password, 10);
-
-        console.log('login attempt:', {email, password});
-    
         try {
-            console.log('Login attempt:', { email, password }); // Tilføj denne linje for at logge login-forsøget
-    
-            const response = await axios.post('https://kienzhe.dk/backend/contactForm.php', {
-                email: email,
-                password: hashedPassword,
+            const response = await axios.post('https://kienzhe.dk/backend/login.php', {
+              email: email,
+              password: password,
             });
-    
-            console.log('Login response:', response.data); // Tilføj denne linje for at logge responsen fra serveren
-    
+      
             if (response.data.success) {
-                setIsLoggedIn((prev) => !prev);
-                setUserName(response.data.userName);
-    
-                sessionStorage.setItem('user', response.data.message);
-                sessionStorage.setItem('userName', response.data.userName);
-    
-                console.log('Login successful');
-                console.log('IsLoggedIn:', isLoggedIn);
-                console.log('UserName:', userName);
-    
-                window.location.reload();
+              // Redirect to a new page or perform other actions upon successful login
+              console.log('Login successful');
+              sessionStorage.setItem('user', JSON.stringify (response.data.user));
+              sessionStorage.setItem('userName', response.data.userName);
+              console.log('login successful');
+              console.log('isLoggedIn:', response.data.isLoggedIn);
+              console.log('userName:', response.data.isLoggedIn);
+
+
+
+              window.location.reload();
             } else {
-                console.error('Login failed:', response.data.message || 'Unknown error');
-                console.log('Full error response:', response);
+              // Handle login failure
+              console.error('Login failed:', response.data.message);
             }
-        } catch (error) {
+          } catch (error) {
             console.error('An error occurred during login:', error);
-        }
+          }
     };
 
     return (

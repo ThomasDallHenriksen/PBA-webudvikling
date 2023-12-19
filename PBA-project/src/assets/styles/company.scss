@@ -68,10 +68,10 @@
     }
 
     .company-section-5 {
+        height: 35rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding-top: 2.5rem;
         padding-left: 5rem;
         padding-right: 5rem;
     }
@@ -250,6 +250,7 @@
         width: 100%;
         display: flex;
         justify-content: space-between;
+        padding: 1rem;
 
         @include media("sm") {
             display: none;

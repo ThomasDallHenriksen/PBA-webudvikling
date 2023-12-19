@@ -34,9 +34,11 @@
 
 .profile-section-1{
     width: 100%;
+    height: 10rem;
 }
 
 .profile-section-2{
+    height: 24rem;
     padding: 0 5rem 0 5rem;
     @include media("md") {
         padding: 0 3.75rem 0 3.75rem;

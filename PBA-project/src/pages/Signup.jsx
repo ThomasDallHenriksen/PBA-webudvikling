@@ -30,47 +30,18 @@ const Signup = () => {
                 },
             });
 
-            console.log(response.data);
-
-        } catch (error) {
-            console.error('Fejl:', error);
-        }
+            if (response.data.redirect) {
+                // Redirect to the specified path
+                window.location.href = response.data.redirect;
+              } else {
+                console.log(response.data);
+              }
+          
+            } catch (error) {
+              console.error('Fejl:', error);
+            }
 
     };
-
-    // const handleChange = (e) => {
-    //     setUserData({
-    //         ...userData,
-    //         [e.target.name]: e.target.value,
-    //     })
-    // };
-
-    //   const handleFormSubmit = async (e) => {
-    //     e.preventDefault();
-
-    //     const transformedFormData = {
-    //         first_name: formData.firstName,
-    //         last_name: formData.lastName,
-    //         email: formData.email,
-    //         password: formData.password,
-    //       };
-
-    //       try {
-    //         const response = await axios.post('http://kienzhe.dk/backend/login.php', transformedFormData);
-
-    //         if (response.status === 200) {
-    //           // Handle successful registration
-    //           console.log('User registered successfully');
-    //         } else {
-    //           // Handle registration failure
-    //           console.error('Registration failed with status:', response.status);
-    //           console.error('Response data:', response.data);
-    //         }
-    //       } catch (error) {
-    //         console.error('Error during registration:', error);
-    //       }
-    //   };
-
     return (
         <div className="signup">
             <div className="column column1">

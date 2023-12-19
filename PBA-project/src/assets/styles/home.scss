@@ -483,6 +483,7 @@
         border-radius: 1.302vw;
         border: none;
         margin-top: 1.042vw;
+        cursor: pointer;
 
         @include media("sm") {
             width: 29.980vw;

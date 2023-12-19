@@ -1,0 +1,54 @@
+@import '../main/font.scss';
+@import '../main/colors.scss';
+@import '../global/breakpoints.scss';
+
+
+.product-section-1{
+    display: flex;
+    width: 100%;
+    padding-top: 5%;
+    @include media("sm"){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.titletop {
+    margin-bottom: 0;
+}
+.drone-carousel{
+    width: 45%;
+    padding-left: 5%;
+    margin-top: 4rem;
+    @include media("sm"){
+        display: none;
+    }
+}
+
+.demo-description{
+    width: 50%;
+    color: var(--color-black);
+    padding: 3rem 8.9375rem 1rem 1.875rem;
+    @include media("sm"){
+        width: auto;
+        margin-top: 4rem;
+        color: var(--color-black);
+        padding: 1rem 1.875rem 1rem 1.875rem;
+    }
+
+}
+
+h1{
+    margin-top: 0;
+}
+
+//mobile version
+.mobile-drone-carousel{
+    display: none;
+    @include media("sm"){
+        display: block;
+        padding: 1rem;
+    }
+}
+

@@ -1,39 +1,176 @@
-@import '../main/colors.scss';
-
-    .navbar{
-        height: 3.875rem;
-        display: flex;
-        background-color: var(--color-grey);
-        justify-content: space-between;
-        padding-right: 1.25rem;
-        align-items: center;
-    }
-
-    .link a{
-        color: var(--color-white);
+.navbar {
+    width: 93.4%;
+    height: 3.875rem;
+    display: flex;
+    position: absolute;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0);
+    margin-top: 1.5rem;
+    z-index: 1;
+}
+  
+.link {
+    display: flex;
+  
+    a {
+        color: var(--color-black);
         margin-left: 1.25rem;
-        /* font-size: clamp-calc(0.1rem, 1.5rem, 24.375rem); */
         font-size: 1.5rem;
-    }
-    .link a:hover {
-        color: var(--color-lightestgrey);
+  
+        &:hover {
+        color: var(--color-skyblue);
+        }
     }
 
+    .dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        display: none;
+        flex-direction: column;
+        background-color: rgba(2, 185, 250, 0.9);
+        border-radius: 5px 5px 5px 5px;
+        transition: 0.4s;
+        align-items: center;
+        width: 100%;
+        &:hover {
+            color: var(--color-skyblue);
+        }
 
-    #navbarButton{
+        &.show {
+            display: flex;
+        }
+
+        a {
+            color: var(--color-black);
+            margin-left: 1.25rem;
+            font-size: 1.5rem;
+
+            
+        }
+    }
+  
+    #navbarButton {
         border-color: var(--color-skyblue);
         border-radius: 1.5625rem;
         background-color: var(--color-skyblue);
-        padding: .1875rem .5625rem .5rem .75rem;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
-    }
-
-    #navbarButton:hover {
-        box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, color */
         color: var(--color-white);
+        padding: 1px 9px 1px 12px;
+        transition: font-size 0.5s ease, transform 0.5s ease;
+        margin-right: 1rem;
     }
   
-
-    .navbar-logo{
-        padding-left: 80px;
+    #navbarButton:hover {
+        transform: scale(1.1);
+        color: var(--color-white);
     }
+}
+  
+.navbar-logo {
+    padding-left: 5%;
+}
+  
+#profil {
+    display: inline-block;
+    background-image: url("../public/spritesheet.png");
+    background-position-x: -20px;
+    background-position-y: -390px;
+    background-color: transparent;
+    width: 39px;
+    height: 39px;
+}
+
+.dropdown-btn {
+    position: relative; // Make the container relative for absolute positioning within it
+  }
+  
+  .dropdown-content {
+    position: absolute;
+    top: 100%; // Position the dropdown content below the button
+    right: 0; // Align the dropdown content with the right edge of the button
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff; // Add a background color if needed
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); // Add a box shadow for a nice effect
+    z-index: 1; // Ensure the dropdown is above other elements
+  }
+  
+  // Add styling for individual links in the dropdown if needed
+  .dropdown-content a {
+    margin-left: 0;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    &:hover {
+      background-color: var(--color-lightestgrey);
+      color: var(--color-black);
+    }
+  }
+  
+@media screen and (min-width: 1025px) {
+    .burger-menu {
+        display: none;
+    }
+  
+    .link-container {
+        display: none;
+    }
+}
+  
+@media screen and (max-width: 1024px) {
+    .link {
+        display: none;
+    }
+  
+    .burger-menu {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        cursor: pointer;
+        width: 40px;
+        height: 50%;
+        background-color: var(--color-skyblue);
+        border-radius: 5px 5px 5px 5px;
+  
+        div {
+            width: 25px;
+            height: 2px;
+            margin: 4px 0;
+            background: black;
+            background-color: var(--color-white);
+  
+            &.middle {
+                margin: 5px 0 5px 0;
+            }
+        }
+    }
+            
+    .link-container {
+        display: none;
+        flex-direction: column;
+        transition: 0.4s;
+        position: absolute;
+        top: 12%;
+        left: 0%;
+        width: 100%;
+        background-color: rgba(2, 185, 250, 0.9);
+        border-radius: 5px 5px 5px 5px;
+        transition: 0.4s;
+        align-items: center;
+      
+        &.show {
+            display: flex;
+        }
+      
+        a {
+            color: var(--color-black);
+            font-size: 1.5rem;
+      
+            &:hover {
+                color: var(--color-grey);
+            }
+        }
+    }
+}

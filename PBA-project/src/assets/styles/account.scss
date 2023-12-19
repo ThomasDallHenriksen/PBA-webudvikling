@@ -1,0 +1,191 @@
+@import '../main/colors.scss';
+@import '../global/breakpoints.scss';
+
+.signup {
+    max-width: 100%;
+    display: flex;
+    min-height: 1080px;
+
+    @include media("md") {
+        flex-direction: column;
+        align-items: center;
+        min-height: auto;
+    }
+}
+
+.column {
+    flex: 1;
+    display: flex;
+    padding-top: 6rem;
+    flex-direction: column;
+    padding-right: 5%;
+    padding-left: 5%;
+    max-width: 25rem;
+    color: var(--color-white);
+
+    @include media("md") {
+        padding-top: 0;
+    }
+}
+
+.column1 {
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: var(--color-darkblue);
+    max-width: 37.5rem;
+    padding-top: 6rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 29.0496px;
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+
+    @include media("md") {
+        background-color: var(--color-white);
+
+        .text-to-hide {
+            display: none;
+        }
+    }
+}
+
+.content {
+    font-size: 1rem;
+    font-weight: 400;
+    min-height: 7.875rem;
+}
+
+.globe {
+    padding-left: 4rem;
+    padding-right: 4rem;
+    padding-top: 5rem;
+    height: auto;
+
+    @include media("md") {
+        padding: 0;
+    }
+}
+
+.globeimg {
+    @include media("md") {
+        max-width: 18.75rem;
+    }
+}
+
+.create {
+    color: var(--color-black);
+    margin-left: 5rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.or {
+    padding-top: 1.6875rem;
+    color: var(--color-lightestgrey);
+    margin-left: 18.75rem;
+    font-size: 1.25rem;
+}
+
+.input-column {
+    max-width: 32.5rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.container {
+    display: flex;
+    min-width: 18.75rem;
+}
+
+.headline {
+    color: var(--color-black);
+}
+
+.forgotpsw a {
+    color: var(--color-darkblue);
+    font-size: 1rem;
+}
+
+.account,
+.login {
+    display: flex;
+    font-size: 1rem;
+    color: var(--color-black);
+    margin-top: 1rem;
+}
+
+.account {
+    margin-right: .5rem;
+}
+
+.login a {
+    color: var(--color-darkblue);
+    text-decoration: none;
+}
+
+.underline-input {
+    border: none;
+    border-bottom: .125rem solid var(--color-black);
+    margin-bottom: 3.625rem;
+    padding: .3125rem;
+    font-size: 1rem;
+    color: var(--color-black);
+    background-color: transparent;
+    padding-top: 2rem;
+}
+
+.buttons {
+    display: flex;
+    margin-top: 1rem;
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+}
+
+.button {
+    opacity: 30%;
+    border: .0625rem solid var(--color-black);
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    margin-right: 2.9375rem;
+    color: var(--color-black);
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: var(--color-lightgrey);
+    }
+}
+
+.createButton {
+    display: flex;
+    align-items: center;
+}
+
+.private {
+    padding: 0.5rem;
+}
+
+.newacc {
+    min-width: 18.75rem;
+    border-radius: .5rem;
+    padding: .5rem;
+    max-width: 31.25rem;
+    margin-top: 2rem;
+    color: var(--color-white);
+    background-color: var(--color-darkblue);
+}
+
+.newacc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-logo {
+    margin-right: .5rem;
+}

@@ -1,0 +1,86 @@
+@import '../main/colors.scss';
+@import '../global/breakpoints.scss';
+
+
+
+.footer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    display: flex;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    font-size: 1.5rem;
+    width: 100%;
+    bottom: 0;
+    height: 14.375rem;
+
+    @include media("sm") {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .airplate-logo {
+        padding-bottom: .5rem;
+    }
+
+    .about-heading {
+        padding-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    .about-text {
+        color: var(--color-footerfont);
+        max-width: 11.25rem;
+        line-height: 1;
+        font-size: .9375rem;
+    }
+
+    &__column {
+        padding-bottom: 1rem;
+        max-width: 18.75rem;
+        margin: 0 auto;
+
+        a {
+            margin-bottom: 1rem;
+            color: var(--color-black);
+            display: block;
+            font-weight: bold;
+
+            @include media("sm") {
+                margin-right: 4.8rem;
+            }
+        }
+    }
+
+    .contact {
+        margin-bottom: 1rem;
+        font-weight: bold;
+
+        @include media("sm") {
+            display: none;
+        }
+    }
+
+    .email {
+        margin-bottom: 1rem;
+    }
+
+    .number {
+        margin-bottom: 2rem;
+    }
+
+    .airmap {
+        text-align: center;
+        margin-bottom: 1rem;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: var(--color-skyblue);
+    }
+}
+
+//mobile version
+
+.contact-mobile {
+    display: none;
+}

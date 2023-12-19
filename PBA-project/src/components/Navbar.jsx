@@ -101,11 +101,11 @@ const Navbar = () => {
               <Link to='/Guideeng' onClick={toggleDropdown}>Guide</Link>
               {isLoggedIn ? (
                 <>
-                  <button onClick={handleLogout}>Logout</button>
+                  <Link to="/" onClick={handleLogout}>Logout</Link>
                 </>
               ) : (
                 
-                <Link to='/login' onClick={() => setShowDropdown(false)}>
+                <Link to='/login'>
                   Login
                 </Link>
                 

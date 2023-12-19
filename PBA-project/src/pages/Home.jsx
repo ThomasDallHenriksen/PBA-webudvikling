@@ -12,7 +12,7 @@ const Home = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('https://kienzhe.dk/backend/newsletter.php', {
+            const response = await axios.post(import.meta.env.VITE_NEWSLETTER_ROUTE, {
                 email: email,
             }, {
                 headers: {

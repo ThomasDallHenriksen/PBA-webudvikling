@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import '../assets/styles/add.scss';
 
 const Addairplate = () => {
     const [serialNum, setSerialNum] = useState('');
@@ -29,7 +30,7 @@ const Addairplate = () => {
         console.log('Extracted userId:', userId);
     
         try {
-            const response = await axios.post('https://kienzhe.dk/backend/user.php', {
+            const response = await axios.post(import.meta.env.VITE_ADD_ROUTE, {
                 serialNum: serialNum,
                 userId: userId,
             });
@@ -42,7 +43,7 @@ const Addairplate = () => {
                 console.log('Serial number added successfully');
                 setSuccess(true);
             } else {
-                console.log('Serial number not found or error adding serial number');
+                alert('Serial number not found or error adding serial number');
             }
         } catch (error) {
             console.error('Error:', error);
@@ -83,7 +84,7 @@ const Addairplate = () => {
                         />
                         <span className="infopic-text">The serial number is unique and is used to identify the individual AirPlate in our database.</span>
                     </div>
-                    <button type="submit">{success ? <Link to="/Adddrone">Next</Link> : 'Next'}</button>
+                    <button className='addButton' type="submit">{success ? <Link to="/Adddrone">Next</Link> : 'Next'}</button>
                 </form>
                 {success && <p>Serial number added successfully!</p>}
             </div>

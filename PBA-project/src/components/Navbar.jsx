@@ -17,13 +17,28 @@ const Navbar = () => {
   useEffect(() => {
     const user = sessionStorage.getItem('user');
     const name = sessionStorage.getItem('userName');
-    
-    if (user && name) {
+    if (user) {
       setIsLoggedIn(true);
       setUserName(name || '');
     }
-  }, [isLoggedIn, userName]);
+  }, []);
 
+  const handleLogout = async () => {
+    try {
+      // Your logout logic here
+
+      // Clear session storage
+      sessionStorage.removeItem('user');
+      sessionStorage.removeItem('userName');
+
+      // Update state and log to console
+      setIsLoggedIn(false);
+      setUserName('');
+      console.log('Logout successful'); // Log the message to console
+    } catch (error) {
+      console.error('An error occurred during logout:', error);
+    }
+  };
 
   const toggleLinks = () => {
     setShowLinks(!showLinks);
@@ -43,27 +58,7 @@ const Navbar = () => {
     setShowDropdown(!showDropdown);
   };
 
-  const handleLogout = async () => {
-    try {
-      const response = await axios.post('https://kienzhe.dk/backend/logout.php');
-      console.log('Logout Response:', response);
-      if (response.data.success) {
-        setIsLoggedIn(false);
-        setUserName('');
 
-        sessionStorage.removeItem('user');
-        sessionStorage.removeItem('userName');
-
-        console.log('Logout successful');
-      console.log('IsLoggedIn:', isLoggedIn);
-      console.log('UserName:', userName);
-      } else {
-        console.error('logout failed:' , response.data.message);
-      }
-    } catch (error) {
-      console.error('an error occured:', error);
-    }
-  };
 
   return (
     <nav className="navbar">
@@ -100,7 +95,11 @@ const Navbar = () => {
                   <button onClick={handleLogout}>Logout</button>
                 </>
               ) : (
-                <Link to='/signup' onClick={toggleDropdown}>Login</Link>   
+                
+                <Link to='/login' onClick={() => setShowDropdown(false)}>
+                  Login
+                </Link>
+                
               )}
             </div>
           )}

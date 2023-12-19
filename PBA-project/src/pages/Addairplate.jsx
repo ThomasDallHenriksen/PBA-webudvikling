@@ -10,25 +10,34 @@ const Addairplate = () => {
     useEffect(() => {
         // Check if the user is logged in
         const storedUser = sessionStorage.getItem('user');
+        console.log('Stored User:', storedUser);
         setIsLoggedIn(!!storedUser); // !! converts to a boolean
     }, []);
 
     const handleAdd = async (e) => {
         e.preventDefault();
-
+    
         if (!isLoggedIn) {
             console.log('Must be logged in to add an airplate');
             return;
         }
-
+    
+        // Extract the userId from the stored user object
+        const storedUser = JSON.parse(sessionStorage.getItem('user'));
+        const userId = storedUser.id;
+    
+        console.log('Extracted userId:', userId);
+    
         try {
             const response = await axios.post('https://kienzhe.dk/backend/user.php', {
-            serialNum: serialNum,
-            userId: sessionStorage.getItem('userId'),
-        });
-
+                serialNum: serialNum,
+                userId: userId,
+            });
+    
+            console.log('Backend response:', response.data);
+    
             const result = response.data;
-
+    
             if (result.success) {
                 console.log('Serial number added successfully');
                 setSuccess(true);
@@ -37,7 +46,7 @@ const Addairplate = () => {
             }
         } catch (error) {
             console.error('Error:', error);
-
+    
             if (error.response) {
                 console.log('Server response:', error.response);
                 console.log(`An error occurred: ${error.response.data.message}`);

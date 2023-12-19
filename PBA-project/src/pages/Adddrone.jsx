@@ -8,7 +8,7 @@ const Adddrone = () => {
 
     useEffect(() => {
         // Fetch data from PHP backend
-        fetch('https://kienzhe.dk/backend/addDrone.php')
+        fetch(import.meta.env.VITE_DRONE_ROUTE)
         .then(response => response.json())
         .then(data => {
 

@@ -12,7 +12,7 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('https://kienzhe.dk/backend/login.php', {
+            const response = await axios.post(import.meta.env.VITE_LOGIN_ROUTE, {
               email: email,
               password: password,
             });

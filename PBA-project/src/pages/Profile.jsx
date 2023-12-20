@@ -12,6 +12,7 @@ const Profile = () => {
         const storedUserData = sessionStorage.getItem('user');
         if(storedUserData) {
             setUserData(JSON.parse(storedUserData));
+            setOpenAccordions([1]);
         }
     }, []);
 

@@ -45,9 +45,6 @@
 
 .input-wrapper {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     padding: 0 1rem;
 }
 .input-wrapper2 {
@@ -90,6 +87,7 @@
     background-color: var(--color-white);
     cursor: pointer;
     margin-left: 0.7rem;
+    margin-top: 2rem;
 }
 
 .addButton a {
@@ -157,15 +155,25 @@ label {
 #dropdown1 {
     width: 8.25rem;
     height: 1.5625rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
 }
 
 #dropdown2 {
     width: 8.25rem;
     height: 1.5625rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
 }
 
 #dropdown3 {
     width: 8.25rem;
     height: 1.5625rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
 
+}
+
+.serialnumber{
+    display: flex;
 }

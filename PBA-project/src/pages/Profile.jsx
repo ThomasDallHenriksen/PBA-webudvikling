@@ -143,7 +143,7 @@ const Profile = () => {
                             <div className="person-icon">
                                 <img src="images/profile/info.png" alt="" />
                             </div>
-                            <div className={`accordion-header ${openAccordions.includes(1) ? 'open' : ''}`} onClick={() => handleAccordionToggle(4)}>About</div>
+                            <div className={`accordion-header ${openAccordions.includes(1) ? 'open' : ''}`} onClick={() => handleAccordionToggle(4)}>Serial Number:</div>
                         </div>
                         <div className={`expand ${openAccordions.includes(4) ? 'open' : ''}`} onClick={() => handleAccordionToggle(14)}>
                             <img src={openAccordions.includes(4) ? 'images/profile/expandMore.png' : 'images/profile/arrow-right.png'} alt="" />
@@ -151,12 +151,14 @@ const Profile = () => {
                     </div>
                     {openAccordions.includes(4) && (
                         <div className="accordion-content">
-                            <div>Serial Numbers:</div>
-                            <ul>
+                            <div>
+                                <ul>
                                 {serialNumArray.map((serialNum, index) => (
                                     <li key={index}>{serialNum}</li>
                                 ))}
                             </ul>
+                            </div>
+
                         </div>
                     )}
                 </div>

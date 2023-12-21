@@ -2,16 +2,33 @@ import React, { useState, useEffect } from 'react';
 import '../assets/global/breakpoints.scss';
 import '../assets/main/font.scss';
 import '../assets/styles/profile.scss';
+import axios from 'axios';
 
 
 const Profile = () => {
     const [openAccordions, setOpenAccordions] = useState([]);
     const [userData, setUserData] = useState(null);
+    const [serialNumArray, setSerialNumArray] = useState([]);
 
     useEffect(() => {
         const storedUserData = sessionStorage.getItem('user');
-        if(storedUserData) {
+        if (storedUserData) {
             setUserData(JSON.parse(storedUserData));
+    
+            const userEmail = JSON.parse(storedUserData).email; // Antag, at e-mailen er gemt i user-data
+            axios.post('https://kienzhe.dk/backend/user.php', { userEmail })
+            .then(response => {
+                console.log(response);  // Log hele response-objektet
+                if (response.data.success) {
+                    setOpenAccordions([1]);
+                    setSerialNumArray(response.data.serialNumArray);
+                } else {
+                    console.error(response.data.message);
+                }
+            })
+            .catch(error => {
+                console.error('error fetching:', error);
+            });
         }
     }, []);
 
@@ -142,7 +159,12 @@ const Profile = () => {
                     </div>
                     {openAccordions.includes(4) && (
                         <div className="accordion-content">
-                            <div>content 4</div>
+                            <div>Serial Numbers:</div>
+                            <ul>
+                                {serialNumArray.map((serialNum, index) => (
+                                    <li key={index}>{serialNum}</li>
+                                ))}
+                            </ul>
                         </div>
                     )}
                 </div>

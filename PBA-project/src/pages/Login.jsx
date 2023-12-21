@@ -12,23 +12,24 @@ const Login = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('https://kienzhe.dk/backend/login.php', {
+            const response = await axios.post(import.meta.env.VITE_LOGIN_ROUTE, {
               email: email,
               password: password,
             });
       
             if (response.data.success) {
-              // Redirect to a new page or perform other actions upon successful login
-              console.log('Login successful');
-              sessionStorage.setItem('user', JSON.stringify (response.data.user));
-              sessionStorage.setItem('userName', response.data.userName);
-              console.log('login successful');
-              console.log('isLoggedIn:', response.data.isLoggedIn);
-              console.log('userName:', response.data.isLoggedIn);
+                // Redirect to a new page or perform other actions upon successful login
+                console.log('Login successful');
+                sessionStorage.setItem('user', JSON.stringify (response.data.user));
+                sessionStorage.setItem('userName', response.data.userName);
+                console.log('login successful');
+                console.log('isLoggedIn:', response.data.isLoggedIn);
+                console.log('userName:', response.data.isLoggedIn);
 
+                // Redirect to the profile page
+                window.location.href = '/profile';
 
-
-              window.location.reload();
+              
             } else {
               // Handle login failure
               console.error('Login failed:', response.data.message);

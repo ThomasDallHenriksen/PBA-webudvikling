@@ -72,14 +72,7 @@ const Profile = () => {
                                     <div className='fullName'>Full name</div>
                                     <div className='fullName-output'>{userData.first_name} {userData.last_name}</div>
                                 </div>
-                                <div className='dob'>
-                                    <div className='dob-hover'>Date of birth</div>
-                                    <div className="dob-output">11-1-95</div>
-                                </div>
-                                <div className='gender'>
-                                    <div className='gender-hover'>Gender</div>
-                                    <div className="gender-output">Male</div>
-                                </div>
+
                             </div>
                             <button className='gear'>
                                 <img src="/images/profile/gear.png" alt="" />
@@ -138,7 +131,6 @@ const Profile = () => {
                             </div>
                         </div>
                         <button className='gear'>
-                            
                             <img src="/images/profile/gear.png" alt="" />
                         </button>
                     </div>

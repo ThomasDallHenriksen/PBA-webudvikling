@@ -1,0 +1,30 @@
+@import '../main/colors.scss';
+
+    
+    .signup{
+        display: flex;
+        width: 100%;
+        height: auto;
+    }
+
+    .signup-info{
+        background-color: var(--color-darkblue);
+        color: var(--color-white);
+        padding-top: 50px;
+        width: 40%;
+        height: 100vh;
+    }
+
+    .signup-info img{
+        width: 80%;
+    }
+
+    .signup-form{
+        padding: 50px;
+        width: 60%;
+        text-align: start;
+    }
+
+    .socials{
+        display: flex;
+    }

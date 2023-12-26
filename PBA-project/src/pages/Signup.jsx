@@ -31,7 +31,6 @@ const Signup = () => {
             });
 
             if (response.data.redirect) {
-                // Redirect to the specified path
                 window.location.href = response.data.redirect;
               } else {
                 console.log(response.data);

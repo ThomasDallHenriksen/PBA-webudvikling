@@ -10,7 +10,7 @@ const Product = () => {
         'images/carousel/carousel2.png',
         'images/carousel/carousel3.png'
     ];
-    
+
     return (
         <div className="product">
             <div className="product-section-1">
@@ -27,21 +27,18 @@ const Product = () => {
                         production. It can be charged through USB-C and has 2+ hrs of battery
                         operation from a single full charge. It can also be integrated without
                         battery, directly powered from the drone with 5 V.
-                        <br/><br/>-Easy configuration
-                        <br/><br/>-Compatible with any drone
+                        <br /><br />-Easy configuration
+                        <br /><br />-Compatible with any drone
                     </p>
                 </div>
                 <div className='mobile-drone-carousel'>
                     <Carousel images={images} />
                 </div>
             </div>
-            {/* <div className="product-section-2">
-                <img src="images/carousel/drone2.png" alt="" />
-            </div> */}
         </div>
-        
-    
+
+
     );
-  };
-  
-  export default Product;
+};
+
+export default Product;

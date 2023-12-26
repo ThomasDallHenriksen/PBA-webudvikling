@@ -5,41 +5,6 @@ import '../assets/main/font.scss'
 import '../assets/styles/contact.scss';
 
 const Contact = () => {
-    // const [formData, setFormData] = useState({
-    //     name: '',
-    //     email: '',
-    //     phone: '',
-    //     message:'',
-    // });
-
-    // const handleChange = (e) => {
-    //     setFormData({ ...formData, [e.target.name]: e.target.value});
-    // };
-
-    // const handleSubmit = async (e) => {
-    //     e.preventDefault();
-
-    //     const templateParams = {
-    //         to_email: '',
-    //         name: formData.name,
-    //         email: formData.email,
-    //         phone: formData.phone,
-    //         message: formData.message,
-    //     };
-
-    //     emailjs.send(
-    //         service_wl4etu5,
-    //         template_4mwsv1h,
-    //         templateParams,
-    //         Acxi6gURdvLCYbdq4
-    //     )
-    //     .then((response) => {
-    //         console.log('email sent:', response);
-    //     })
-    //     .catch((error) => {
-    //         console.error('error sending email:', error);
-    //     });
-    // };
 
     const form = useRef();
 
@@ -47,11 +12,11 @@ const Contact = () => {
         e.preventDefault();
 
         emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, import.meta.env.VITE_PUBLIC_ID)
-        .then((result) => {
-            console.log(result.text);
-        }, (error) => {
-            console.log(error.text);
-        });
+            .then((result) => {
+                console.log(result.text);
+            }, (error) => {
+                console.log(error.text);
+            });
     };
 
     return (
@@ -91,7 +56,7 @@ const Contact = () => {
                     </div>
 
                     <div className="contact-info__right">
-                        
+
                         <form ref={form} className='contact-form' onSubmit={sendEmail}>
                             <h3>Let's talk</h3>
                             <p>Feel free to drop a line below</p>
@@ -100,7 +65,6 @@ const Contact = () => {
                                 className='contact-form__name'
                                 placeholder='Your Name'
                                 name='name'
-                                // onChange={handleChange}
                                 required>
                             </input>
 
@@ -109,7 +73,6 @@ const Contact = () => {
                                 className='contact-form__email'
                                 placeholder='Your E-mail'
                                 name='email'
-                                // onChange={handleChange}
                                 required>
                             </input>
 
@@ -118,15 +81,13 @@ const Contact = () => {
                                 className='contact-form__phone'
                                 placeholder='Phone Number'
                                 name='phone'
-                                // onChange={handleChange}
-                                >
+                            >
                             </input>
 
                             <textarea
                                 name='message'
                                 className='contact-form__message'
                                 placeholder='Message'
-                                // onChange={handleChange}
                                 required>
                             </textarea>
 
@@ -137,7 +98,7 @@ const Contact = () => {
                             </input>
                         </form>
                     </div>
-                </div>             
+                </div>
             </div>
 
             <div className="contact-mobile">
@@ -148,7 +109,7 @@ const Contact = () => {
 
                 <div className="mobile-content">
                     <p>If you have any questions or need
-                    <br />help, please fill out the form below. </p>
+                        <br />help, please fill out the form below. </p>
 
                     <form className="mobile-form">
 
@@ -215,8 +176,8 @@ const Contact = () => {
                         </div>
                     </div>
 
-                    </div>
                 </div>
+            </div>
 
             <div className="contact-personal">
                 <h3>Other ways to get in touch</h3>
@@ -227,9 +188,9 @@ const Contact = () => {
                         <p>Administrative Director</p>
                         <p>august.mader@airplate.dk</p>
                         <p>+45 31549731</p>
-                    
+
                     </div>
-                <div className="contact-personal__ceo">
+                    <div className="contact-personal__ceo">
                         <img src='../public/images/contactPage/founder.png'></img>
                         <h4>Troels Andreasen</h4>
                         <p>CTO, Co-founder</p>

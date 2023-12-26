@@ -1,54 +1,62 @@
 @import '../main/colors.scss';
 @import '../global/breakpoints.scss';
 
-.profile{
+.profile {
     color: var(--color-black);
     padding: 0 5rem 0 5rem;
     padding-top: 5%;
+
     @include media("md") {
         padding: 0 60px 0 60px;
-        
+
 
     }
+
     @include media("sm") {
         padding: 0 2.5rem 0 2.5rem;
 
     }
 }
 
-.profile-title{
+.profile-title {
     font-size: 400%;
-    transition: font-size 0.5s ease; /* Add a smooth transition effect */
+    transition: font-size 0.5s ease;
 
     @include media("md") {
         font-size: 300%;
     }
+
     @include media("sm") {
         font-size: 200%;
     }
+
     @include media("xs") {
         font-size: 100%;
     }
-    
+
 }
 
-.profile-section-1{
+.profile-section-1 {
     width: 100%;
     height: 10rem;
 }
 
-.profile-section-2{
+.profile-section-2 {
     height: 24rem;
     padding: 0 5rem 0 5rem;
+
     @include media("md") {
         padding: 0 3.75rem 0 3.75rem;
     }
+
     @include media("sm") {
         padding: 0 2.5rem 0 2.5rem;
     }
+
     @include media("xs") {
         padding: 0 1.25rem 0 1.25rem;
     }
+
     @include media("xxs") {
         padding: 0 0 0 0;
     }
@@ -56,159 +64,179 @@
 
 
 
-.accordion-content{
+.accordion-content {
     display: flex;
     justify-content: space-between;
     padding: 0 2.5rem 0 2.5rem;
+
     @include media("xxs") {
         padding: 0 0 0 0;
     }
-    :hover{
+
+    :hover {
         color: var(--color-black);
     }
 
 }
 
-.personal-info, .password, .contact-accordion{
+.personal-info,
+.password,
+.contact-accordion {
     width: 95%;
 }
 
-.gear{
+.gear {
     height: 2.5rem;
     padding: 0;
     background-color: transparent;
 }
 
 .profile {
-    /* Your existing styles for profile container */
-  
+
+
     .accordion-item {
-      margin-bottom: .9375rem; /* Adjust spacing between accordion items */
-      user-select: none;
-  
-      .accordion-header, .name, .dob, .gender, .password, .email, .phone-number, .accordion-expand-header {
-        cursor: pointer;
-        position: relative;
-  
-        &:hover {
-          /* Optional: Style for hover effect, you can customize as needed */
-          color: #007bff; /* Change to your preferred color */
-        }
-  
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 100%; /* Fills the whole width */
-          height: .125rem; /* Adjust the thickness of the underline as needed */
-          background-color: var(--color-black); /* Change to your preferred color */
-          transform-origin: bottom left;
-          transform: scaleX(1); /* Show the underline at all times */
-        }
-      }
-  
-      .accordion-content {
-        /* Your existing styles for accordion content */
-        :hover{
-            color: var(--color-black);
-            cursor: default;
-        }
-      }
+        margin-bottom: .9375rem;
+        user-select: none;
 
-        .name{
+        .accordion-header,
+        .name,
+        .dob,
+        .gender,
+        .password,
+        .email,
+        .phone-number,
+        .accordion-expand-header {
+            cursor: pointer;
+            position: relative;
+
+            &:hover {
+                color: #007bff;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: .125rem;
+                background-color: var(--color-black);
+                transform-origin: bottom left;
+                transform: scaleX(1);
+            }
+        }
+
+        .accordion-content {
+            :hover {
+                color: var(--color-black);
+                cursor: default;
+            }
+        }
+
+        .name {
             display: flex;
+
             @include media("sm") {
                 display: block;
             }
+
             :hover {
                 color: var(--color-black);
             }
         }
 
-        .dob{
+        .dob {
             display: flex;
+
             @include media("sm") {
                 display: block;
             }
+
             :hover {
                 color: var(--color-black);
             }
         }
 
-        .gender{
+        .gender {
             display: flex;
+
             @include media("sm") {
                 display: block;
             }
+
             :hover {
                 color: var(--color-black);
             }
         }
 
-        .password{
+        .password {
             display: flex;
+
             @include media("sm") {
                 display: block;
             }
+
             :hover {
                 color: var(--color-black);
             }
         }
 
-        .email, .phone-number{
+        .email,
+        .phone-number {
             display: flex;
+
             @include media("sm") {
                 display: block;
             }
         }
 
-        .fullName{
+        .fullName {
             padding-right: 13.7rem;
-            :hover{
+
+            :hover {
                 color: var(--color-black);
             }
         }
 
-        .dob-hover{
+        .dob-hover {
             padding-right: 12rem;
         }
 
-        .gender-hover{
+        .gender-hover {
             padding-right: 16rem;
         }
 
-        .password-title{
+        .password-title {
             padding-right: 11.5rem;
-            :hover{
+
+            :hover {
                 color: var(--color-black);
             }
         }
 
-        .email-title{
+        .email-title {
             padding-right: 13rem;
         }
 
-        .phone-title{
+        .phone-title {
             padding-right: 9.1rem;
 
         }
 
-        .password-gear{
-            padding: 0 1.8rem 0 1.8rem 
+        .password-gear {
+            padding: 0 1.8rem 0 1.8rem
         }
 
-        .accordion-expand-header{
+        .accordion-expand-header {
             display: flex;
             justify-content: space-between;
         }
 
-        .flex{
+        .flex {
             display: flex;
         }
 
 
-        
+
     }
-  }
-  
+}

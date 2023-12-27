@@ -151,7 +151,7 @@
 
     &__icon {
         width: 17%;
-        background-image: url(../../../public/spritesheet.png);
+        background-image: url(../../../public/spritesheets.png);
         background-size: cover;
     }
 
@@ -186,8 +186,8 @@
 
     &__icon {
         width: 17%;
-        background-image: url(../../../public/spritesheet.png);
-        background-position: 0.052vw -4.271vw;
+        background-image: url(../../../public/spritesheets.png);
+        background-position: 0.052vw -5.71vw;
         background-size: cover;
     }
 
@@ -224,7 +224,7 @@
 
     &__icon {
         width: 17%;
-        background-image: url(../../../public/spritesheet.png);
+        background-image: url(../../../public/spritesheets.png);
         background-position: 0.052vw -10.104vw;
         background-size: cover;
     }
@@ -430,7 +430,7 @@
         @include media("sm") {
             width: 7.813vw;
             height: 7.813vw;
-            background-image: url(../../../public/spritesheet.png);
+            background-image: url(../../../public/spritesheets.png);
             background-size: cover;
         }
     }
@@ -471,8 +471,8 @@
         @include media("sm") {
             width: 7.813vw;
             height: 7.813vw;
-            background-image: url(../../../public/spritesheet.png);
-            background-position: 0.098vw -8.008vw;
+            background-image: url(../../../public/spritesheets.png);
+            background-position: 0.098vw -10.9vw;
             background-size: cover;
         }
     }
@@ -513,7 +513,7 @@
         @include media("sm") {
             width: 7.813vw;
             height: 7.813vw;
-            background-image: url(../../../public/spritesheet.png);
+            background-image: url(../../../public/spritesheets.png);
             background-position: 0.098vw -19.945vw;
             background-size: cover;
         }

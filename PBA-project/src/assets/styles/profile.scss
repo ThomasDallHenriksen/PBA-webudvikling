@@ -239,4 +239,26 @@
 
 
     }
+
+}
+
+.noUser {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    &__login{
+        display: flex;
+        font-size: 1rem;
+        color: var(--color-black);
+        margin-top: 1rem;
+    }
+}
+
+#jim{
+    display: flex;
+    font-size: 3.2em;
+  line-height: 1.1;
 }

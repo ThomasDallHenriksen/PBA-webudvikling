@@ -41,7 +41,9 @@ const Profile = () => {
     };
 
     if (!userData) {
-        return <div>Loading...</div>
+        return <div className='noUser'>
+                <h1>Need to&nbsp;<a href="/login">login</a></h1>
+            </div>
     }
 
     return (

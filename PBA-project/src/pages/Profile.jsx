@@ -42,7 +42,7 @@ const Profile = () => {
 
     if (!userData) {
         return <div className='noUser'>
-                <h1>Need to&nbsp;<a href="/login">login</a></h1>
+                <h1>Need to&nbsp;<a id='login-a' href="/login">login</a></h1>
             </div>
     }
 

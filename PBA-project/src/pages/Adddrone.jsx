@@ -7,20 +7,18 @@ const Adddrone = () => {
     const [options, setOptions] = useState([]);
 
     useEffect(() => {
-        // Fetch data from PHP backend
         fetch(import.meta.env.VITE_DRONE_ROUTE)
-        .then(response => response.json())
-        .then(data => {
+            .then(response => response.json())
+            .then(data => {
 
-          // Ensure data is an array before setting it in state
-          if (Array.isArray(data)) {
-            setOptions(data);
-          } else {
-            console.error('Invalid data format:', data);
-          }
-        })
-        .catch(error => console.error('Error fetching data:', error));
-      }, []);
+                if (Array.isArray(data)) {
+                    setOptions(data);
+                } else {
+                    console.error('Invalid data format:', data);
+                }
+            })
+            .catch(error => console.error('Error fetching data:', error));
+    }, []);
 
     return (
         <div className="block">
@@ -42,10 +40,10 @@ const Adddrone = () => {
                             </div>
                         </div>
                         <select>
-                        {options.map((option, index) => (
-                            <option value={option.value}>
-                            {option.label}
-                            </option>
+                            {options.map((option, index) => (
+                                <option value={option.value}>
+                                    {option.label}
+                                </option>
                             ))}
                         </select>
                         <select id="dropdown1" name="dropdown1">

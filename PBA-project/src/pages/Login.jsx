@@ -13,30 +13,26 @@ const Login = () => {
 
         try {
             const response = await axios.post(import.meta.env.VITE_LOGIN_ROUTE, {
-              email: email,
-              password: password,
+                email: email,
+                password: password,
             });
-      
+
             if (response.data.success) {
-                // Redirect to a new page or perform other actions upon successful login
                 console.log('Login successful');
-                sessionStorage.setItem('user', JSON.stringify (response.data.user));
+                sessionStorage.setItem('user', JSON.stringify(response.data.user));
                 sessionStorage.setItem('userName', response.data.userName);
                 console.log('login successful');
                 console.log('isLoggedIn:', response.data.isLoggedIn);
                 console.log('userName:', response.data.isLoggedIn);
-
-                // Redirect to the profile page
                 window.location.href = '/profile';
 
-              
+
             } else {
-              // Handle login failure
-              console.error('Login failed:', response.data.message);
+                console.error('Login failed:', response.data.message);
             }
-          } catch (error) {
+        } catch (error) {
             console.error('An error occurred during login:', error);
-          }
+        }
     };
 
     return (
@@ -54,7 +50,7 @@ const Login = () => {
             <div className="column">
                 <h2 className="headline">Login</h2>
                 <div className="input-column">
-                    <input 
+                    <input
                         type="text"
                         placeholder="E-mail Address"
                         className="underline-input"

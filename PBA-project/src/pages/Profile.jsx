@@ -34,16 +34,16 @@ const Profile = () => {
 
     const handleAccordionToggle = (index) => {
         if (openAccordions.includes(index)) {
-            // If accordion is already open, close it
             setOpenAccordions((prev) => prev.filter((item) => item !== index));
         } else {
-            // If accordion is closed, open it
             setOpenAccordions((prev) => [...prev, index]);
         }
     };
 
-    if(!userData) {
-        return <div>Loading...</div>
+    if (!userData) {
+        return <div className='noUser'>
+                <h1>Need to&nbsp;<a id='login-a' href="/login">login</a></h1>
+            </div>
     }
 
     return (
@@ -65,7 +65,7 @@ const Profile = () => {
                         </div>
                     </div>
                     {openAccordions.includes(1) && (
-                        
+
                         <div className="accordion-content">
                             <div className="personal-info">
                                 <div className="name">
@@ -105,7 +105,7 @@ const Profile = () => {
                         </div>
                     )}
                 </div>
-                
+
                 <div className="accordion-item">
                     <div className={`accordion-expand-header ${openAccordions.includes(3) ? 'open' : ''}`} onClick={() => handleAccordionToggle(3)}>
                         <div className="flex">
@@ -120,20 +120,20 @@ const Profile = () => {
                     </div>
                     {openAccordions.includes(3) && (
                         <div className="accordion-content">
-                        <div className='contact-accordion'>
-                            <div className="email">
-                                <div className="email-title">Your E-mail</div>
-                                <div className="email-output">{userData.email}</div>
+                            <div className='contact-accordion'>
+                                <div className="email">
+                                    <div className="email-title">Your E-mail</div>
+                                    <div className="email-output">{userData.email}</div>
+                                </div>
+                                <div className="phone-number">
+                                    <div className="phone-title">Your phone number</div>
+                                    <div className="phone-output">{userData.phone}</div>
+                                </div>
                             </div>
-                            <div className="phone-number">
-                                <div className="phone-title">Your phone number</div>
-                                <div className="phone-output">{userData.phone}</div>
-                            </div>
+                            <button className='gear'>
+                                <img src="/images/profile/gear.png" alt="" />
+                            </button>
                         </div>
-                        <button className='gear'>
-                            <img src="/images/profile/gear.png" alt="" />
-                        </button>
-                    </div>
                     )}
                 </div>
 
@@ -153,10 +153,10 @@ const Profile = () => {
                         <div className="accordion-content">
                             <div>
                                 <ul>
-                                {serialNumArray.map((serialNum, index) => (
-                                    <li key={index}>{serialNum}</li>
-                                ))}
-                            </ul>
+                                    {serialNumArray.map((serialNum, index) => (
+                                        <li key={index}>{serialNum}</li>
+                                    ))}
+                                </ul>
                             </div>
 
                         </div>

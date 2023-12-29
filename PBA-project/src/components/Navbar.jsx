@@ -13,8 +13,6 @@ const Navbar = () => {
   const dropdownRef = useRef(null)
 
 
-
-
   useEffect(() => {
     const user = sessionStorage.getItem('user');
     const name = sessionStorage.getItem('userName');
@@ -31,13 +29,13 @@ const Navbar = () => {
 
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
-    document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
 
   const handleLogout = async () => {
     try {
-      // Clear session storage
+
       sessionStorage.removeItem('user');
       sessionStorage.removeItem('userName');
 
@@ -77,14 +75,13 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Burger menu icon */}
       <div className={`burger-menu ${showLinks ? 'show' : ''}`} onClick={toggleLinks}>
         <div></div>
         <div id='middle'></div>
         <div></div>
       </div>
 
-      {/* Regular links */}
+
       <div className={`link ${showLinks ? 'show' : ''}`}>
         <Link to='/'>Home</Link>
         <Link to='/Product'>Product</Link>
@@ -94,28 +91,28 @@ const Navbar = () => {
         <div className="dropdown-btn" onClick={toggleDropdown}>
           <button id='profil'>{isLoggedIn ? '' : ''}</button>
         </div>
-          {/* Dropdown content */}
-          {showDropdown && (
-            <div className="dropdown-content" ref={dropdownRef}>
-              <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
-              <Link to='/Guideeng' onClick={toggleDropdown}>Guide</Link>
-              {isLoggedIn ? (
-                <>
-                  <Link to="/" onClick={handleLogout}>Logout</Link>
-                </>
-              ) : (
-                
-                <Link to='/login'>
-                  Login
-                </Link>
-                
-              )}
-            </div>
-          )}
-      </div>
-      
 
-      {/* Links container below the navbar */}
+        {showDropdown && (
+          <div className="dropdown-content" ref={dropdownRef}>
+            <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
+            <Link to='/Guideeng' onClick={toggleDropdown}>Guide</Link>
+            {isLoggedIn ? (
+              <>
+                <Link to="/" onClick={handleLogout}>Logout</Link>
+              </>
+            ) : (
+
+              <Link to='/login'>
+                Login
+              </Link>
+
+            )}
+          </div>
+        )}
+      </div>
+
+
+
       <div className={`link-container ${showLinkContainer ? 'show' : ''}`} onClick={closeLinkContainer}>
         <Link to='/' onClick={closeLinks}>Home</Link>
         <Link to='/Product' onClick={closeLinks}>Product</Link>
@@ -123,9 +120,9 @@ const Navbar = () => {
         <Link to='/Contact' onClick={closeLinks}>Contact</Link>
         <Link id='navbarButton' to='/' onClick={closeLinks}>Company</Link>
         <div id='profil' onClick={setShowDropdown}></div>
-          <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
-          <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
-          <Link to='/signup' onClick={toggleDropdown}>Login</Link>
+        <Link to='/Profile' onClick={toggleDropdown}>Profile</Link>
+        <Link to='/Guidedk' onClick={toggleDropdown}>Guide</Link>
+        <Link to='/signup' onClick={toggleDropdown}>Login</Link>
       </div>
     </nav>
   );

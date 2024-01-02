@@ -82,7 +82,7 @@ const Addairplate = () => {
                         />
                         <span className="infopic-text">The serial number is unique and is used to identify the individual AirPlate in our database.</span>
                     </div>
-                    <button className='addButton' type="submit">{success ? <Link to="/Adddrone">Next</Link> : 'Next'}</button>
+                    <button className='addButton' type="submit">{success ? <Link to="/Adddrone">Next</Link> : 'Submit'}</button>
                 </form>
                 {success && <p>Serial number added successfully!</p>}
             </div>

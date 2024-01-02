@@ -50,12 +50,12 @@ const Home = () => {
 
                 <div className="sectionOne-pic">
                     <div className="sectionOne-pic__left">
-                        <img src='../public/images/frontpage/airplate.png'></img>
+                        <img src='images/frontpage/airplate.png'></img>
                     </div>
 
                     <div className="sectionOne-pic__right">
-                    <img src='../public/images/frontpage/frontpage2.png'></img>
-                    <img className='underDrone' src='../public/images/frontpage/frontpage1.png'></img>
+                    <img src='images/frontpage/frontpage2.png'></img>
+                    <img className='underDrone' src='images/frontpage/frontpage1.png'></img>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@ const Home = () => {
                 <h1>Simple, Independent & Compatible with Any Drone</h1>
 
                 <div className="home-sectionTwo__data">
-                <img src='../public/images/frontpage/controller.png'></img>
+                <img src='images/frontpage/controller.png'></img>
                 <p>Easy Install – Compatible with any drone.
                 <br />
                 <br /> Network and Broadcast Remote ID – An all-in-one drone remote identification module.
@@ -92,21 +92,21 @@ const Home = () => {
                     </div>
 
                     <div className="sectionFour-internet__mid">
-                    <img src='../public/images/frontpage/signal.png'></img>
+                    <img src='images/frontpage/signal.png'></img>
                     </div>
 
                     <div className="sectionFour-internet__right">
-                    <img src='../public/images/frontpage/phone.png'></img>
+                    <img src='images/frontpage/phone.png'></img>
                     </div>
                 </div>
 
                 <div className="sectionFour-bluetooth">
                     <div className="sectionFour-bluetooth__left">
-                        <img src='../public/images/frontpage/phone2.png'></img>
+                        <img src='images/frontpage/phone2.png'></img>
                     </div>
 
                     <div className="sectionFour-bluetooth__mid">
-                        <img src='../public/images/frontpage/bluetooth.png'></img>
+                        <img src='images/frontpage/bluetooth.png'></img>
                     </div>
 
                     <div className="sectionFour-bluetooth__right">
@@ -116,8 +116,8 @@ const Home = () => {
                 </div>
 
                 <div className="sectionFour-flags">
-                    <img src='../public/images/frontpage/EU.png'></img>
-                    <img src='../public/images/frontpage/usa.png'></img>
+                    <img src='images/frontpage/EU.png'></img>
+                    <img src='images/frontpage/usa.png'></img>
                 </div>
             </div>
 
@@ -147,8 +147,8 @@ const Home = () => {
 
             <div className="home-sectionSix">
                 <h2>Trusted by</h2>
-                <img src='../public/images/frontpage/trusted.png'></img>
-                <img src='../public/images/frontpage/trusted.png'></img>
+                <img src='images/frontpage/trusted.png'></img>
+                <img src='images/frontpage/trusted.png'></img>
             </div>
         </div>
     );

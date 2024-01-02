@@ -183,7 +183,7 @@ const Contact = () => {
                 <h3>Other ways to get in touch</h3>
                 <div className="contact-personal__founders">
                     <div className="contact-personal__director">
-                        <img src='../public/images/contactPage/director.png'></img>
+                        <img src='images/contactPage/director.png'></img>
                         <h4>August Mader</h4>
                         <p>Administrative Director</p>
                         <p>august.mader@airplate.dk</p>
@@ -191,7 +191,7 @@ const Contact = () => {
 
                     </div>
                     <div className="contact-personal__ceo">
-                        <img src='../public/images/contactPage/founder.png'></img>
+                        <img src='images/contactPage/founder.png'></img>
                         <h4>Troels Andreasen</h4>
                         <p>CTO, Co-founder</p>
                         <p>troels.andreasen@airplate.dk</p>

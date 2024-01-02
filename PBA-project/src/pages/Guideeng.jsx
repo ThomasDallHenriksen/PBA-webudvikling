@@ -16,29 +16,31 @@ const Guide = () => {
                         </a>
                     </div>
                 </div>
-                <h2 className='title'>Step 1. Website</h2>
-                <h2 className='bread'>Go to www.airplate.dk/guide or scan the QR-code that comes with the package to continue registration of your new AirPlate.</h2>
+                <h2 className='title'>Step 1. Create / Login account</h2>
+                <h2 className='bread'>Before you can register a new AirPlate, you must login as a user or create one. Find 'Login' in the top right corner of the browers under the profile icon.</h2>
                 <div className="stepone">
-                    <img src="images/airplate.dk-guide.png" />
-                    <img src="images/scan-qr.png" />
+                    <img src="images/create-account.png" />
                 </div>
             </div>
             <div className='element'>
-                <h2 className='title'>Step 2. User</h2>
-                <h2 className='bread'>To register your new AirPlate, create a new user if you are not already registered. If not, follow the form to create a new user.</h2>
-                <div className="stepone">
-                    <img src="images/account-circle.png" />
-                </div>
-            </div>
-            <div className='element'>
-                <h2 className='title'>Step 3. Setup </h2>
-                <h2 className='bread'>As a user, you have the option to enter the provided serial number on your AirPlate (located on the back of the AirPlate) to register it. Once logged in, this can be done by navigating to: AirMap → Dashboard → Configuration → Add Airplate, and entering the serial number for your AirPlate. Click on submit, and upon providing the correct serial number, it will be registered in the database.</h2>
+                <h2 className='title'>Step 2. Add Airplate</h2>
+                <h2 className='bread'>To register a AirPlate, click 'Add Airplate' in the top right of the navigationbar.</h2>
                 <div className="stepthree">
-                    <img src="images/airmap-circle.png" />
-                    <img src="images/dashboard-circle.png" />
-                    <img src="images/configuration-circle.png" />
-                    <img src="images/addairplate-circle.png" />
-                    <img src="images/serialnumber-circle.png" />
+                    <img src="images/AddAirplate.png" />
+                </div>
+            </div>
+            <div className='element'>
+                <h2 className='title'>Step 3. Serialnumber registration</h2>
+                <h2 className='bread'>On the 'AddAirplate page' you have the oppertunity to register an AirPlate. You must type a valid serialnumber. Find the valid serialnumber in the package that arrived with the AirPlate.</h2>
+                <div className="stepthree">
+                    <img src="images/SerialNumber.png" />
+                </div>
+            </div>
+            <div className='element'>
+                <h2 className='title'>(Optional) Step 4. Add drone</h2>
+                <h2 className='bread'>On the 'Add drone page' you have the oppertunity to add an drone for one of your registered AirPlates. This is optinal if you haven't gotten a drone yet.</h2>
+                <div className="stepthree">
+                    <img src="images/AddDrone.png" />
                 </div>
             </div>
         </div >

@@ -15,14 +15,14 @@
         display: flex;
         align-items: center;
         justify-content: space-evenly;
-        gap: 40rem;
+        gap: 25%;
         margin-top: 5rem;
         margin-bottom: 0;
     }
 
     .title {
         text-decoration: underline;
-        font-weight: 400;
+        font-size: 2.5rem;
     }
 
     .flag-container {
@@ -31,26 +31,22 @@
     }
 }
 
-.guide,
-h1 {
+.guide, h1 {
     margin-bottom: 0;
 }
 
 .bread {
     font-weight: 400;
+    max-width: 62.5rem;
+    margin: 0 auto;
 }
 
 .stepone {
-    padding-top: 2rem;
     display: flex;
-    justify-content: center;
-    gap: 10%;
-
-    @include media("md") {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
-    }
+    flex-direction: column;
+    padding-top: 2rem;
+    width: 18.75rem;
+    margin: 0 auto;
 }
 
 .stepthree {
@@ -62,7 +58,7 @@ h1 {
 }
 
 .stepthree img {
-    max-width: 100%;
+    max-width: 630px;
     height: auto;
     display: block;
     margin-bottom: 10px;

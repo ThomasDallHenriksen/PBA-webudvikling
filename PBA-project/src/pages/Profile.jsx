@@ -16,7 +16,7 @@ const Profile = () => {
             setUserData(JSON.parse(storedUserData));
     
             const userEmail = JSON.parse(storedUserData).email; // Antag, at e-mailen er gemt i user-data
-            axios.post(import.meta.env.VITE_SHOW_SERIENUMBER, { userEmail })
+            axios.post('https://kienzhe.dk/updates/serieNumber.php', { userEmail })
             .then(response => {
                 console.log(response);  // Log hele response-objektet
                 if (response.data.success) {

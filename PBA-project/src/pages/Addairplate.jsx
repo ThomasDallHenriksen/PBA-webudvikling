@@ -28,7 +28,7 @@ const Addairplate = () => {
         console.log('Extracted userId:', userId);
 
         try {
-            const response = await axios.post(import.meta.env.VITE_ADD_ROUTE, {
+            const response = await axios.post('https://kienzhe.dk/updates/addAirplate.php', {
                 serialNum: serialNum,
                 userId: userId,
             });

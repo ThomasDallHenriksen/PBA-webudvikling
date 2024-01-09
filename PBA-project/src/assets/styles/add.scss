@@ -31,7 +31,7 @@
 
 .input-container {
     width: 550px;
-    height: 12.5rem;
+    height: 14.5rem;
     margin-top: .9375rem;
     display: flex;
     flex-direction: column;
@@ -151,6 +151,14 @@ label {
 .infopic-container:hover .infopic-text {
     visibility: visible;
     opacity: 1;
+}
+
+#SerialDropdown{
+    width: 17.25rem;
+    height: 1.5625rem;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    margin-bottom: 0.5rem;
 }
 
 #dropdown1 {

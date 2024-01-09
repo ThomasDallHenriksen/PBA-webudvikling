@@ -27,6 +27,23 @@ const Adddrone = () => {
                 <h2 className='bottom_text'>If you already have a drone ready to connect to your AirPlate, you can add it below. If you don't have a drone yet, you can always add it later to your AirPlate.</h2>
             </div>
             <div className="input-container">
+            <div className="dropdown">
+                <div className="infopic-container">
+                    <div className="input-wrapper2">Serialnumber
+                        <img
+                            className='infopic'
+                            src="/images/info-button.png"
+                            alt="info-button"
+                        />
+                        <span className="infopic-text">Select the serialnumber for the airplate you wish to add.</span>
+                    </div>
+                </div>
+                <div className='selectSerial'>
+                    <select id='SerialDropdown'>
+                    <option value="" disabled selected hidden>Add Airplate</option>
+                    </select>
+                </div>
+            </div>
                 <div className="dropdown-container">
                     <div className="dropdown">
                         <div className="input-wrapper2">Class

@@ -24,7 +24,7 @@ const Signup = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(import.meta.env.VITE_SIGNUP_ROUTE, userData, {
+            const response = await axios.post('https://kienzhe.dk/updates/signup.php', userData, {
                 headers: {
                     'Content-Type': 'application/json'
                 },

@@ -152,11 +152,11 @@ const Profile = () => {
                     {openAccordions.includes(4) && (
                         <div className="accordion-content">
                             <div>
-                                <ul>
-                                    {serialNumArray.map((serialNum, index) => (
-                                        <li key={index}>{serialNum}</li>
+                                <div>
+                                    {serialNumArray.map((serialNumber, index) => (
+                                        <span key={index}>{serialNumber}&nbsp;</span>
                                     ))}
-                                </ul>
+                                </div>
                             </div>
 
                         </div>

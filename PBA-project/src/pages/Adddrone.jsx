@@ -1,24 +1,55 @@
 import React, { useState, useEffect } from 'react';
 import '../assets/styles/add.scss';
 import { Link } from 'react-router-dom';
-
+import axios from 'axios';
 
 const Adddrone = () => {
-    const [options, setOptions] = useState([]);
+    const [userData, setUserData] = useState(null);
+    const [serialNumArray, setSerialNumArray] = useState([]);
+    const [selectedSerialNumber, setSelectedSerialNumber] = useState('');
+    const [selectedClass, setSelectedClass] = useState('Undefined');
+    const [selectedUAType, setSelectedUAType] = useState('Undefined');
+    const [selectedClassification, setSelectedClassification] = useState('Undeclared');
+
+        
 
     useEffect(() => {
-        fetch(import.meta.env.VITE_DRONE_ROUTE)
-            .then(response => response.json())
-            .then(data => {
-
-                if (Array.isArray(data)) {
-                    setOptions(data);
+        const storedUserData = sessionStorage.getItem('user');
+        if (storedUserData) {
+            setUserData(JSON.parse(storedUserData));
+    
+            const userEmail = JSON.parse(storedUserData).email; // Antag, at e-mailen er gemt i user-data
+            axios.post('https://kienzhe.dk/updates/serieNumber.php', { userEmail })
+            .then(response => {
+                console.log(response);  // Log hele response-objektet
+                if (response.data.success) {
+                    setSerialNumArray(response.data.serialNumArray);
                 } else {
-                    console.error('Invalid data format:', data);
+                    console.error(response.data.message);
                 }
             })
-            .catch(error => console.error('Error fetching data:', error));
+            .catch(error => {
+                console.error('error fetching:', error);
+            });
+        }
     }, []);
+
+    const handleFormSubmit = () => {
+        const dataToSend = {
+            serialNumber: selectedSerialNumber,
+            userId: userData.id, 
+            formatType: selectedClass,
+            ua: selectedUAType,
+            uas: selectedClassification,
+        };
+        axios.post('https://kienzhe.dk/updates/drone.php', dataToSend)
+            .then(response => {
+                console.log(response.data);
+            })
+            .catch(error => {
+                console.error('Error sending data to backend:', error);
+            });
+    };
 
     return (
         <div className="block">
@@ -39,9 +70,12 @@ const Adddrone = () => {
                     </div>
                 </div>
                 <div className='selectSerial'>
-                    <select id='SerialDropdown'>
+                <select id='SerialDropdown' value={selectedSerialNumber} onChange={(e) => setSelectedSerialNumber(e.target.value)}>
                     <option value="" disabled selected hidden>Add Airplate</option>
-                    </select>
+                    {serialNumArray.map((serialNum, index) => (
+                        <option key={index} value={serialNum}>{serialNum}</option>
+                    ))}
+                </select>
                 </div>
             </div>
                 <div className="dropdown-container">
@@ -56,15 +90,15 @@ const Adddrone = () => {
                                 <span className="infopic-text">EU Class label introduced January 1st 2024. This label will be clearly visible on the drone.</span>
                             </div>
                         </div>
-                        <select id="dropdown1" name="dropdown1">
-                            <option value="option1">Undefined</option>
-                            <option value="option2">class 0</option>
-                            <option value="option3">class 1</option>
-                            <option value="option3">class 2</option>
-                            <option value="option3">class 3</option>
-                            <option value="option3">class 4</option>
-                            <option value="option3">class 5</option>
-                            <option value="option3">class 6</option>
+                        <select id="dropdown1" name="dropdown1" value={selectedClass} onChange={(e) => setSelectedClass(e.target.value)} >
+                            <option value="undefined">Undefined</option>
+                            <option value="class 0">class 0</option>
+                            <option value="class 1">class 1</option>
+                            <option value="class 2">class 2</option>
+                            <option value="class 3">class 3</option>
+                            <option value="class 4">class 4</option>
+                            <option value="class 5">class 5</option>
+                            <option value="class 6">class 6</option>
                         </select>
                     </div>
 
@@ -79,24 +113,24 @@ const Adddrone = () => {
                                 <span className="infopic-text">What type is your aircraft? If your drone is a quadcopter or similar, choose 2 (Helicopter or multirotor). If the drone is a fixed-wing choose 1 (Aeroplane or fixed wing)</span>
                             </div>
                         </div>
-                        <select id="dropdown2" name="dropdown2">
-                            <option value="option1">Undefined</option>
-                            <option value="option1">0: None or not declared</option>
-                            <option value="option2">1: Aeroplane or fixedwing</option>
-                            <option value="option3">2: Helicoper or multirotor</option>
-                            <option value="option3">3: Gyroplane</option>
-                            <option value="option3">4: Hybrid lift (fixed wing aircraft)</option>
-                            <option value="option3">5: Ornithopter</option>
-                            <option value="option3">6: Glider</option>
-                            <option value="option3">7: Kite</option>
-                            <option value="option3">8: Free balloon</option>
-                            <option value="option3">9: Captive balloon</option>
-                            <option value="option3">10: Airship (such as a blimp)</option>
-                            <option value="option3">11: Free fall/parachute(unpowered)</option>
-                            <option value="option3">12: Rocket</option>
-                            <option value="option3">13: Tethered power aircraft</option>
-                            <option value="option3">14: Ground obstacle</option>
-                            <option value="option3">15: Other</option>
+                        <select id="dropdown2" name="dropdown2" value={selectedUAType} onChange={(e) => setSelectedUAType(e.target.value)} >
+                            <option value="Undefined">Undefined</option>
+                            <option value="None or not declared">0: None or not declared</option>
+                            <option value="Aeroplane or fixedwing">1: Aeroplane or fixedwing</option>
+                            <option value="Helicoper or multirotor">2: Helicoper or multirotor</option>
+                            <option value="Gyroplane">3: Gyroplane</option>
+                            <option value="Hybrid lift (fixed wing aircraft">4: Hybrid lift (fixed wing aircraft)</option>
+                            <option value="Ornithopter">5: Ornithopter</option>
+                            <option value="Glider">6: Glider</option>
+                            <option value="Kite">7: Kite</option>
+                            <option value="Free balloon">8: Free balloon</option>
+                            <option value="Captive balloon">9: Captive balloon</option>
+                            <option value="Airship (such as a blimp">10: Airship (such as a blimp)</option>
+                            <option value="Free fall/parachute(unpowered)">11: Free fall/parachute(unpowered)</option>
+                            <option value="Rocket">12: Rocket</option>
+                            <option value="Tethered power aircraft">13: Tethered power aircraft</option>
+                            <option value="Ground obstacle">14: Ground obstacle</option>
+                            <option value="Other">15: Other</option>
                         </select>
                     </div>
 
@@ -111,9 +145,9 @@ const Adddrone = () => {
                                 <span className="infopic-text">Specifies the type of data in the UA Category and UA Class fields. Is your drone flying under EASA (EU) rules or not.</span>
                             </div>
                         </div>
-                        <select id="dropdown3" name="dropdown3">
-                            <option value="option1">Undeclared</option>
-                            <option value="option2">EU</option>
+                        <select id="dropdown3" name="dropdown3" value={selectedClassification} onChange={(e) => setSelectedClassification(e.target.value)} >
+                            <option value="Undeclared">Undeclared</option>
+                            <option value="EU">EU</option>
                         </select>
                     </div>
                 </div>
@@ -122,7 +156,7 @@ const Adddrone = () => {
                         <button className="next-button">Back</button>
                     </Link>
                     <Link to="/">
-                        <button className="next-button">Submit</button>
+                        <button className="next-button" onClick={handleFormSubmit} disabled={!userData}>Submit</button>
                     </Link>
                 </div>
             </div>

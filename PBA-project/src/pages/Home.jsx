@@ -3,13 +3,33 @@ import axios from 'axios';
 import '../assets/global/breakpoints.scss';
 import '../assets/main/font.scss';
 import '../assets/styles/home.scss';
+import Toastify from 'toastify-js';
+import 'toastify-js/src/toastify.css';
 
 
 const Home = () => {
     const [email, setEmail] = useState('');
+    const [isValidEmail, setIsValidEmail] = useState(true);
+
 
     const handleNewsletter = async (e) => {
         e.preventDefault();
+
+        // Email validation using regular expression
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setIsValidEmail(false);
+
+            Toastify({
+                text: 'Invalid email',
+                duration: 3000,
+                backgroundColor: 'var(--color-red)',
+                gravity: 'top',
+                position: 'center',
+            }).showToast();
+
+            return;
+        }
 
         try {
             const response = await axios.post('https://kienzhe.dk/updates/newsletter.php', {
@@ -23,8 +43,25 @@ const Home = () => {
             console.log(response.data);
 
             setEmail('');
+            setIsValidEmail(true);
+
+            Toastify({
+                text: 'Email sent successfully!',
+                duration: 3000,
+                backgroundColor: 'var(--color-green)',
+                gravity: 'top',
+                position: 'center',
+            }).showToast();
         } catch (error) {
             console.error('error:', error);
+
+            Toastify({
+                text: 'Email not sent. Please try again later.',
+                duration: 3000,
+                backgroundColor: 'var(--color-skyblue)',
+                gravity: 'top',
+                position: 'center',
+            }).showToast();
         }
     };
 
@@ -122,26 +159,32 @@ const Home = () => {
             </div>
 
             <div className="home-sectionFive">
-                <form className='sectionFive-form' onSubmit={handleNewsletter}>
+                <form className="sectionFive-form" onSubmit={handleNewsletter}>
                     <h3>Newsletter Module</h3>
-                    <p>Sign up to our newslatter to receive
-                        <br />the lastest updates</p>
+                    <p>Sign up to our newsletter to receive the latest updates</p>
                     <input
-                        type='text'
-                        className='sectionFive-form__email'
-                        placeholder='Your E-mail address...'
-                        name='email'
+                        type="text"
+                        className={`sectionFive-form__email ${isValidEmail ? '' : 'invalid-email'
+                            }`}
+                        placeholder="Your E-mail address..."
+                        name="email"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        required>
-                    </input>
+                        onChange={(e) => {
+                            setEmail(e.target.value);
+                            setIsValidEmail(true); // Reset validation when user types
+                        }}
+                        required
+                    ></input>
 
                     <input
-                        type='submit'
-                        className='sectionFive-form__submit'
-                        value='Signup'>
-                    </input>
+                        type="submit"
+                        className="sectionFive-form__submit"
+                        value="Signup"
+                    ></input>
                 </form>
+                {!isValidEmail && (
+                    <p className="error-message">Please enter a valid email address</p>
+                )}
                 <div className="sectionFive-border"></div>
             </div>
 

@@ -16,12 +16,12 @@ const Profile = () => {
             setUserData(JSON.parse(storedUserData));
     
             const userEmail = JSON.parse(storedUserData).email; // Antag, at e-mailen er gemt i user-data
-            axios.post('https://kienzhe.dk/updates/serieNumber.php', { userEmail })
+            axios.post('https://kienzhe.dk/updates/showData.php', { userEmail })
             .then(response => {
                 console.log(response);  // Log hele response-objektet
                 if (response.data.success) {
                     setOpenAccordions([1]);
-                    setSerialNumArray(response.data.serialNumArray);
+                    setSerialNumArray(response.data.combinedDataArray);
                 } else {
                     console.error(response.data.message);
                 }
@@ -153,9 +153,14 @@ const Profile = () => {
                         <div className="accordion-content">
                             <div>
                                 <div>
-                                    {serialNumArray.map((serialNumber, index) => (
-                                        <span key={index}>{serialNumber}&nbsp;</span>
-                                    ))}
+                                    {serialNumArray.map((data, index) => (
+                                        <div key={index}>
+                                            <span>Serial Number: {data.serial_number}</span>
+                                            {data.format && <span> Format: {data.format}</span>}
+                                            {data.ua && <span> UA: {data.ua}</span>}
+                                            {data.uas && <span> UAS: {data.uas}</span>}
+                                        </div>
+                ))}
                                 </div>
                             </div>
 

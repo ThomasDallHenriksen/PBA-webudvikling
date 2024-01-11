@@ -84,6 +84,12 @@ const Addairplate = () => {
                     </div>
                     <button className='addButton' type="submit">{success ? <Link to="/Adddrone">Next</Link> : 'Submit'}</button>
                 </form>
+                <div className="container">
+                    <div className="account">Have you already registered a Airplate?</div>
+                    <div className="login">
+                        <a href='/adddrone'>Connect drone</a>
+                    </div>
+                </div>
                 {success && <p>Serial number added successfully!</p>}
             </div>
         </div>

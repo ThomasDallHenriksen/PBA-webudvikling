@@ -24,7 +24,7 @@ const Login = () => {
                 console.log('login successful');
                 console.log('isLoggedIn:', response.data.isLoggedIn);
                 console.log('userName:', response.data.isLoggedIn);
-                window.location.href = '/profile';
+                window.location.href = '/';
 
 
             } else {

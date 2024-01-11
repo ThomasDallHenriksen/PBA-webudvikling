@@ -46,8 +46,8 @@ const Home = () => {
             setIsValidEmail(true);
 
             Toastify({
-                text: 'Email sent successfully!',
-                duration: 3000,
+                text: 'Congratulation! You are now signed up to our newsletter',
+                duration: 4000,
                 backgroundColor: 'var(--color-green)',
                 gravity: 'top',
                 position: 'center',
@@ -182,9 +182,6 @@ const Home = () => {
                         value="Signup"
                     ></input>
                 </form>
-                {!isValidEmail && (
-                    <p className="error-message">Please enter a valid email address</p>
-                )}
                 <div className="sectionFive-border"></div>
             </div>
 

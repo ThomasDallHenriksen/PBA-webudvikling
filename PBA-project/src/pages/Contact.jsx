@@ -3,20 +3,44 @@ import emailjs from 'emailjs-com';
 import '../assets/global/breakpoints.scss'
 import '../assets/main/font.scss'
 import '../assets/styles/contact.scss';
+import Toastify from 'toastify-js';
+import 'toastify-js/src/toastify.css';
 
 const Contact = () => {
-
     const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
 
-        emailjs.sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_TEMPLATE_ID, form.current, import.meta.env.VITE_PUBLIC_ID)
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
+        emailjs
+            .sendForm(
+                import.meta.env.VITE_SERVICE_ID,
+                import.meta.env.VITE_TEMPLATE_ID,
+                form.current,
+                import.meta.env.VITE_PUBLIC_ID
+            )
+            .then(
+                (result) => {
+                    console.log(result.text);
+                    Toastify({
+                        text: 'Email sent successfully!',
+                        duration: 3000,
+                        gravity: 'top',
+                        position: 'center',
+                        style : {
+                        backgroundColor: 'variable(--primary)',
+                        }
+                    }).showToast();
+                },
+                (error) => {
+                    console.log(error.text);
+                    Toastify({
+                        text: 'Email not sent!',
+                        duration: 3000,
+                        backgroundColor: 'variable(--primary)',
+                    }).showToast();
+                }
+            );
     };
 
     return (

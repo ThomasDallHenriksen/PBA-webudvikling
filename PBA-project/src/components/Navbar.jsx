@@ -2,8 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import '../assets/styles/navbar.scss';
 import axios from 'axios';
+import { useLocation } from 'react-router-dom';
+
 
 const Navbar = () => {
+  const location = useLocation();
   const [showLinks, setShowLinks] = useState(false);
   const [showLinkContainer, setShowLinkContainer] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -83,10 +86,10 @@ const Navbar = () => {
 
 
       <div className={`link ${showLinks ? 'show' : ''}`}>
-        <Link to='/'>Home</Link>
-        <Link to='/Product'>Product</Link>
-        <Link to='/Company'>Company</Link>
-        <Link to='/Contact'>Contact</Link>
+        <Link to='/' className={location.pathname === '/' ? 'active' : ''} onClick={closeLinks}>Home</Link>
+        <Link to='/Product' className={location.pathname === '/Product' ? 'active' : ''} onClick={closeLinks}>Product</Link>
+        <Link to='/Company' className={location.pathname === '/Company' ? 'active' : ''} onClick={closeLinks}>Company</Link>
+        <Link to='/Contact' className={location.pathname === '/Contact' ? 'active' : ''} onClick={closeLinks}>Contact</Link>
         <Link id='navbarButton' to='/Addairplate'>Add Airplate</Link>
         <div className="dropdown-btn" onClick={toggleDropdown}>
           <button id='profil'>{isLoggedIn ? '' : ''}</button>

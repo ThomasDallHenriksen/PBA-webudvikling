@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import '../assets/global/breakpoints.scss';
 import '../assets/main/font.scss';
@@ -12,7 +12,7 @@ const Home = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post(import.meta.env.VITE_NEWSLETTER_ROUTE, {
+            const response = await axios.post('https://kienzhe.dk/updates/newsletter.php', {
                 email: email,
             }, {
                 headers: {
@@ -36,15 +36,15 @@ const Home = () => {
                     <p>At AirPlate we make it possible to combine any drone with our license plate AirPlate. In 2024 it will be a legal requirement that drone operators have a so-called 'plate' for their drone so that it is identifiable.</p>
 
                     <div className="sectionOne-info__airmap">
-                    <a id='sectionButton' href='/Company'>Learn more</a>
-                    <a href='/Product'>Product</a>
+                        <a id='sectionButton' href='/Company'>Learn more</a>
+                        <a href='/Product'>Product</a>
                     </div>
 
                     <div className="sectionOne-info__50k">
                         <h2>50K</h2>
-                        <p>With AirPlate you are covered under the new<br /> 
-                        legislation with guarantee and can fly safely<br />
-                        with your drone when you want going forward.</p>
+                        <p>With AirPlate you are covered under the new<br />
+                            legislation with guarantee and can fly safely<br />
+                            with your drone when you want going forward.</p>
                     </div>
                 </div>
 
@@ -54,8 +54,8 @@ const Home = () => {
                     </div>
 
                     <div className="sectionOne-pic__right">
-                    <img src='images/frontpage/frontpage2.png'></img>
-                    <img className='underDrone' src='images/frontpage/frontpage1.png'></img>
+                        <img src='images/frontpage/frontpage2.png'></img>
+                        <img className='underDrone' src='images/frontpage/frontpage1.png'></img>
                     </div>
                 </div>
             </div>
@@ -64,24 +64,24 @@ const Home = () => {
                 <h1>Simple, Independent & Compatible with Any Drone</h1>
 
                 <div className="home-sectionTwo__data">
-                <img src='images/frontpage/controller.png'></img>
-                <p>Easy Install – Compatible with any drone.
-                <br />
-                <br /> Network and Broadcast Remote ID – An all-in-one drone remote identification module.
-                <br />
-                <br /> 5G – Using 5G to ensure stable and reliable connection
-                <br />
-                <br /> Independent – GNSS reciever and battery to be standalone and fully independent.
-                <br />
-                <br /> MAVLink Integration – Pixhawk flight controllers integration.
-                </p>
+                    <img src='images/frontpage/controller.png'></img>
+                    <p>Easy Install – Compatible with any drone.
+                        <br />
+                        <br /> Network and Broadcast Remote ID – An all-in-one drone remote identification module.
+                        <br />
+                        <br /> 5G – Using 5G to ensure stable and reliable connection
+                        <br />
+                        <br /> Independent – GNSS reciever and battery to be standalone and fully independent.
+                        <br />
+                        <br /> MAVLink Integration – Pixhawk flight controllers integration.
+                    </p>
                 </div>
             </div>
 
             <div className="home-sectionThree">
                 <p>Real Time Interface</p>
                 <a id='airmapButton' href='/Addairplate'>Add AirPlate</a>
-                
+
             </div>
 
             <div className="home-sectionFour">
@@ -92,11 +92,11 @@ const Home = () => {
                     </div>
 
                     <div className="sectionFour-internet__mid">
-                    <img src='images/frontpage/signal.png'></img>
+                        <img src='images/frontpage/signal.png'></img>
                     </div>
 
                     <div className="sectionFour-internet__right">
-                    <img src='images/frontpage/phone.png'></img>
+                        <img src='images/frontpage/phone.png'></img>
                     </div>
                 </div>
 
@@ -110,8 +110,8 @@ const Home = () => {
                     </div>
 
                     <div className="sectionFour-bluetooth__right">
-                    <h3>Bluetooth</h3>
-                    <p>Bluetooth is a wireless technology standard used for exchanging data between fixed and mobile devices over short distances. It operates at 2.4 to 2.485 GHz and uses frequency-hopping spread spectrum technology. Bluetooth was originally conceived as a wireless alternative to RS-232 data cables by Jaap Haartsen and Sven Mattisson in 1994. The first Bluetooth product came out in 1999 produced by Ericsson. Bluetooth is managed by the Bluetooth Special Interest Group founded in 1998 by Ericsson, IBM, Intel, Nokia and Toshiba. Bluetooth protocols simplify the discovery and setup of services between devices. Bluetooth Low Energy, marketed as Bluetooth Smart, was introduced in 2011. It is targeted at applications in healthcare, fitness, beacons, security, and home entertainment. Bluetooth mesh networking was introduced in July 2017 and enables many-to-many communication over Bluetooth Low Energy. As of 2018, over 8 billion Bluetooth products have been shipped worldwide.</p>
+                        <h3>Bluetooth</h3>
+                        <p>Bluetooth is a wireless technology standard used for exchanging data between fixed and mobile devices over short distances. It operates at 2.4 to 2.485 GHz and uses frequency-hopping spread spectrum technology. Bluetooth was originally conceived as a wireless alternative to RS-232 data cables by Jaap Haartsen and Sven Mattisson in 1994. The first Bluetooth product came out in 1999 produced by Ericsson. Bluetooth is managed by the Bluetooth Special Interest Group founded in 1998 by Ericsson, IBM, Intel, Nokia and Toshiba. Bluetooth protocols simplify the discovery and setup of services between devices. Bluetooth Low Energy, marketed as Bluetooth Smart, was introduced in 2011. It is targeted at applications in healthcare, fitness, beacons, security, and home entertainment. Bluetooth mesh networking was introduced in July 2017 and enables many-to-many communication over Bluetooth Low Energy. As of 2018, over 8 billion Bluetooth products have been shipped worldwide.</p>
                     </div>
                 </div>
 
@@ -124,23 +124,23 @@ const Home = () => {
             <div className="home-sectionFive">
                 <form className='sectionFive-form' onSubmit={handleNewsletter}>
                     <h3>Newsletter Module</h3>
-                    <p>Sign up to our newslatter to receive 
-                    <br />the lastest updates</p>
-                        <input
-                            type='text'
-                            className='sectionFive-form__email'
-                            placeholder='Your E-mail address...'
-                            name='email'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            required>
-                        </input>
+                    <p>Sign up to our newslatter to receive
+                        <br />the lastest updates</p>
+                    <input
+                        type='text'
+                        className='sectionFive-form__email'
+                        placeholder='Your E-mail address...'
+                        name='email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        required>
+                    </input>
 
-                        <input
-                            type='submit'
-                            className='sectionFive-form__submit'
-                            value='Signup'>
-                        </input>
+                    <input
+                        type='submit'
+                        className='sectionFive-form__submit'
+                        value='Signup'>
+                    </input>
                 </form>
                 <div className="sectionFive-border"></div>
             </div>

@@ -21,6 +21,10 @@
         &:hover {
             color: var(--color-skyblue);
         }
+
+        &.active {
+            color: var(--color-skyblue);
+        }
     }
 
     .dropdown {
@@ -174,4 +178,5 @@
             }
         }
     }
+
 }

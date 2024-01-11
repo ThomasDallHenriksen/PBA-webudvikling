@@ -174,6 +174,8 @@ const Profile = () => {
                     )}
                 </div>
             </div>
+            <div className="profil-border"></div>
+
         </div>
     );
 };

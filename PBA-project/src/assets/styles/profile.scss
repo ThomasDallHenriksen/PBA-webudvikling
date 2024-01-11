@@ -42,7 +42,7 @@
 }
 
 .profile-section-2 {
-    height: 24rem;
+    height: auto;
     padding: 0 5rem 0 5rem;
 
     @include media("md") {
@@ -268,7 +268,6 @@
 
 .configuration {
     width: 90rem;
-    height: 18.75rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -307,4 +306,8 @@
     width: 25%; 
     display: inline-block; 
     margin-left: 11%;
+}
+
+.profil-border {
+    height: 10rem;
 }

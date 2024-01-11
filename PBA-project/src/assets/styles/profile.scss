@@ -265,3 +265,46 @@
 #login-a:hover{
     color: var(--color-blue)
 }
+
+.configuration {
+    width: 90rem;
+    height: 18.75rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dataHeader {
+    display: flex;
+    justify-content: space-around;
+}
+
+.showData { 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.serial {
+    width: 25%; 
+    display: inline-block; 
+    margin-left: 11%;
+}
+
+.format {
+    width: 25%; 
+    display: inline-block; 
+    margin-left: 16%;
+}
+
+.ua {
+    width: 25%; 
+    display: inline-block; 
+    margin-left: 13%;
+}
+
+.uas {
+    width: 25%; 
+    display: inline-block; 
+    margin-left: 11%;
+}

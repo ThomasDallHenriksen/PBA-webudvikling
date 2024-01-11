@@ -143,7 +143,7 @@ const Profile = () => {
                             <div className="person-icon">
                                 <img src="images/profile/info.png" alt="" />
                             </div>
-                            <div className={`accordion-header ${openAccordions.includes(1) ? 'open' : ''}`} onClick={() => handleAccordionToggle(4)}>Serial Number:s</div>
+                            <div className={`accordion-header ${openAccordions.includes(1) ? 'open' : ''}`} onClick={() => handleAccordionToggle(4)}>AirPlate configuration:</div>
                         </div>
                         <div className={`expand ${openAccordions.includes(4) ? 'open' : ''}`} onClick={() => handleAccordionToggle(14)}>
                             <img src={openAccordions.includes(4) ? 'images/profile/expandMore.png' : 'images/profile/arrow-right.png'} alt="" />
@@ -152,15 +152,21 @@ const Profile = () => {
                     {openAccordions.includes(4) && (
                         <div className="accordion-content">
                             <div>
-                                <div>
+                                <div className='configuration'>
+                                    <div className="dataHeader">
+                                        <h4>Serial Number</h4>
+                                        <h4>Format</h4>
+                                        <h4>UA</h4>
+                                        <h4>UAS</h4>
+                                    </div>
                                     {serialNumArray.map((data, index) => (
-                                        <div key={index}>
-                                            <span>Serial Number: {data.serial_number}</span>
-                                            {data.format && <span> Format: {data.format}</span>}
-                                            {data.ua && <span> UA: {data.ua}</span>}
-                                            {data.uas && <span> UAS: {data.uas}</span>}
+                                        <div className='showData' key={index}>
+                                            <span className="serial"> {data.serial_number}</span>
+                                            {data.format && <span className="format"> {data.format}</span>}
+                                            {data.ua && <span className="ua"> {data.ua}</span>}
+                                            {data.uas && <span className="uas"> {data.uas}</span>}
                                         </div>
-                ))}
+                                    ))}
                                 </div>
                             </div>
 

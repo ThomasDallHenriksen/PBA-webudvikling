@@ -10,41 +10,80 @@ const Profile = () => {
     const [userData, setUserData] = useState(null);
     const [serialNumArray, setSerialNumArray] = useState([]);
 
+    //Redigerings
+    const [firstNameInput, setFirstNameInput] = useState('');
+    const [lastNameInput, setLastNameInput] = useState('');
+    const [showNameInputs, setShowNameInputs] = useState(false);
+    const [updatedFullName, setUpdatedFullName] = useState('');
+    const handleGearButtonClick = (accordionIndex) => {
+        setShowNameInputs(accordionIndex === 1 && !showNameInputs);
+    };
+
+
     useEffect(() => {
         const storedUserData = sessionStorage.getItem('user');
         if (storedUserData) {
             setUserData(JSON.parse(storedUserData));
-    
+
             const userEmail = JSON.parse(storedUserData).email; // Antag, at e-mailen er gemt i user-data
             axios.post('https://kienzhe.dk/updates/showData.php', { userEmail })
-            .then(response => {
-                console.log(response);  // Log hele response-objektet
-                if (response.data.success) {
-                    setOpenAccordions([1]);
-                    setSerialNumArray(response.data.combinedDataArray);
-                } else {
-                    console.error(response.data.message);
-                }
-            })
-            .catch(error => {
-                console.error('error fetching:', error);
-            });
+                .then(response => {
+                    console.log(response);  // Log hele response-objektet
+                    if (response.data.success) {
+                        setOpenAccordions([1]);
+                        setSerialNumArray(response.data.combinedDataArray);
+                    } else {
+                        console.error(response.data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('error fetching:', error);
+                });
         }
     }, []);
 
     const handleAccordionToggle = (index) => {
         if (openAccordions.includes(index)) {
             setOpenAccordions((prev) => prev.filter((item) => item !== index));
+            setShowNameInputs(false);
         } else {
             setOpenAccordions((prev) => [...prev, index]);
+            setShowNameInputs(index === 0);
         }
     };
 
     if (!userData) {
         return <div className='noUser'>
-                <h1>Need to&nbsp;<a id='login-a' href="/login">login</a></h1>
-            </div>
+            <h1>Need to&nbsp;<a id='login-a' href="/login">login</a></h1>
+        </div>
     }
+
+    const handleSaveChanges = () => {
+        const updatedData = {
+            userEmail: userData.email,
+            first_name: firstNameInput,
+            last_name: lastNameInput,
+        };
+
+        axios.post('https://kienzhe.dk/updates/profileEdit.php', updatedData)
+            .then(response => {
+                console.log(response);
+                if (response.data.success) {
+                    // Update the user data in state or re-fetch the data
+                    // Reset input fields
+                    setFirstNameInput('');
+                    setLastNameInput('');
+                    setUpdatedFullName(`${firstNameInput} ${lastNameInput}`);
+                    setShowNameInputs(false);
+
+                } else {
+                    console.error(response.data.message);
+                }
+            })
+            .catch(error => {
+                console.error('error updating profile:', error);
+            });
+    };
 
     return (
         <div className="profile">
@@ -65,16 +104,33 @@ const Profile = () => {
                         </div>
                     </div>
                     {openAccordions.includes(1) && (
-
                         <div className="accordion-content">
                             <div className="personal-info">
                                 <div className="name">
                                     <div className='fullName'>Full name</div>
-                                    <div className='fullName-output'>{userData.first_name} {userData.last_name}</div>
+                                    <div className='fullName-output'>{updatedFullName || `${userData.first_name} ${userData.last_name}`}</div>
+
+                                    {showNameInputs && (
+                                        <div>
+                                            <input
+                                                type="text"
+                                                placeholder="New First Name"
+                                                value={firstNameInput}
+                                                onChange={(e) => setFirstNameInput(e.target.value)}
+                                            />
+                                            <input
+                                                type="text"
+                                                placeholder="New Last Name"
+                                                value={lastNameInput}
+                                                onChange={(e) => setLastNameInput(e.target.value)}
+                                            />
+                                            <button className='save-button' onClick={handleSaveChanges}>Save Changes</button>
+                                        </div>
+                                    )}
                                 </div>
 
                             </div>
-                            <button className='gear'>
+                            <button className='gear' onClick={() => handleGearButtonClick(1)}>
                                 <img src="/images/profile/gear.png" alt="" />
                             </button>
                         </div>

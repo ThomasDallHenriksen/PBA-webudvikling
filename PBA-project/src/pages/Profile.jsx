@@ -65,25 +65,34 @@ const Profile = () => {
             last_name: lastNameInput,
         };
 
-        axios.post('https://kienzhe.dk/updates/profileEdit.php', updatedData)
-            .then(response => {
-                console.log(response);
-                if (response.data.success) {
-                    // Update the user data in state or re-fetch the data
-                    // Reset input fields
-                    setFirstNameInput('');
-                    setLastNameInput('');
-                    setUpdatedFullName(`${firstNameInput} ${lastNameInput}`);
-                    setShowNameInputs(false);
+        axios.post('https://kienzhe.dk/updates/profileEdit.php', updatedData, )
+        .then(response => {
+            if (response.data.success) {
+                // Opdater React-tilstanden
+                setUserData(prevUserData => ({
+                    ...prevUserData,
+                    first_name: firstNameInput,
+                    last_name: lastNameInput,
+                }));
 
-                } else {
-                    console.error(response.data.message);
+                // Opdater sessionStorage
+                const storedUserData = sessionStorage.getItem('user');
+                if (storedUserData) {
+                    const parsedUserData = JSON.parse(storedUserData);
+                    parsedUserData.first_name = firstNameInput;
+                    parsedUserData.last_name = lastNameInput;
+                    sessionStorage.setItem('user', JSON.stringify(parsedUserData));
                 }
-            })
-            .catch(error => {
-                console.error('error updating profile:', error);
-            });
-    };
+
+                setShowNameInputs(false);
+            } else {
+                console.error(response.data.message);
+            }
+        })
+        .catch(error => {
+            console.error('error updating profile:', error);
+        });
+};
 
     return (
         <div className="profile">
@@ -108,7 +117,7 @@ const Profile = () => {
                             <div className="personal-info">
                                 <div className="name">
                                     <div className='fullName'>Full name</div>
-                                    <div className='fullName-output'>{updatedFullName || `${userData.first_name} ${userData.last_name}`}</div>
+                                    <div key={userData.id} className='fullName-output'>{updatedFullName || `${userData.first_name} ${userData.last_name}`}</div>
 
                                     {showNameInputs && (
                                         <div>

@@ -13,11 +13,14 @@ const Signup = () => {
         account_type: 'private'
     });
 
+    const [error, setError] = useState('');
+
     const handleChange = (e) => {
         setUserData({
             ...userData,
             [e.target.name]: e.target.value,
         });
+        setError('');
     };
 
     const handleSignup = async (e) => {
@@ -33,14 +36,21 @@ const Signup = () => {
             if (response.data.redirect) {
                 window.location.href = response.data.redirect;
               } else {
-                console.log(response.data);
+                console.log(response.data.error);
+                setError(response.data.error); // Sæt fejl i state
               }
           
             } catch (error) {
-              console.error('Fejl:', error);
-            }
-
+                if (error.response && error.response.data && error.response.data.error) {
+                    console.error('Fejl:', error.response.data.error);
+                    setError(error.response.data.error);
+                } else {
+                    console.error('Der opstod en fejl ved oprettelse.', error);
+                    setError('Der opstod en fejl ved oprettelse.');
+                }
+            }    
     };
+
     return (
         <div className="signup">
             <div className="column column1">
@@ -126,6 +136,11 @@ const Signup = () => {
                         required
                     />
                     <div className="column3">
+                        {error && (
+                            <div className="error-message">
+                        {error}
+                    </div>
+                )}
 
                         <div className="createButton">
                             <button type='submit' className="newacc">Create Account</button>

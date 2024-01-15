@@ -27,8 +27,8 @@ const Contact = () => {
                         duration: 3000,
                         gravity: 'top',
                         position: 'center',
-                        style : {
-                        backgroundColor: 'variable(--primary)',
+                        style: {
+                            backgroundColor: 'variable(--primary)',
                         }
                     }).showToast();
                 },

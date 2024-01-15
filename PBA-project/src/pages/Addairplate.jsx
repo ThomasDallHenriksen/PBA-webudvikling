@@ -90,7 +90,7 @@ const Addairplate = () => {
                         <a href='/adddrone'>Connect drone</a>
                     </div>
                 </div>
-                {success && <p>Serial number added successfully!</p>}
+                {success && <p>Serialnumber added successfully!</p>}
             </div>
         </div>
     );

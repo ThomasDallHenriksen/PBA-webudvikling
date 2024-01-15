@@ -10,34 +10,40 @@ const Adddrone = () => {
     const [selectedClass, setSelectedClass] = useState('Undefined');
     const [selectedUAType, setSelectedUAType] = useState('Undefined');
     const [selectedClassification, setSelectedClassification] = useState('Undeclared');
+    const [success, setSuccess] = useState(false);
 
-        
+
 
     useEffect(() => {
         const storedUserData = sessionStorage.getItem('user');
         if (storedUserData) {
             setUserData(JSON.parse(storedUserData));
-    
-            const userEmail = JSON.parse(storedUserData).email; // Antag, at e-mailen er gemt i user-data
+
+            const userEmail = JSON.parse(storedUserData).email;
             axios.post('https://kienzhe.dk/updates/serieNumber.php', { userEmail })
-            .then(response => {
-                console.log(response);  // Log hele response-objektet
-                if (response.data.success) {
-                    setSerialNumArray(response.data.serialNumArray);
-                } else {
-                    console.error(response.data.message);
-                }
-            })
-            .catch(error => {
-                console.error('error fetching:', error);
-            });
+                .then(response => {
+                    console.log(response); 
+                    if (response.data.success) {
+                        setSerialNumArray(response.data.serialNumArray);
+                    } else {
+                        console.error(response.data.message);
+                    }
+                })
+                .catch(error => {
+                    console.error('error fetching:', error);
+                });
         }
     }, []);
 
     const handleFormSubmit = () => {
+        // Check if all required fields are selected
+        if (!selectedSerialNumber || selectedClass === 'Undefined' || selectedUAType === 'Undefined' || selectedClassification === 'Undeclared') {
+            alert('Please fill in all fields.');
+            return;
+        }
         const dataToSend = {
             serialNumber: selectedSerialNumber,
-            userId: userData.id, 
+            userId: userData.id,
             formatType: selectedClass,
             ua: selectedUAType,
             uas: selectedClassification,
@@ -45,11 +51,15 @@ const Adddrone = () => {
         axios.post('https://kienzhe.dk/updates/drone.php', dataToSend)
             .then(response => {
                 console.log(response.data);
+                setSuccess(true);
             })
             .catch(error => {
                 console.error('Error sending data to backend:', error);
             });
     };
+    
+
+    
 
     return (
         <div className="block">
@@ -58,26 +68,26 @@ const Adddrone = () => {
                 <h2 className='bottom_text'>If you already have a drone ready to connect to your AirPlate, you can add it below. If you don't have a drone yet, you can always add it later to your AirPlate.</h2>
             </div>
             <div className="input-container">
-            <div className="dropdown">
-                <div className="infopic-container">
-                    <div className="input-wrapper2">Serialnumber
-                        <img
-                            className='infopic'
-                            src="/images/info-button.png"
-                            alt="info-button"
-                        />
-                        <span className="infopic-text">Select the serialnumber for the airplate you wish to add.</span>
+                <div className="dropdown">
+                    <div className="infopic-container">
+                        <div className="input-wrapper2">Serialnumber
+                            <img
+                                className='infopic'
+                                src="/images/info-button.png"
+                                alt="info-button"
+                            />
+                            <span className="infopic-text">Select the serialnumber for the airplate you wish to add.</span>
+                        </div>
+                    </div>
+                    <div className='selectSerial'>
+                        <select id='SerialDropdown' value={selectedSerialNumber} onChange={(e) => setSelectedSerialNumber(e.target.value)}>
+                            <option value="" disabled selected hidden>Add Airplate</option>
+                            {serialNumArray.map((serialNum, index) => (
+                                <option key={index} value={serialNum}>{serialNum}</option>
+                            ))}
+                        </select>
                     </div>
                 </div>
-                <div className='selectSerial'>
-                <select id='SerialDropdown' value={selectedSerialNumber} onChange={(e) => setSelectedSerialNumber(e.target.value)}>
-                    <option value="" disabled selected hidden>Add Airplate</option>
-                    {serialNumArray.map((serialNum, index) => (
-                        <option key={index} value={serialNum}>{serialNum}</option>
-                    ))}
-                </select>
-                </div>
-            </div>
                 <div className="dropdown-container">
                     <div className="dropdown">
                         <div className="input-wrapper2">Class
@@ -155,10 +165,11 @@ const Adddrone = () => {
                     <Link to="/Addairplate">
                         <button className="next-button">Back</button>
                     </Link>
-                    <Link to="/">
+                    <Link to="">
                         <button className="next-button" onClick={handleFormSubmit} disabled={!userData}>Submit</button>
                     </Link>
                 </div>
+                {success && <p>Drone with AirPlate registered successfully!</p>}
             </div>
         </div>
     );

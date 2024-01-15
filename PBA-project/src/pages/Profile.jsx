@@ -305,7 +305,7 @@ const Profile = () => {
                                     <div className="phone-output">{userData.phone}</div>
                                 </div>
                                     {showContactInputs && (
-                                        <div className='input-fields'>
+                                        <div>
                                             <input
                                                 type="text"
                                                 placeholder="New email"

@@ -41,13 +41,8 @@ const Signup = () => {
               }
           
             } catch (error) {
-                if (error.response && error.response.data && error.response.data.error) {
-                    console.error('Fejl:', error.response.data.error);
-                    setError(error.response.data.error);
-                } else {
-                    console.error('Der opstod en fejl ved oprettelse.', error);
-                    setError('Der opstod en fejl ved oprettelse.');
-                }
+                    console.error('Fejl:', error);
+                    setError('user create error');
             }    
     };
 

@@ -8,6 +8,8 @@ const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    const [error, setError] = useState('');
+
     const handleLogin = async (e) => {
         e.preventDefault();
 
@@ -25,13 +27,13 @@ const Login = () => {
                 console.log('isLoggedIn:', response.data.isLoggedIn);
                 console.log('userName:', response.data.isLoggedIn);
                 window.location.href = '/';
-
-
             } else {
                 console.error('Login failed:', response.data.message);
+                setError(response.data.message);
             }
         } catch (error) {
             console.error('An error occurred during login:', error);
+            setError('Error under login');
         }
     };
 
@@ -74,6 +76,14 @@ const Login = () => {
                         Login
                     </button>
                 </div>
+                <div className="showError">
+                    {error && (
+                        <div className="error-message">
+                            {error}
+                        </div>
+                    )}
+                </div>
+
                 <div className="container">
                     <div className="account">Don't have an account?</div>
                     <div className="login">

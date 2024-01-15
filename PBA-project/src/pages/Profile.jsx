@@ -46,10 +46,10 @@ const Profile = () => {
         if (storedUserData) {
             setUserData(JSON.parse(storedUserData));
 
-            const userEmail = JSON.parse(storedUserData).email; // Antag, at e-mailen er gemt i user-data
+            const userEmail = JSON.parse(storedUserData).email;
             axios.post('https://kienzhe.dk/updates/showData.php', { userEmail })
                 .then(response => {
-                    console.log(response);  // Log hele response-objektet
+                    console.log(response);
                     if (response.data.success) {
                         setOpenAccordions([1]);
                         setSerialNumArray(response.data.combinedDataArray);
@@ -89,14 +89,13 @@ const Profile = () => {
         axios.post('https://kienzhe.dk/updates/profileEdit.php', updatedData,)
             .then(response => {
                 if (response.data.success) {
-                    // Opdater React-tilstanden
+                    showToast('Name changed successfully.', 'var(--color-green)');
                     setUserData(prevUserData => ({
                         ...prevUserData,
                         first_name: firstNameInput,
                         last_name: lastNameInput,
                     }));
 
-                    // Opdater sessionStorage
                     const storedUserData = sessionStorage.getItem('user');
                     if (storedUserData) {
                         const parsedUserData = JSON.parse(storedUserData);
@@ -111,14 +110,14 @@ const Profile = () => {
                 }
             })
             .catch(error => {
+                showToast('error updating name.', 'var(--color-red)');
+
                 console.error('error updating profile:', error);
             });
     };
 
     const handleSavePasswordChanges = () => {
-        // Validate the current password and new password fields
         if (!currentPassword || !newPassword || newPassword !== confirmNewPassword) {
-            // Handle validation error, maybe show an alert
             console.error('Password fields are not valid.');
             return;
         }
@@ -141,7 +140,7 @@ const Profile = () => {
                 }
             })
             .catch(error => {
-                showToast('Error updating password. Please try again later.', 'var(--color-skyblue)');
+                showToast('Error updating password. Please try again later.', 'var(--color-red)');
                 console.error('Error updating password:', error);
             });
     };
@@ -156,14 +155,12 @@ const Profile = () => {
         axios.post('https://kienzhe.dk/updates/profileEdit.php', updatedData)
             .then(response => {
                 if (response.data.success) {
-                    // Opdater React-tilstanden
                     setUserData(prevUserData => ({
                         ...prevUserData,
                         email: newEmail,
                         phone: newPhone,
                     }));
 
-                    // Opdater sessionStorage
                     const storedUserData = sessionStorage.getItem('user');
                     if (storedUserData) {
                         const parsedUserData = JSON.parse(storedUserData);

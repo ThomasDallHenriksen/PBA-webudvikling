@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../assets/global/breakpoints.scss';
 import '../assets/main/font.scss';
 import '../assets/styles/profile.scss';
+import Toastify from 'toastify-js';
 import axios from 'axios';
 
 
@@ -10,13 +11,29 @@ const Profile = () => {
     const [userData, setUserData] = useState(null);
     const [serialNumArray, setSerialNumArray] = useState([]);
 
-    //Redigerings
+    //Redigerings funktionalitet
     const [firstNameInput, setFirstNameInput] = useState('');
     const [lastNameInput, setLastNameInput] = useState('');
     const [showNameInputs, setShowNameInputs] = useState(false);
     const [updatedFullName, setUpdatedFullName] = useState('');
+    const [currentPassword, setCurrentPassword] = useState('');
+    const [newPassword, setNewPassword] = useState('');
+    const [confirmNewPassword, setConfirmNewPassword] = useState('');
+    const [showPasswordInputs, setShowPasswordInputs] = useState(false);
+
     const handleGearButtonClick = (accordionIndex) => {
         setShowNameInputs(accordionIndex === 1 && !showNameInputs);
+        setShowPasswordInputs(accordionIndex === 2 && !showPasswordInputs);
+    };
+    //notifikation
+    const showToast = (text, backgroundColor) => {
+        Toastify({
+            text,
+            duration: 3000,
+            backgroundColor,
+            gravity: 'top',
+            position: 'center',
+        }).showToast();
     };
 
 
@@ -58,41 +75,72 @@ const Profile = () => {
         </div>
     }
 
-    const handleSaveChanges = () => {
+    const handleSaveNameChanges = () => {
         const updatedData = {
             userEmail: userData.email,
             first_name: firstNameInput,
             last_name: lastNameInput,
         };
 
-        axios.post('https://kienzhe.dk/updates/profileEdit.php', updatedData, )
-        .then(response => {
-            if (response.data.success) {
-                // Opdater React-tilstanden
-                setUserData(prevUserData => ({
-                    ...prevUserData,
-                    first_name: firstNameInput,
-                    last_name: lastNameInput,
-                }));
+        axios.post('https://kienzhe.dk/updates/profileEdit.php', updatedData,)
+            .then(response => {
+                if (response.data.success) {
+                    // Opdater React-tilstanden
+                    setUserData(prevUserData => ({
+                        ...prevUserData,
+                        first_name: firstNameInput,
+                        last_name: lastNameInput,
+                    }));
 
-                // Opdater sessionStorage
-                const storedUserData = sessionStorage.getItem('user');
-                if (storedUserData) {
-                    const parsedUserData = JSON.parse(storedUserData);
-                    parsedUserData.first_name = firstNameInput;
-                    parsedUserData.last_name = lastNameInput;
-                    sessionStorage.setItem('user', JSON.stringify(parsedUserData));
+                    // Opdater sessionStorage
+                    const storedUserData = sessionStorage.getItem('user');
+                    if (storedUserData) {
+                        const parsedUserData = JSON.parse(storedUserData);
+                        parsedUserData.first_name = firstNameInput;
+                        parsedUserData.last_name = lastNameInput;
+                        sessionStorage.setItem('user', JSON.stringify(parsedUserData));
+                    }
+
+                    setShowNameInputs(false);
+                } else {
+                    console.error(response.data.message);
                 }
+            })
+            .catch(error => {
+                console.error('error updating profile:', error);
+            });
+    };
 
-                setShowNameInputs(false);
-            } else {
-                console.error(response.data.message);
-            }
-        })
-        .catch(error => {
-            console.error('error updating profile:', error);
-        });
-};
+    const handleSavePasswordChanges = () => {
+        // Validate the current password and new password fields
+        if (!currentPassword || !newPassword || newPassword !== confirmNewPassword) {
+            // Handle validation error, maybe show an alert
+            console.error('Password fields are not valid.');
+            return;
+        }
+
+        const updatedData = {
+            userEmail: userData.email,
+            currentPassword,
+            newPassword,
+        };
+
+        axios.post('https://kienzhe.dk/updates/profileEdit.php', updatedData)
+            .then(response => {
+                if (response.data.success) {
+                    showToast('Password changed successfully.', 'var(--color-green)');
+                    console.log('Password changed successfully.');
+                    setShowPasswordInputs(false);
+                } else {
+                    showToast(response.data.message, 'var(--color-red)');
+                    console.error(response.data.message);
+                }
+            })
+            .catch(error => {
+                showToast('Error updating password. Please try again later.', 'var(--color-skyblue)');
+                console.error('Error updating password:', error);
+            });
+    };
 
     return (
         <div className="profile">
@@ -133,7 +181,7 @@ const Profile = () => {
                                                 value={lastNameInput}
                                                 onChange={(e) => setLastNameInput(e.target.value)}
                                             />
-                                            <button className='save-button' onClick={handleSaveChanges}>Save Changes</button>
+                                            <button className='save-button' onClick={handleSaveNameChanges}>Save Changes</button>
                                         </div>
                                     )}
                                 </div>
@@ -163,8 +211,31 @@ const Profile = () => {
                             <div className='password'>
                                 <div className="password-title">Your Password</div>
                                 <div className="password-output">********</div>
+                                {showPasswordInputs && (
+                                    <div>
+                                        <input
+                                            type="password"
+                                            placeholder="Current Password"
+                                            value={currentPassword}
+                                            onChange={(e) => setCurrentPassword(e.target.value)}
+                                        />
+                                        <input
+                                            type="password"
+                                            placeholder="New Password"
+                                            value={newPassword}
+                                            onChange={(e) => setNewPassword(e.target.value)}
+                                        />
+                                        <input
+                                            type="password"
+                                            placeholder="Confirm New Password"
+                                            value={confirmNewPassword}
+                                            onChange={(e) => setConfirmNewPassword(e.target.value)}
+                                        />
+                                        <button className='save-button' onClick={handleSavePasswordChanges}>Save Password Changes</button>
+                                    </div>
+                                )}
                             </div>
-                            <button className='gear'>
+                            <button className='gear'onClick={() => handleGearButtonClick(2)}>
                                 <img src="/images/profile/gear.png" alt="" />
                             </button>
                         </div>

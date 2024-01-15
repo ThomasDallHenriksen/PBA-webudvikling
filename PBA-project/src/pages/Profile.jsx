@@ -319,7 +319,7 @@ const Profile = () => {
                                                 onChange={(e) => setNewPhone(e.target.value)}
                                             />
                                             <button className='save-button' onClick={handleSaveContactChanges}>Save Changes</button>
-                                            <p>* filling out both input is required</p>
+                                            <p>* Filling out both input is required</p>
                                         </div>
                                     )}
                             </div>

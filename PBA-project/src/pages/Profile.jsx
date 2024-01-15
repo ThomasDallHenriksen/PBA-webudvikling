@@ -207,7 +207,7 @@ const Profile = () => {
                                     <div key={userData.id} className='fullName-output'>{updatedFullName || `${userData.first_name} ${userData.last_name}`}</div>
 
                                     {showNameInputs && (
-                                        <div>
+                                        <div className='input-fields'>
                                             <input
                                                 type="text"
                                                 placeholder="New First Name"
@@ -251,7 +251,7 @@ const Profile = () => {
                                 <div className="password-title">Your Password</div>
                                 <div className="password-output">********</div>
                                 {showPasswordInputs && (
-                                    <div>
+                                    <div className='input-fields'>
                                         <input
                                             type="password"
                                             placeholder="Current Password"
@@ -305,7 +305,7 @@ const Profile = () => {
                                     <div className="phone-output">{userData.phone}</div>
                                 </div>
                                     {showContactInputs && (
-                                        <div>
+                                        <div className='input-fields'>
                                             <input
                                                 type="text"
                                                 placeholder="New email"

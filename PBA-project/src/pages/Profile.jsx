@@ -20,10 +20,14 @@ const Profile = () => {
     const [newPassword, setNewPassword] = useState('');
     const [confirmNewPassword, setConfirmNewPassword] = useState('');
     const [showPasswordInputs, setShowPasswordInputs] = useState(false);
+    const [showContactInputs, setShowContactInputs] = useState(false); // Add this line for showContactInputs
+    const [newEmail, setNewEmail] = useState('');
+    const [newPhone, setNewPhone] = useState('');
 
     const handleGearButtonClick = (accordionIndex) => {
         setShowNameInputs(accordionIndex === 1 && !showNameInputs);
         setShowPasswordInputs(accordionIndex === 2 && !showPasswordInputs);
+        setShowContactInputs(accordionIndex === 3 && !showContactInputs);
     };
     //notifikation
     const showToast = (text, backgroundColor) => {
@@ -142,6 +146,44 @@ const Profile = () => {
             });
     };
 
+    const handleSaveContactChanges = () => {
+        const updatedData = {
+            userEmail: userData.email,
+            newEmail,
+            newPhone,
+        };
+
+        axios.post('https://kienzhe.dk/updates/profileEdit.php', updatedData)
+            .then(response => {
+                if (response.data.success) {
+                    // Opdater React-tilstanden
+                    setUserData(prevUserData => ({
+                        ...prevUserData,
+                        email: newEmail,
+                        phone: newPhone,
+                    }));
+
+                    // Opdater sessionStorage
+                    const storedUserData = sessionStorage.getItem('user');
+                    if (storedUserData) {
+                        const parsedUserData = JSON.parse(storedUserData);
+                        parsedUserData.email = newEmail;
+                        parsedUserData.phone = newPhone;
+                        sessionStorage.setItem('user', JSON.stringify(parsedUserData));
+                    }
+
+                    showToast('Contact information updated successfully.', 'var(--color-green)');
+                } else {
+                    showToast(response.data.message, 'var(--color-red)');
+                    console.error(response.data.message);
+                }
+            })
+            .catch(error => {
+                showToast('Error updating contact information. Please try again later.', 'var(--color-skyblue)');
+                console.error('Error updating contact information:', error);
+            });
+    };
+
     return (
         <div className="profile">
             <div className="profile-section-1">
@@ -235,7 +277,7 @@ const Profile = () => {
                                     </div>
                                 )}
                             </div>
-                            <button className='gear'onClick={() => handleGearButtonClick(2)}>
+                            <button className='gear' onClick={() => handleGearButtonClick(2)}>
                                 <img src="/images/profile/gear.png" alt="" />
                             </button>
                         </div>
@@ -265,8 +307,26 @@ const Profile = () => {
                                     <div className="phone-title">Your phone number</div>
                                     <div className="phone-output">{userData.phone}</div>
                                 </div>
+                                    {showContactInputs && (
+                                        <div>
+                                            <input
+                                                type="text"
+                                                placeholder="New email"
+                                                value={newEmail}
+                                                onChange={(e) => setNewEmail(e.target.value)}
+                                            />
+                                            <input
+                                                type="text"
+                                                placeholder="New phone number"
+                                                value={newPhone}
+                                                onChange={(e) => setNewPhone(e.target.value)}
+                                            />
+                                            <button className='save-button' onClick={handleSaveContactChanges}>Save Changes</button>
+                                            <p>* filling out both input is required</p>
+                                        </div>
+                                    )}
                             </div>
-                            <button className='gear'>
+                            <button className='gear'onClick={() => handleGearButtonClick(3)}>
                                 <img src="/images/profile/gear.png" alt="" />
                             </button>
                         </div>

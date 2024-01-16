@@ -37,7 +37,7 @@ const Signup = () => {
                 window.location.href = response.data.redirect;
               } else {
                 console.log(response.data.error);
-                setError(response.data.error); // Sæt fejl i state
+                setError(response.data.error);
               }
           
             } catch (error) {

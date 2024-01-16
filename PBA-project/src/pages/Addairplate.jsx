@@ -18,7 +18,7 @@ const Addairplate = () => {
         e.preventDefault();
 
         if (!isLoggedIn) {
-            console.log('Must be logged in to add an airplate');
+            alert('Must be logged in to add an airplate');
             return;
         }
 
@@ -81,9 +81,13 @@ const Addairplate = () => {
                             alt="info-button"
                         />
                         <span className="infopic-text">The serial number is unique and is used to identify the individual AirPlate in our database.</span>
-                    </div>
-                    <button className='addButton' type="submit">{success ? <Link to="/Adddrone">Next</Link> : 'Submit'}</button>
+                    </div>         
                 </form>
+                {success ? (
+                    <Link to="/Adddrone" className='nextButton'>Next</Link>
+                    ) : (
+                    <button type="submit" onClick={handleAdd} className='addButton'>Submit</button>
+                    )}
                 <div className="container">
                     <div className="account">Have you already registered a Airplate?</div>
                     <div className="login">

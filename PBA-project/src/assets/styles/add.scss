@@ -95,6 +95,28 @@
     color: var(--color-black);
 }
 
+.nextButton {
+    width: 9.5rem;
+    padding: .625rem;
+    border: 1px solid #ccc;
+    border-radius: 3.75rem;
+    box-sizing: border-box;
+    font-size: 1rem;
+    color: var(--color-black);
+    background-color: var(--color-white);
+    cursor: pointer;
+    margin-left: 0.7rem;
+    margin-top: 2rem;
+}
+
+.nextButton a {
+    color: var(--color-black);
+}
+
+p {
+    color: var(--color-green);
+}
+
 .dropdown {
     font-size: 16px;
 }
